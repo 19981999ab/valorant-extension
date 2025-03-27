@@ -472,16 +472,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const score = document.createElement('span');
       score.classList.add('score');
       if (type === 'live') {
-        if (match.score1 && match.score2) {
-          score.textContent = `${match.score1}-${match.score2}`;
-        } else if (match.map_scores && match.map_scores.length > 0) {
-          const currentMap = match.map_scores.find(m => m.is_current) || match.map_scores[0];
-          score.textContent = `${currentMap.team1_score}-${currentMap.team2_score}`;
-        } else {
-          const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
-          const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
-          score.textContent = `${team1Total}-${team2Total}`;
-        }
+        const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
+        const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
+        const mapName = match.current_map || 'Unknown Map';
+        const mapScore = match.score1 && match.score2 ? `${match.score1}-${match.score2}` : '';
+        score.innerHTML = `${mapName}: ${team1Total}-${team2Total}<br>${mapScore}`;
       } else if (type === 'results') {
         if (match.score1 && match.score2) {
           score.textContent = `${match.score1}-${match.score2}`;
@@ -510,45 +505,18 @@ document.addEventListener('DOMContentLoaded', () => {
       teams.appendChild(score);
       teams.appendChild(team2);
       
-      // Add current round scores for live matches
-      if (type === 'live') {
-        const roundScore = document.createElement('div');
-        roundScore.classList.add('round-score');
-        
-        // Calculate total rounds for each team
-        const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
-        const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
-        
-        // Only show round score if at least one team has rounds
-        if (team1Total > 0 || team2Total > 0) {
-          const mapName = match.current_map || 'Unknown Map';
-          roundScore.textContent = `${mapName}: ${team1Total}-${team2Total}`;
-          matchItem.appendChild(roundScore);
-        }
-      }
-      
-      // Add map scores for live matches
-      if (type === 'live' && match.map_scores) {
-        const liveScore = document.createElement('div');
-        liveScore.classList.add('live-score');
-        
-        match.map_scores.forEach((mapScore, index) => {
-          const mapScoreElement = document.createElement('span');
-          mapScoreElement.classList.add('map-score');
-          if (mapScore.is_current) {
-            mapScoreElement.classList.add('active');
-          }
-          mapScoreElement.textContent = `${mapScore.team1_score}-${mapScore.team2_score}`;
-          liveScore.appendChild(mapScoreElement);
-        });
-        
-        matchItem.appendChild(liveScore);
-      }
-      
       // Tournament name
       const tournament = document.createElement('p');
       tournament.classList.add('tournament');
-      tournament.textContent = tournamentName;
+      if (type === 'results' && match.tournament_icon) {
+        const tournamentIcon = document.createElement('img');
+        tournamentIcon.src = match.tournament_icon;
+        tournamentIcon.alt = 'Tournament Icon';
+        tournamentIcon.classList.add('tournament-icon');
+        tournamentIcon.onerror = () => { tournamentIcon.style.display = 'none'; };
+        tournament.appendChild(tournamentIcon);
+      }
+      tournament.appendChild(document.createTextNode(tournamentName));
       
       // Match time
       const time = document.createElement('p');
@@ -556,8 +524,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (type === 'upcoming') {
         time.classList.add('upcoming');
         time.textContent = `Starts in: ${match.time_until_match || 'N/A'}`;
+      } else if (type === 'results') {
+        time.textContent = match.time_completed || match.match_time || '';
       } else {
-        time.textContent = match.match_time || 'N/A';
+        time.textContent = match.match_time || '';
       }
       
       matchItem.appendChild(teams);
@@ -581,28 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Round Details for live matches
       if (type === 'live') {
-        const roundDetails = document.createElement('div');
-        roundDetails.classList.add('round-details');
-        
-        const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
-        const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
-        
-        roundDetails.innerHTML = `
-          <div class="round-details-header">Current Round Score</div>
-          <div class="team-rounds">
-            <span class="team-name">${match.team1}</span>
-            <div class="rounds">
-              <span class="round">${team1Total}</span>
-            </div>
-          </div>
-          <div class="team-rounds">
-            <span class="team-name">${match.team2}</span>
-            <div class="rounds">
-              <span class="round">${team2Total}</span>
-            </div>
-          </div>
-        `;
-        tournamentInfo.appendChild(roundDetails);
+        // Remove this section entirely
       }
       
       // Tournament Container with Icon
@@ -674,6 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayUpcomingMatches(segments) {
       matchListDiv.innerHTML = '';
+      matchListDiv.classList.remove('results');
       if (segments?.length > 0) {
         segments.forEach(match => {
           matchListDiv.appendChild(createMatchElement(match, 'upcoming'));
@@ -685,6 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function displayLiveMatches(segments) {
       matchListDiv.innerHTML = '';
+      matchListDiv.classList.remove('results');
       if (segments?.length > 0) {
         segments.forEach(match => {
           matchListDiv.appendChild(createMatchElement(match, 'live'));
