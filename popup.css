@@ -1,0 +1,189 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    padding: 15px;
+    background-color: #181a1c;
+    color: #eee;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #ff4655;
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    justify-content: center;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #2c3034;
+    color: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    font-size: 0.9em;
+}
+
+button:hover {
+    background-color: #4a5259;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#match-list {
+    width: 100%;
+}
+
+.match-item {
+    background-color: #24272b;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #ff4655;
+    transition: transform 0.2s ease;
+}
+
+.match-item:hover {
+    transform: translateY(-2px);
+}
+
+.teams {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #2c3034;
+}
+
+.team-name {
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.vs-text {
+    color: #aaa;
+    padding: 0 5px;
+    font-size: 0.9em;
+}
+
+.score {
+    font-weight: bold;
+    color: #ff4655;
+    margin-left: auto;
+    font-size: 1.1em;
+}
+
+.tournament {
+    color: #aaa;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.series {
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 8px;
+}
+
+.match-time {
+    color: #bbb;
+    font-size: 0.85em;
+    margin-bottom: 8px;
+}
+
+.match-item a {
+    color: #ff4655;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85em;
+    display: inline-block;
+    margin-top: 5px;
+    transition: color 0.2s ease;
+}
+
+.match-item a:hover {
+    color: #ff6b78;
+    text-decoration: underline;
+}
+
+.live-item {
+    border-left: 4px solid #ff4655;
+    background-color: rgba(255, 70, 85, 0.08);
+}
+
+.live-badge {
+    background-color: #ff4655;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+.result-item {
+    border-left: 4px solid #666;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.result-item .team-name {
+    color: #bbb;
+}
+
+.result-item .tournament {
+    color: #888;
+}
+
+.loading, .no-matches {
+    text-align: center;
+    color: #aaa;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+.error {
+    text-align: center;
+    color: #f44336;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}

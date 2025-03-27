@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valorant Matches</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <button id="upcoming">Upcoming</button>
+      <button id="live">Live</button>
+      <button id="results">Results</button>
+    </div>
+    <div class="header-right">
+      <button id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+  <div class="filter-section">
+    <div class="filter-container">
+      <label class="filter-label">Filter by Tournament:</label>
+      <div class="dropdown-container">
+        <div id="dropdown-header" class="dropdown-header">
+          <span class="selected-text">All Tournaments</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div id="tournament-filters" class="tournament-filters"></div>
+      </div>
+    </div>
+  </div>
+  <div id="match-list">
+    <p class="loading">Loading matches...</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

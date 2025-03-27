@@ -1,0 +1,21 @@
+{
+    "name": "valorant-proxy",
+    "version": "1.0.0",
+    "description": "A proxy for fetching Valorant match data for a Chrome extension",
+    "main": "index.js",
+    "scripts": {
+      "dev": "node index.js"
+    },
+    "keywords": [
+      "vercel",
+      "proxy",
+      "valorant",
+      "api"
+    ],
+    "author": "Your Name (or leave blank)",
+    "license": "ISC",
+    "dependencies": {
+      "cors": "^2.8.5",
+      "node-fetch": "^2.7.0"
+    }
+  }
