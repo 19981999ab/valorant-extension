@@ -407,90 +407,276 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   
+    // Add color generation function
+    function generateColor() {
+      // Generate a random HSL color with good saturation and lightness for readability
+      const hue = Math.random() * 360;
+      // Use a higher saturation and lower lightness for more visible colors
+      // Randomize saturation between 80-95% and lightness between 80-90%
+      const saturation = 80 + Math.random() * 15;
+      const lightness = 80 + Math.random() * 10;
+      // Randomize opacity between 0.2 and 0.3 for more variation
+      const opacity = 0.2 + Math.random() * 0.1;
+      return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
+    }
+
+    // Store colors for each tournament
+    const tournamentColors = new Map();
+
+    function getTournamentColor(tournamentName) {
+      if (!tournamentName) return 'var(--card-bg)';
+      
+      if (!tournamentColors.has(tournamentName)) {
+        tournamentColors.set(tournamentName, generateColor());
+      }
+      return tournamentColors.get(tournamentName);
+    }
+
+    function createMatchElement(match, type) {
+      const matchItem = document.createElement('div');
+      matchItem.classList.add('match-item');
+      
+      // Get tournament name and color
+      const tournamentName = match.match_event || match.tournament_name;
+      const tournamentColor = getTournamentColor(tournamentName);
+      
+      // Apply tournament-specific background color
+      matchItem.style.backgroundColor = tournamentColor;
+      
+      // Add live badge for live matches
+      if (type === 'live') {
+        const liveBadge = document.createElement('div');
+        liveBadge.classList.add('live-badge');
+        matchItem.appendChild(liveBadge);
+      }
+      
+      // Create teams section
+      const teams = document.createElement('div');
+      teams.classList.add('teams');
+      
+      // Team 1
+      const team1 = document.createElement('div');
+      team1.classList.add('team');
+      const team1Logo = document.createElement('img');
+      team1Logo.src = match.team1_logo || `https://www.vlr.gg/img/vlr/tmp/vlr_${match.flag1}.png`;
+      team1Logo.alt = match.team1;
+      team1Logo.classList.add('team-logo');
+      team1Logo.onerror = () => { team1Logo.style.display = 'none'; };
+      const team1Name = document.createElement('span');
+      team1Name.classList.add('team-name');
+      team1Name.textContent = match.team1;
+      team1.appendChild(team1Logo);
+      team1.appendChild(team1Name);
+      
+      // Score
+      const score = document.createElement('span');
+      score.classList.add('score');
+      if (type === 'live') {
+        if (match.score1 && match.score2) {
+          score.textContent = `${match.score1}-${match.score2}`;
+        } else if (match.map_scores && match.map_scores.length > 0) {
+          const currentMap = match.map_scores.find(m => m.is_current) || match.map_scores[0];
+          score.textContent = `${currentMap.team1_score}-${currentMap.team2_score}`;
+        } else {
+          const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
+          const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
+          score.textContent = `${team1Total}-${team2Total}`;
+        }
+      } else if (type === 'results') {
+        if (match.score1 && match.score2) {
+          score.textContent = `${match.score1}-${match.score2}`;
+        } else {
+          score.textContent = 'vs';
+        }
+      } else {
+        score.textContent = 'vs';
+      }
+      
+      // Team 2
+      const team2 = document.createElement('div');
+      team2.classList.add('team');
+      const team2Logo = document.createElement('img');
+      team2Logo.src = match.team2_logo || `https://www.vlr.gg/img/vlr/tmp/vlr_${match.flag2}.png`;
+      team2Logo.alt = match.team2;
+      team2Logo.classList.add('team-logo');
+      team2Logo.onerror = () => { team2Logo.style.display = 'none'; };
+      const team2Name = document.createElement('span');
+      team2Name.classList.add('team-name');
+      team2Name.textContent = match.team2;
+      team2.appendChild(team2Logo);
+      team2.appendChild(team2Name);
+      
+      teams.appendChild(team1);
+      teams.appendChild(score);
+      teams.appendChild(team2);
+      
+      // Add current round scores for live matches
+      if (type === 'live') {
+        const roundScore = document.createElement('div');
+        roundScore.classList.add('round-score');
+        
+        // Calculate total rounds for each team
+        const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
+        const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
+        
+        // Only show round score if at least one team has rounds
+        if (team1Total > 0 || team2Total > 0) {
+          const mapName = match.current_map || 'Unknown Map';
+          roundScore.textContent = `${mapName}: ${team1Total}-${team2Total}`;
+          matchItem.appendChild(roundScore);
+        }
+      }
+      
+      // Add map scores for live matches
+      if (type === 'live' && match.map_scores) {
+        const liveScore = document.createElement('div');
+        liveScore.classList.add('live-score');
+        
+        match.map_scores.forEach((mapScore, index) => {
+          const mapScoreElement = document.createElement('span');
+          mapScoreElement.classList.add('map-score');
+          if (mapScore.is_current) {
+            mapScoreElement.classList.add('active');
+          }
+          mapScoreElement.textContent = `${mapScore.team1_score}-${mapScore.team2_score}`;
+          liveScore.appendChild(mapScoreElement);
+        });
+        
+        matchItem.appendChild(liveScore);
+      }
+      
+      // Tournament name
+      const tournament = document.createElement('p');
+      tournament.classList.add('tournament');
+      tournament.textContent = tournamentName;
+      
+      // Match time
+      const time = document.createElement('p');
+      time.classList.add('match-time');
+      if (type === 'upcoming') {
+        time.classList.add('upcoming');
+        time.textContent = `Starts in: ${match.time_until_match || 'N/A'}`;
+      } else {
+        time.textContent = match.match_time || 'N/A';
+      }
+      
+      matchItem.appendChild(teams);
+      matchItem.appendChild(tournament);
+      matchItem.appendChild(time);
+      
+      // Tournament Info
+      const tournamentInfo = document.createElement('div');
+      tournamentInfo.classList.add('tournament-info');
+      
+      // Map Information
+      if (match.current_map) {
+        const mapInfo = document.createElement('div');
+        mapInfo.classList.add('map-info');
+        mapInfo.innerHTML = `
+          <span class="map-name">${match.current_map}</span>
+          ${match.map_number ? `<span class="map-number">Map ${match.map_number}</span>` : ''}
+        `;
+        tournamentInfo.appendChild(mapInfo);
+      }
+      
+      // Round Details for live matches
+      if (type === 'live') {
+        const roundDetails = document.createElement('div');
+        roundDetails.classList.add('round-details');
+        
+        const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
+        const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
+        
+        roundDetails.innerHTML = `
+          <div class="round-details-header">Current Round Score</div>
+          <div class="team-rounds">
+            <span class="team-name">${match.team1}</span>
+            <div class="rounds">
+              <span class="round">${team1Total}</span>
+            </div>
+          </div>
+          <div class="team-rounds">
+            <span class="team-name">${match.team2}</span>
+            <div class="rounds">
+              <span class="round">${team2Total}</span>
+            </div>
+          </div>
+        `;
+        tournamentInfo.appendChild(roundDetails);
+      }
+      
+      // Tournament Container with Icon
+      const tournamentContainer = document.createElement('div');
+      tournamentContainer.classList.add('tournament-container');
+      
+      if (match.tournament_icon) {
+        const tournamentIcon = document.createElement('img');
+        tournamentIcon.src = match.tournament_icon;
+        tournamentIcon.alt = 'Tournament Icon';
+        tournamentIcon.classList.add('tournament-icon');
+        tournamentIcon.onerror = () => { tournamentIcon.style.display = 'none'; };
+        tournamentContainer.appendChild(tournamentIcon);
+      }
+      
+      const tournamentNameElement = document.createElement('p');
+      tournamentNameElement.classList.add('tournament');
+      tournamentNameElement.textContent = match.tournament_name || match.match_event || 'N/A';
+      tournamentContainer.appendChild(tournamentNameElement);
+      
+      tournamentInfo.appendChild(tournamentContainer);
+      
+      // Round Info for results
+      if (type === 'results' && match.round_info) {
+        const roundInfo = document.createElement('p');
+        roundInfo.classList.add('round-info');
+        roundInfo.textContent = match.round_info;
+        tournamentInfo.appendChild(roundInfo);
+      }
+      
+      // Time Container
+      const timeContainer = document.createElement('div');
+      timeContainer.classList.add('time-container');
+      
+      const timeText = document.createElement('p');
+      timeText.classList.add('match-time');
+      if (type === 'upcoming') {
+        timeText.classList.add('upcoming');
+      }
+      timeText.textContent = type === 'upcoming' 
+        ? `Starts in: ${match.time_until_match || 'N/A'}`
+        : type === 'live'
+        ? 'LIVE'
+        : match.time_completed || 'N/A';
+      timeContainer.appendChild(timeText);
+      
+      tournamentInfo.appendChild(timeContainer);
+      
+      // Link
+      const link = document.createElement('a');
+      link.href = match.match_page;
+      link.textContent = 'View on vlr.gg';
+      link.target = '_blank';
+      tournamentInfo.appendChild(link);
+      
+      matchItem.appendChild(tournamentInfo);
+      
+      // Add click handler for expansion
+      matchItem.addEventListener('click', (e) => {
+        // Don't expand if clicking the link
+        if (e.target.tagName === 'A') return;
+        
+        // Toggle expansion
+        matchItem.classList.toggle('expanded');
+      });
+      
+      return matchItem;
+    }
+
     function displayUpcomingMatches(segments) {
       matchListDiv.innerHTML = '';
       if (segments?.length > 0) {
         segments.forEach(match => {
-          const matchItem = document.createElement('div');
-          matchItem.classList.add('match-item', 'upcoming-item');
-          
-          // Teams and Score
-          const teamsContainer = document.createElement('div');
-          teamsContainer.classList.add('teams');
-          
-          // Team 1 with logo
-          const team1Container = document.createElement('div');
-          team1Container.classList.add('team');
-          
-          if (match.team1_logo) {
-            const team1Logo = document.createElement('img');
-            team1Logo.src = match.team1_logo;
-            team1Logo.alt = match.team1;
-            team1Logo.classList.add('team-logo');
-            team1Logo.onerror = () => { team1Logo.style.display = 'none'; };
-            team1Container.appendChild(team1Logo);
-          }
-          
-          const team1Name = document.createElement('span');
-          team1Name.textContent = match.team1;
-          team1Name.classList.add('team-name');
-          team1Container.appendChild(team1Name);
-          
-          teamsContainer.appendChild(team1Container);
-          
-          const vs = document.createElement('span');
-          vs.textContent = ' vs ';
-          vs.classList.add('vs-text');
-          teamsContainer.appendChild(vs);
-          
-          // Team 2 with logo
-          const team2Container = document.createElement('div');
-          team2Container.classList.add('team');
-          
-          if (match.team2_logo) {
-            const team2Logo = document.createElement('img');
-            team2Logo.src = match.team2_logo;
-            team2Logo.alt = match.team2;
-            team2Logo.classList.add('team-logo');
-            team2Logo.onerror = () => { team2Logo.style.display = 'none'; };
-            team2Container.appendChild(team2Logo);
-          }
-          
-          const team2Name = document.createElement('span');
-          team2Name.textContent = match.team2;
-          team2Name.classList.add('team-name');
-          team2Container.appendChild(team2Name);
-          
-          teamsContainer.appendChild(team2Container);
-          
-          matchItem.appendChild(teamsContainer);
-          
-          // Tournament Info
-          const tournament = document.createElement('p');
-          tournament.classList.add('tournament');
-          tournament.textContent = match.match_event || 'N/A';
-          matchItem.appendChild(tournament);
-          
-          if (match.match_series) {
-            const series = document.createElement('p');
-            series.classList.add('series');
-            series.textContent = match.match_series;
-            matchItem.appendChild(series);
-          }
-          
-          const timeUntil = document.createElement('p');
-          timeUntil.classList.add('match-time');
-          timeUntil.textContent = `Starts in: ${match.time_until_match || 'N/A'}`;
-          matchItem.appendChild(timeUntil);
-          
-          // Link
-          const link = document.createElement('a');
-          link.href = match.match_page;
-          link.textContent = 'View on vlr.gg';
-          link.target = '_blank';
-          matchItem.appendChild(link);
-          
-          matchListDiv.appendChild(matchItem);
+          matchListDiv.appendChild(createMatchElement(match, 'upcoming'));
         });
       } else {
         matchListDiv.innerHTML = '<p class="no-matches">No upcoming matches found.</p>';
@@ -501,130 +687,7 @@ document.addEventListener('DOMContentLoaded', () => {
       matchListDiv.innerHTML = '';
       if (segments?.length > 0) {
         segments.forEach(match => {
-          const matchItem = document.createElement('div');
-          matchItem.classList.add('match-item', 'live-item');
-          
-          // Teams and Score
-          const teamsContainer = document.createElement('div');
-          teamsContainer.classList.add('teams');
-          
-          // Team 1 with logo
-          const team1Container = document.createElement('div');
-          team1Container.classList.add('team');
-          
-          if (match.team1_logo) {
-            const team1Logo = document.createElement('img');
-            team1Logo.src = match.team1_logo;
-            team1Logo.alt = match.team1;
-            team1Logo.classList.add('team-logo');
-            team1Logo.onerror = () => { team1Logo.style.display = 'none'; };
-            team1Container.appendChild(team1Logo);
-          }
-          
-          const team1Name = document.createElement('span');
-          team1Name.textContent = match.team1;
-          team1Name.classList.add('team-name');
-          team1Container.appendChild(team1Name);
-          
-          teamsContainer.appendChild(team1Container);
-          
-          // Score
-          const score = document.createElement('div');
-          score.classList.add('score');
-          score.textContent = `${match.score1} - ${match.score2}`;
-          teamsContainer.appendChild(score);
-          
-          // Team 2 with logo
-          const team2Container = document.createElement('div');
-          team2Container.classList.add('team');
-          
-          if (match.team2_logo) {
-            const team2Logo = document.createElement('img');
-            team2Logo.src = match.team2_logo;
-            team2Logo.alt = match.team2;
-            team2Logo.classList.add('team-logo');
-            team2Logo.onerror = () => { team2Logo.style.display = 'none'; };
-            team2Container.appendChild(team2Logo);
-          }
-          
-          const team2Name = document.createElement('span');
-          team2Name.textContent = match.team2;
-          team2Name.classList.add('team-name');
-          team2Container.appendChild(team2Name);
-          
-          teamsContainer.appendChild(team2Container);
-          
-          matchItem.appendChild(teamsContainer);
-          
-          // Map Information
-          if (match.current_map) {
-            const mapInfo = document.createElement('div');
-            mapInfo.classList.add('map-info');
-            mapInfo.innerHTML = `
-              <span class="map-name">${match.current_map}</span>
-              ${match.map_number ? `<span class="map-number">Map ${match.map_number}</span>` : ''}
-            `;
-            matchItem.appendChild(mapInfo);
-          }
-          
-          // Round Details
-          const roundDetails = document.createElement('div');
-          roundDetails.classList.add('round-details');
-          
-          // Calculate total scores
-          const team1Total = (parseInt(match.team1_round_ct) || 0) + (parseInt(match.team1_round_t) || 0);
-          const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
-          
-          const team1Rounds = document.createElement('div');
-          team1Rounds.classList.add('team-rounds');
-          team1Rounds.innerHTML = `
-            <span class="team-name">${match.team1}</span>
-            <div class="rounds">
-              <span class="round">${team1Total}</span>
-            </div>
-          `;
-          
-          const team2Rounds = document.createElement('div');
-          team2Rounds.classList.add('team-rounds');
-          team2Rounds.innerHTML = `
-            <span class="team-name">${match.team2}</span>
-            <div class="rounds">
-              <span class="round">${team2Total}</span>
-            </div>
-          `;
-          
-          roundDetails.appendChild(team1Rounds);
-          roundDetails.appendChild(team2Rounds);
-          matchItem.appendChild(roundDetails);
-          
-          // Tournament Info
-          const tournament = document.createElement('p');
-          tournament.classList.add('tournament');
-          tournament.textContent = match.match_event || 'N/A';
-          matchItem.appendChild(tournament);
-          
-          if (match.match_series) {
-            const series = document.createElement('p');
-            series.classList.add('series');
-            series.textContent = match.match_series;
-            
-            matchItem.appendChild(series);
-          }
-          
-          // Live Badge
-          const liveBadge = document.createElement('span');
-          liveBadge.textContent = 'LIVE';
-          liveBadge.classList.add('live-badge');
-          matchItem.appendChild(liveBadge);
-          
-          // Link
-          const link = document.createElement('a');
-          link.href = match.match_page;
-          link.textContent = 'View on vlr.gg';
-          link.target = '_blank';
-          matchItem.appendChild(link);
-          
-          matchListDiv.appendChild(matchItem);
+          matchListDiv.appendChild(createMatchElement(match, 'live'));
         });
       } else {
         matchListDiv.innerHTML = '<p class="no-matches">No live matches currently.</p>';
@@ -635,119 +698,7 @@ document.addEventListener('DOMContentLoaded', () => {
       matchListDiv.innerHTML = '';
       if (segments?.length > 0) {
         segments.forEach(match => {
-          const matchItem = document.createElement('div');
-          matchItem.classList.add('match-item', 'result-item');
-          
-          // Teams and Score
-          const teamsContainer = document.createElement('div');
-          teamsContainer.classList.add('teams');
-          
-          // Team 1 with logo
-          const team1Container = document.createElement('div');
-          team1Container.classList.add('team');
-          
-          if (match.team1_logo) {
-            const team1Logo = document.createElement('img');
-            team1Logo.src = match.team1_logo;
-            team1Logo.alt = match.team1;
-            team1Logo.classList.add('team-logo');
-            team1Logo.onerror = () => { team1Logo.style.display = 'none'; };
-            team1Container.appendChild(team1Logo);
-          }
-          
-          const team1Name = document.createElement('span');
-          team1Name.textContent = match.team1;
-          team1Name.classList.add('team-name');
-          team1Container.appendChild(team1Name);
-          
-          teamsContainer.appendChild(team1Container);
-          
-          // Score
-          const score = document.createElement('div');
-          score.classList.add('score');
-          score.textContent = `${match.score1 || '0'} - ${match.score2 || '0'}`;
-          teamsContainer.appendChild(score);
-          
-          // Team 2 with logo
-          const team2Container = document.createElement('div');
-          team2Container.classList.add('team');
-          
-          if (match.team2_logo) {
-            const team2Logo = document.createElement('img');
-            team2Logo.src = match.team2_logo;
-            team2Logo.alt = match.team2;
-            team2Logo.classList.add('team-logo');
-            team2Logo.onerror = () => { team2Logo.style.display = 'none'; };
-            team2Container.appendChild(team2Logo);
-          }
-          
-          const team2Name = document.createElement('span');
-          team2Name.textContent = match.team2;
-          team2Name.classList.add('team-name');
-          team2Container.appendChild(team2Name);
-          
-          teamsContainer.appendChild(team2Container);
-          
-          matchItem.appendChild(teamsContainer);
-          
-          // Tournament Info with Icon
-          const tournamentContainer = document.createElement('div');
-          tournamentContainer.classList.add('tournament-container');
-          
-          if (match.tournament_icon) {
-            const tournamentIcon = document.createElement('img');
-            tournamentIcon.src = match.tournament_icon;
-            tournamentIcon.alt = 'Tournament Icon';
-            tournamentIcon.classList.add('tournament-icon');
-            tournamentIcon.onerror = () => { tournamentIcon.style.display = 'none'; };
-            tournamentContainer.appendChild(tournamentIcon);
-          }
-          
-          const tournament = document.createElement('p');
-          tournament.classList.add('tournament');
-          tournament.textContent = match.tournament_name || match.match_event || 'N/A';
-          tournamentContainer.appendChild(tournament);
-          
-          matchItem.appendChild(tournamentContainer);
-          
-          // Round Info
-          if (match.round_info) {
-            const roundInfo = document.createElement('p');
-            roundInfo.classList.add('round-info');
-            roundInfo.textContent = match.round_info;
-            matchItem.appendChild(roundInfo);
-          }
-          
-          // Match Time
-          const timeContainer = document.createElement('div');
-          timeContainer.classList.add('time-container');
-          
-          const completed = document.createElement('p');
-          completed.classList.add('match-time');
-          completed.textContent = match.time_completed || 'N/A';
-          timeContainer.appendChild(completed);
-          
-          // Map Information if available
-          if (match.current_map) {
-            const mapInfo = document.createElement('div');
-            mapInfo.classList.add('map-info');
-            mapInfo.innerHTML = `
-              <span class="map-name">${match.current_map}</span>
-              ${match.map_number ? `<span class="map-number">Map ${match.map_number}</span>` : ''}
-            `;
-            timeContainer.appendChild(mapInfo);
-          }
-          
-          matchItem.appendChild(timeContainer);
-          
-          // Link
-          const link = document.createElement('a');
-          link.href = match.match_page;
-          link.textContent = 'View on vlr.gg';
-          link.target = '_blank';
-          matchItem.appendChild(link);
-          
-          matchListDiv.appendChild(matchItem);
+          matchListDiv.appendChild(createMatchElement(match, 'results'));
         });
       } else {
         matchListDiv.innerHTML = '<p class="no-matches">No results found.</p>';
