@@ -609,13 +609,14 @@ document.addEventListener('DOMContentLoaded', () => {
       
       matchItem.appendChild(tournamentInfo);
       
-      // Add click handler for expansion
-      matchItem.addEventListener('click', (e) => {
-        // Don't expand if clicking the link
-        if (e.target.tagName === 'A') return;
-        
-        // Toggle expansion
-        matchItem.classList.toggle('expanded');
+      // Add click handler
+      matchItem.addEventListener('click', () => {
+        if (match.match_page) {
+          const fullUrl = type === 'results' 
+            ? `https://www.vlr.gg${match.match_page}`
+            : match.match_page;
+          window.open(fullUrl, '_blank');
+        }
       });
       
       return matchItem;
