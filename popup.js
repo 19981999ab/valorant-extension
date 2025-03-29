@@ -11,9 +11,242 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedText = document.querySelector('.selected-text');
   
     const proxyUrl = 'https://valorant-proxy.vercel.app/api/proxy';
+    const notificationApiUrl = 'https://valorant-proxy.vercel.app/api/notification';
+    let userId = null;
     let currentMatches = [];
     let selectedTournaments = new Set();
-  
+    let teamLogos = new Map();
+    let tournamentIcons = new Map();
+
+    // Load team logos and tournament icons
+    async function loadInitialData() {
+      try {
+        // Load team logos
+        const teamData = await fetch(chrome.runtime.getURL('team_logos.json')).then(response => response.json());
+        teamData.forEach(team => {
+          teamLogos.set(team.team_name, team.logo_url);
+        });
+
+        // Load tournament icons directly from proxy
+        const iconResponse = await fetch('https://valorant-proxy.vercel.app/api/proxy?q=tournament_icons');
+        if (!iconResponse.ok) {
+          throw new Error(`HTTP error! status: ${iconResponse.status}`);
+        }
+        const iconData = await iconResponse.json();
+        
+        if (iconData.icons) {
+          iconData.icons.forEach(icon => {
+            if (icon.name && icon.url) {
+              tournamentIcons.set(icon.name, icon.url);
+            }
+          });
+        }
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
+    }
+
+    // Generate a unique user ID or retrieve the existing one
+    function getUserId() {
+      return new Promise((resolve) => {
+        chrome.storage.local.get('userId', (data) => {
+          if (data.userId) {
+            resolve(data.userId);
+          } else {
+            // Generate a unique ID
+            const newUserId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            chrome.storage.local.set({ userId: newUserId }, () => {
+              resolve(newUserId);
+            });
+          }
+        });
+      });
+    }
+
+    // Function to save notifications to the API
+    async function saveNotificationsToApi(notifiedMatches) {
+      try {
+        const response = await fetch(notificationApiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            userId,
+            notifiedMatches
+          })
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        return await response.json();
+      } catch (error) {
+        console.error('Error saving notifications to API:', error);
+        return { error: error.message };
+      }
+    }
+
+    // Function to fetch notifications from the API
+    async function fetchNotificationsFromApi() {
+      try {
+        const response = await fetch(`${notificationApiUrl}?userId=${userId}`);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        return data.notifiedMatches || {};
+      } catch (error) {
+        console.error('Error fetching notifications from API:', error);
+        return {};
+      }
+    }
+
+    // Function to delete a notification from the API
+    async function deleteNotificationFromApi(matchId) {
+      try {
+        const response = await fetch(notificationApiUrl, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            userId,
+            matchId
+          })
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        return await response.json();
+      } catch (error) {
+        console.error('Error deleting notification from API:', error);
+        return { error: error.message };
+      }
+    }
+
+    // Modified preloadNotificationStates function - only fetches from API
+    async function preloadNotificationStates() {
+      try {
+        // First get user ID
+        userId = await getUserId();
+        console.log('User ID:', userId);
+        
+        // Only fetch notifications from API - no local storage
+        const apiNotifications = await fetchNotificationsFromApi();
+        console.log('Fetched notifications from API:', apiNotifications);
+        
+        return apiNotifications;
+      } catch (error) {
+        console.error('Error preloading notification states:', error);
+        return {};
+      }
+    }
+
+    // Add a function to refresh notification states from API
+    async function refreshNotificationStates() {
+      try {
+        if (!userId) {
+          userId = await getUserId();
+        }
+        const apiNotifications = await fetchNotificationsFromApi();
+        console.log('Refreshed notification states from API:', apiNotifications);
+        
+        // If we're on the upcoming tab, update the UI
+        if (currentQuery === 'upcoming') {
+          // Delay slightly to ensure DOM is ready
+          setTimeout(() => updateNotificationUI(), 100);
+        }
+        
+        return apiNotifications;
+      } catch (error) {
+        console.error('Error refreshing notification states:', error);
+        return {};
+      }
+    }
+
+    // Call loadInitialData when popup opens
+    loadInitialData().then(async () => {
+      await preloadNotificationStates();
+      
+      // Add test button in development mode
+      const testButton = document.createElement('button');
+      testButton.textContent = 'Test Notification';
+      testButton.classList.add('test-button');
+      testButton.addEventListener('click', () => {
+        const testMatch = {
+          team1: "Test Team 1",
+          team2: "Test Team 2",
+          tournament_name: "Test Tournament",
+          unix_timestamp: new Date(Date.now() + 6 * 60 * 1000).toISOString(), // 6 minutes from now
+          match_page: "https://www.vlr.gg",
+          id: `test-match-${Date.now()}`
+        };
+        
+        console.log('Created test match:', testMatch);
+        const matchElement = createMatchElement(testMatch, 'upcoming');
+        matchListDiv.insertBefore(matchElement, matchListDiv.firstChild);
+      });
+      
+      document.querySelector('.header-right').appendChild(testButton);
+      
+      fetchMatchesViaProxy('live');
+    });
+
+    // Function to get team logo
+    function getTeamLogo(teamName) {
+      return teamLogos.get(teamName) || 'https://www.vlr.gg/img/vlr/tmp/vlr.png';
+    }
+
+    // Function to get tournament icon
+    function getTournamentIcon(tournamentName) {
+      return tournamentIcons.get(tournamentName) || null;
+    }
+
+    // Function to save tournament icons
+    async function saveTournamentIcons() {
+      try {
+        // Convert Map to array for API
+        const icons = Array.from(tournamentIcons.entries()).map(([name, url]) => ({
+          name,
+          url
+        }));
+        
+        // Save to API
+        const response = await fetch('https://valorant-proxy.vercel.app/api/tournament-icons', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ icons })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        console.log('Tournament icons saved successfully to API');
+      } catch (error) {
+        console.error('Error saving tournament icons to API:', error);
+      }
+    }
+
+    // Function to update tournament icons from results
+    function updateTournamentIcons(data) {
+      if (data.tournament_icons) {
+        data.tournament_icons.forEach(icon => {
+          if (icon.name && icon.url) {
+            tournamentIcons.set(icon.name, icon.url);
+          }
+        });
+      }
+    }
+
     // Theme handling
     function setTheme(theme) {
       document.body.setAttribute('data-theme', theme);
@@ -383,7 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuery = 'live';
   
     async function fetchMatchesViaProxy(query) {
-      matchListDiv.innerHTML = '<p class="loading">Loading matches...</p>';
+      showLoadingState();
       try {
         const apiQuery = query === 'live' ? 'live_score' : query;
         const response = await fetch(`${proxyUrl}?q=${apiQuery}`);
@@ -395,59 +628,249 @@ document.addEventListener('DOMContentLoaded', () => {
         
         currentMatches = data.data.segments;
         currentQuery = query;
+    
+        // Update tournament icons if they're in the response
+        if (data.tournament_icons) {
+          updateTournamentIcons(data);
+          // Save the updated icons to cache
+          await saveTournamentIcons();
+        }
         
-        // Clear selections when switching tabs
+        // Ensure all tournament icons are loaded before displaying
+        await Promise.all(currentMatches.map(async match => {
+          const tournamentName = match.tournament_name || match.match_event;
+          if (tournamentName && !tournamentIcons.has(tournamentName)) {
+            // Try to load icon from API if not in cache
+            try {
+              const iconResponse = await fetch(`${proxyUrl}?q=tournament_icon&name=${encodeURIComponent(tournamentName)}`);
+              if (iconResponse.ok) {
+                const iconData = await iconResponse.json();
+                if (iconData.url) {
+                  tournamentIcons.set(tournamentName, iconData.url);
+                }
+              }
+            } catch (error) {
+              console.error('Error loading tournament icon:', error);
+            }
+          }
+        }));
+        
+        // IMPORTANT: Don't clear notification selections when switching tabs
+        // We're only clearing tournament filters, not notification settings
         selectedTournaments.clear();
         selectedText.textContent = 'All Tournaments';
         
+        // Always refresh notifications from API when switching tabs
+        const notifiedMatches = await refreshNotificationStates();
+        console.log('Refreshed notification states when switching tabs:', notifiedMatches);
+        
         updateTournamentFilters(currentMatches);
         filterMatches();
+        
+        // If we're on the upcoming tab, make sure to update UI
+        if (query === 'upcoming' && notificationButtons.size > 0) {
+          // Slight delay to ensure DOM is ready
+          setTimeout(() => updateNotificationUI(), 100);
+        }
       } catch (error) {
         matchListDiv.innerHTML = `<p class="error">Failed to load matches: ${error.message}</p>`;
       }
     }
-  
-    // Add color generation function
+    
+    // Comment out or remove the existing color generation functions
+    /*
     function generateColor() {
-      // Generate a random HSL color with good saturation and lightness for readability
-      const hue = Math.random() * 360;
-      // Use a higher saturation and lower lightness for more visible colors
-      // Randomize saturation between 80-95% and lightness between 80-90%
-      const saturation = 80 + Math.random() * 15;
-      const lightness = 80 + Math.random() * 10;
-      // Randomize opacity between 0.2 and 0.3 for more variation
-      const opacity = 0.2 + Math.random() * 0.1;
-      return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
+        const hue = Math.random() * 360;
+        const saturation = 80 + Math.random() * 15;
+        const lightness = 80 + Math.random() * 10;
+        const opacity = 0.2 + Math.random() * 0.1;
+        return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
     }
 
     // Store colors for each tournament
     const tournamentColors = new Map();
 
     function getTournamentColor(tournamentName) {
-      if (!tournamentName) return 'var(--card-bg)';
-      
-      if (!tournamentColors.has(tournamentName)) {
-        tournamentColors.set(tournamentName, generateColor());
-      }
-      return tournamentColors.get(tournamentName);
+        if (!tournamentName) return 'var(--card-bg)';
+        if (!tournamentColors.has(tournamentName)) {
+            tournamentColors.set(tournamentName, generateColor());
+        }
+        return tournamentColors.get(tournamentName);
+    }
+    */
+
+    // Add new shine effect functions
+    function hashString(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32-bit integer
+        }
+        return Math.abs(hash);
     }
 
+    function generateConsistentColor(tournamentName) {
+        const hash = hashString(tournamentName);
+        const hue = hash % 360;
+        return `rgba(${hue}, 70%, 50%, 0.05)`;
+    }
+
+    function getTournamentShineEffect(tournamentName) {
+        if (!tournamentName) return '';
+        
+        const effects = {
+            'VCT Americas': `
+                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(255,0,0,0.05) 40%, var(--card-bg) 60%);
+                background-size: 200% 100%;
+                animation: vctAmericasShine 3s linear infinite;
+            `,
+            'VCT Pacific': `
+                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(0,255,255,0.05) 40%, var(--card-bg) 60%);
+                background-size: 200% 100%;
+                animation: vctPacificShine 3s linear infinite;
+            `,
+            'VCT EMEA': `
+                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(255,70,85,0.05) 40%, var(--card-bg) 60%);
+                background-size: 200% 100%;
+                animation: vctEMEAShine 3s linear infinite;
+            `,
+            'Champions': `
+                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(255,215,0,0.05) 40%, var(--card-bg) 60%);
+                background-size: 200% 100%;
+                animation: championsShine 3s linear infinite;
+            `,
+            'Game Changers': `
+                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(147,112,219,0.05) 40%, var(--card-bg) 60%);
+                background-size: 200% 100%;
+                animation: gameChangersShine 3s linear infinite;
+            `,
+            'Challengers': `
+                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(10,200,185,0.05) 40%, var(--card-bg) 60%);
+                background-size: 200% 100%;
+                animation: challengersShine 3s linear infinite;
+            `
+        };
+
+        // Check for exact matches first
+        for (const [key, effect] of Object.entries(effects)) {
+            if (tournamentName.includes(key)) {
+                return effect;
+            }
+        }
+
+        // Generate consistent color based on tournament name hash
+        const color = generateConsistentColor(tournamentName);
+        return `
+            background: linear-gradient(110deg, var(--card-bg) 0%, ${color} 40%, var(--card-bg) 60%);
+            background-size: 200% 100%;
+            animation: defaultShine 3s linear infinite;
+        `;
+    }
+
+    // Add this to your CSS file
+
+    // Update the formatDateTime function to better handle date strings
+    function formatDateTime(timestamp, options = {}) {
+      if (!timestamp) return 'N/A';
+      
+      let date;
+      
+      // Convert date string to timestamp
+      if (typeof timestamp === 'string') {
+        if (timestamp.includes('-')) {
+          // For date strings like "2025-03-30 00:00:00"
+          date = new Date(timestamp.replace(' ', 'T') + 'Z'); // Add Z to make it UTC
+        } else {
+          date = new Date(parseInt(timestamp));
+        }
+      } else {
+        date = new Date(timestamp);
+      }
+    
+      // Default options for time only
+      const defaultOptions = {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'Asia/Kolkata'
+      };
+    
+      if (options.includeDate) {
+        Object.assign(defaultOptions, {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          second: '2-digit'
+        });
+      }
+    
+      try {
+        const formatted = new Intl.DateTimeFormat('en-US', defaultOptions)
+          .format(date)
+          .replace(/am|pm/i, match => match.toUpperCase()) + ' IST';
+        return formatted;
+      } catch (error) {
+        console.error('Error formatting date:', error, 'for timestamp:', timestamp);
+        return 'Invalid date';
+      }
+    }
+
+    // Add a function to parse timestamp to UTC milliseconds
+    function parseTimestamp(timestamp) {
+      if (!timestamp) return null;
+    
+      try {
+        if (typeof timestamp === 'string' && timestamp.includes('-')) {
+          // Convert "2025-03-30 00:00:00" to UTC timestamp
+          const utcDate = new Date(timestamp.replace(' ', 'T') + 'Z');
+          return utcDate.getTime();
+        }
+        
+        // For numeric timestamps
+        return typeof timestamp === 'string' ? parseInt(timestamp) : timestamp;
+      } catch (error) {
+        console.error('Error parsing timestamp:', error);
+        return null;
+      }
+    }
+
+    // Update the createMatchElement function to create more compact tiles
     function createMatchElement(match, type) {
       const matchItem = document.createElement('div');
       matchItem.classList.add('match-item');
+      matchItem.setAttribute('data-type', type);
       
-      // Get tournament name and color
+      // Get tournament name and icon
       const tournamentName = match.match_event || match.tournament_name;
-      const tournamentColor = getTournamentColor(tournamentName);
+      const tournamentIcon = getTournamentIcon(tournamentName);
       
-      // Apply tournament-specific background color
-      matchItem.style.backgroundColor = tournamentColor;
+      // Set background color based on tournament
+      matchItem.style.cssText = getTournamentShineEffect(tournamentName);
       
-      // Add live badge for live matches
+      // Create tournament section with icon
+      const tournament = document.createElement('div');
+      tournament.classList.add('tournament');
+      if (tournamentIcon) {
+        const iconImg = document.createElement('img');
+        iconImg.src = tournamentIcon;
+        iconImg.alt = 'Tournament Icon';
+        iconImg.classList.add('tournament-icon');
+        iconImg.onerror = () => { iconImg.style.display = 'none'; };
+        tournament.appendChild(iconImg);
+      }
+      tournament.appendChild(document.createTextNode(tournamentName));
+      matchItem.appendChild(tournament);
+      
+      // Add live indicator for live matches
       if (type === 'live') {
-        const liveBadge = document.createElement('div');
-        liveBadge.classList.add('live-badge');
-        matchItem.appendChild(liveBadge);
+        const liveIndicator = document.createElement('div');
+        liveIndicator.className = 'live-indicator';
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        liveIndicator.appendChild(dot);
+        liveIndicator.appendChild(document.createTextNode('LIVE'));
+        matchItem.appendChild(liveIndicator);
       }
       
       // Create teams section
@@ -458,7 +881,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const team1 = document.createElement('div');
       team1.classList.add('team');
       const team1Logo = document.createElement('img');
-      team1Logo.src = match.team1_logo || `https://www.vlr.gg/img/vlr/tmp/vlr_${match.flag1}.png`;
+      team1Logo.src = getTeamLogo(match.team1);
       team1Logo.alt = match.team1;
       team1Logo.classList.add('team-logo');
       team1Logo.onerror = () => { team1Logo.style.display = 'none'; };
@@ -476,7 +899,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const team2Total = (parseInt(match.team2_round_ct) || 0) + (parseInt(match.team2_round_t) || 0);
         const mapName = match.current_map || 'Unknown Map';
         const mapScore = match.score1 && match.score2 ? `${match.score1}-${match.score2}` : '';
-        score.innerHTML = `${mapName}: ${team1Total}-${team2Total}<br>${mapScore}`;
+        
+        const mapNameSpan = document.createElement('span');
+        mapNameSpan.classList.add('map-name');
+        mapNameSpan.textContent = mapName;
+        
+        const mapScoreSpan = document.createElement('span');
+        mapScoreSpan.classList.add('map-score');
+        mapScoreSpan.textContent = `${team1Total}-${team2Total}`;
+        
+        score.appendChild(mapNameSpan);
+        score.appendChild(mapScoreSpan);
+        if (mapScore) {
+          const seriesScore = document.createElement('span');
+          seriesScore.classList.add('map-name');
+          seriesScore.textContent = `${mapScore}`;
+          score.appendChild(seriesScore);
+        }
       } else if (type === 'results') {
         if (match.score1 && match.score2) {
           score.textContent = `${match.score1}-${match.score2}`;
@@ -491,7 +930,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const team2 = document.createElement('div');
       team2.classList.add('team');
       const team2Logo = document.createElement('img');
-      team2Logo.src = match.team2_logo || `https://www.vlr.gg/img/vlr/tmp/vlr_${match.flag2}.png`;
+      team2Logo.src = getTeamLogo(match.team2);
       team2Logo.alt = match.team2;
       team2Logo.classList.add('team-logo');
       team2Logo.onerror = () => { team2Logo.style.display = 'none'; };
@@ -505,135 +944,226 @@ document.addEventListener('DOMContentLoaded', () => {
       teams.appendChild(score);
       teams.appendChild(team2);
       
-      // Tournament name
-      const tournament = document.createElement('p');
-      tournament.classList.add('tournament');
-      if (type === 'results' && match.tournament_icon) {
-        const tournamentIcon = document.createElement('img');
-        tournamentIcon.src = match.tournament_icon;
-        tournamentIcon.alt = 'Tournament Icon';
-        tournamentIcon.classList.add('tournament-icon');
-        tournamentIcon.onerror = () => { tournamentIcon.style.display = 'none'; };
-        tournament.appendChild(tournamentIcon);
-      }
-      tournament.appendChild(document.createTextNode(tournamentName));
+      matchItem.appendChild(teams);
       
-      // Match time
-      const time = document.createElement('p');
+      // Create time element with improved formatting - replace this section
+      const timeContainer = document.createElement('div');
+      timeContainer.classList.add('match-time-container');
+      
+      const time = document.createElement('span'); // Changed from p to span for better inline display
       time.classList.add('match-time');
+      
       if (type === 'upcoming') {
-        time.classList.add('upcoming');
-        time.textContent = `Starts in: ${match.time_until_match || 'N/A'}`;
+        time.classList.add('upcoming-time');
+        
+        // Ensure proper timestamp parsing
+        const timestamp = parseTimestamp(match.unix_timestamp);
+        const matchTimeIST = formatDateTime(timestamp);
+        
+        // Add clock icon for better visual indication
+        const clockIcon = document.createElement('i');
+        clockIcon.className = 'fas fa-clock';
+        time.appendChild(clockIcon);
+        
+        time.appendChild(document.createTextNode(' ' + matchTimeIST));
+        timeContainer.appendChild(time);
+        
+        // Add time until match inline with the time
+        if (match.time_until_match) {
+          const timeUntil = document.createElement('span');
+          timeUntil.classList.add('time-until-match');
+          timeUntil.textContent = `${match.time_until_match}`;
+          timeContainer.appendChild(timeUntil);
+        }
       } else if (type === 'results') {
         time.textContent = match.time_completed || match.match_time || '';
+        timeContainer.appendChild(time);
       } else {
         time.textContent = match.match_time || '';
+        timeContainer.appendChild(time);
       }
       
-      matchItem.appendChild(teams);
-      matchItem.appendChild(tournament);
-      matchItem.appendChild(time);
+      matchItem.appendChild(timeContainer);
       
-      // Tournament Info
-      const tournamentInfo = document.createElement('div');
-      tournamentInfo.classList.add('tournament-info');
-      
-      // Map Information
-      if (match.current_map) {
-        const mapInfo = document.createElement('div');
-        mapInfo.classList.add('map-info');
-        mapInfo.innerHTML = `
-          <span class="map-name">${match.current_map}</span>
-          ${match.map_number ? `<span class="map-number">Map ${match.map_number}</span>` : ''}
-        `;
-        tournamentInfo.appendChild(mapInfo);
-      }
-      
-      // Round Details for live matches
-      if (type === 'live') {
-        // Remove this section entirely
-      }
-      
-      // Tournament Container with Icon
-      const tournamentContainer = document.createElement('div');
-      tournamentContainer.classList.add('tournament-container');
-      
-      if (match.tournament_icon) {
-        const tournamentIcon = document.createElement('img');
-        tournamentIcon.src = match.tournament_icon;
-        tournamentIcon.alt = 'Tournament Icon';
-        tournamentIcon.classList.add('tournament-icon');
-        tournamentIcon.onerror = () => { tournamentIcon.style.display = 'none'; };
-        tournamentContainer.appendChild(tournamentIcon);
-      }
-      
-      const tournamentNameElement = document.createElement('p');
-      tournamentNameElement.classList.add('tournament');
-      tournamentNameElement.textContent = match.tournament_name || match.match_event || 'N/A';
-      tournamentContainer.appendChild(tournamentNameElement);
-      
-      tournamentInfo.appendChild(tournamentContainer);
-      
-      // Round Info for results
-      if (type === 'results' && match.round_info) {
-        const roundInfo = document.createElement('p');
-        roundInfo.classList.add('round-info');
-        roundInfo.textContent = match.round_info;
-        tournamentInfo.appendChild(roundInfo);
-      }
-      
-      // Time Container
-      const timeContainer = document.createElement('div');
-      timeContainer.classList.add('time-container');
-      
-      const timeText = document.createElement('p');
-      timeText.classList.add('match-time');
+      // Add notification button for upcoming matches
       if (type === 'upcoming') {
-        timeText.classList.add('upcoming');
+        // Parse timestamp once
+        const timestamp = parseTimestamp(match.unix_timestamp);
+        
+        // Generate match ID once
+        const matchId = match.id || `${match.team1}-${match.team2}-${match.unix_timestamp}`;
+        
+        // Store all match data in one place
+        const matchData = {
+          id: matchId,
+          team1: match.team1,
+          team2: match.team2,
+          tournament: match.tournament_name || match.match_event || '',
+          timestamp // Store parsed timestamp
+        };
+    
+        const notifyButton = document.createElement('button');
+        notifyButton.className = 'notify-button';
+        
+        // Store the match data directly in the button
+        notifyButton.matchData = matchData;
+        
+        notifyButton.innerHTML = '<i class="far fa-bell"></i>';
+        notifyButton.title = 'Get notified 5 minutes before match';
+        
+        notificationButtons.set(matchId, notifyButton);
+        
+        notifyButton.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          const button = e.currentTarget;
+          const { id, team1, team2, tournament, timestamp } = button.matchData;
+          const isActive = button.classList.contains('active');
+          
+          if (isActive) {
+            button.innerHTML = '<i class="far fa-bell"></i>';
+            button.classList.remove('active');
+            button.title = 'Get notified 5 minutes before match';
+            
+            chrome.runtime.sendMessage({
+              action: 'cancelNotification',
+              matchId: id
+            });
+            
+            try {
+              await deleteNotificationFromApi(id);
+              console.log('Notification canceled in API:', id);
+            } catch (error) {
+              console.error('Failed to cancel notification in API:', error);
+              button.innerHTML = '<i class="fas fa-bell"></i>';
+              button.classList.add('active');
+              button.title = 'Cancel notification';
+            }
+          } else {
+            button.innerHTML = '<i class="fas fa-bell"></i>';
+            button.classList.add('active');
+            button.title = 'Cancel notification';
+            
+            if (isNaN(timestamp) || timestamp <= 0) {
+              console.error(`Invalid match time: ${timestamp}`);
+              alert('Could not schedule notification - invalid match time');
+              return;
+            }
+            
+            console.log(`Scheduling notification for match ${team1} vs ${team2}`);
+            console.log(`Match time (GMT): ${new Date(timestamp).toISOString()}`);
+            
+            chrome.runtime.sendMessage({
+              action: 'scheduleNotification',
+              matchId: id,
+              matchTime: timestamp,
+              team1,
+              team2,
+              tournament
+            }, async (response) => {
+              if (response?.success) {
+                try {
+                  const notifiedMatches = await fetchNotificationsFromApi();
+                  const readableTime = formatDateTime(timestamp, { includeDate: true });
+                  
+                  notifiedMatches[id] = {
+                    time: timestamp.toString(),
+                    team1,
+                    team2,
+                    tournament,
+                    alarmTime: (timestamp - (5 * 60 * 1000)).toString(),
+                    readableTime,
+                    originalTimestamp: match.unix_timestamp
+                  };
+                  
+                  await saveNotificationsToApi(notifiedMatches);
+                  console.log('Notification scheduled in API:', id);
+                } catch (error) {
+                  console.error('Failed to schedule notification in API:', error);
+                  button.innerHTML = '<i class="far fa-bell"></i>';
+                  button.classList.remove('active');
+                  button.title = 'Get notified 5 minutes before match';
+                }
+              } else {
+                console.error('Failed to schedule notification in background script:', response);
+                button.innerHTML = '<i class="far fa-bell"></i>';
+                button.classList.remove('active');
+                button.title = 'Get notified 5 minutes before match';
+              }
+            });
+          }
+        });
+        
+        const matchActions = document.createElement('div');
+        matchActions.className = 'match-actions';
+        matchActions.appendChild(notifyButton);
+        matchItem.appendChild(matchActions);
       }
-      timeText.textContent = type === 'upcoming' 
-        ? `Starts in: ${match.time_until_match || 'N/A'}`
-        : type === 'live'
-        ? 'LIVE'
-        : match.time_completed || 'N/A';
-      timeContainer.appendChild(timeText);
       
-      tournamentInfo.appendChild(timeContainer);
-      
-      // Link
-      const link = document.createElement('a');
-      link.href = match.match_page;
-      link.textContent = 'View on vlr.gg';
-      link.target = '_blank';
-      tournamentInfo.appendChild(link);
-      
-      matchItem.appendChild(tournamentInfo);
-      
-      // Add click handler
       matchItem.addEventListener('click', () => {
-        if (match.match_page) {
-          const fullUrl = type === 'results' 
-            ? `https://www.vlr.gg${match.match_page}`
-            : match.match_page;
-          window.open(fullUrl, '_blank');
+        let vlrUrl = '';
+        if (type === 'results') {
+          vlrUrl = `https://www.vlr.gg${match.match_page}`;
+        } else {
+          vlrUrl = match.match_page;
         }
+        window.open(vlrUrl, '_blank');
       });
       
       return matchItem;
     }
 
+    // Add this map to store references to notification buttons
+    let notificationButtons = new Map();
+
+    // Modify the displayUpcomingMatches function
     function displayUpcomingMatches(segments) {
+      notificationButtons.clear(); // Clear the previous references
+      
       matchListDiv.innerHTML = '';
       matchListDiv.classList.remove('results');
       if (segments?.length > 0) {
         segments.forEach(match => {
           matchListDiv.appendChild(createMatchElement(match, 'upcoming'));
         });
+        
+        // Now update notification states all at once after DOM is built
+        updateNotificationUI();
       } else {
         matchListDiv.innerHTML = '<p class="no-matches">No upcoming matches found.</p>';
       }
     }
-  
+
+    // Add a function to update notification UI
+    async function updateNotificationUI() {
+      try {
+        if (!userId) {
+          userId = await getUserId();
+        }
+        
+        console.log('Updating notification UI for user:', userId);
+        
+        // Fetch latest notification states from API
+        const notifiedMatches = await fetchNotificationsFromApi();
+        console.log('Current notifications from API:', notifiedMatches);
+        
+        // Update UI for each match
+        for (const [matchId, button] of notificationButtons.entries()) {
+          if (notifiedMatches[matchId]) {
+            console.log('Setting active state for match:', matchId);
+            button.innerHTML = '<i class="fas fa-bell"></i>';
+            button.classList.add('active');
+            button.title = 'Cancel notification';
+          } else {
+            button.innerHTML = '<i class="far fa-bell"></i>';
+            button.classList.remove('active');
+            button.title = 'Get notified 5 minutes before match';
+          }
+        }
+      } catch (error) {
+        console.error('Error updating notification UI:', error);
+      }
+    }
+
     function displayLiveMatches(segments) {
       matchListDiv.innerHTML = '';
       matchListDiv.classList.remove('results');
@@ -657,10 +1187,101 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   
-    upcomingButton.addEventListener('click', () => fetchMatchesViaProxy('upcoming'));
-    liveButton.addEventListener('click', () => fetchMatchesViaProxy('live'));
-    resultsButton.addEventListener('click', () => fetchMatchesViaProxy('results'));
-  
-    // Load live matches by default
-    fetchMatchesViaProxy('live');
+    upcomingButton.addEventListener('click', () => {
+      liveButton.classList.remove('active');
+      resultsButton.classList.remove('active');
+      upcomingButton.classList.add('active');
+      fetchMatchesViaProxy('upcoming');
+    });
+    liveButton.addEventListener('click', () => {
+      upcomingButton.classList.remove('active');
+      resultsButton.classList.remove('active');
+      liveButton.classList.add('active');
+      fetchMatchesViaProxy('live');
+    });
+    resultsButton.addEventListener('click', () => {
+      upcomingButton.classList.remove('active');
+      liveButton.classList.remove('active');
+      resultsButton.classList.add('active');
+      fetchMatchesViaProxy('results');
+    });
+
+    function createTestMatch() {
+      // Create a match 6 minutes from now
+      const now = new Date();
+      const testTime = new Date(now.getTime() + (6 * 60 * 1000));
+      
+      // Format like regular matches: "YYYY-MM-DD HH:mm:ss"
+      const formattedDate = testTime.toISOString()
+        .replace('T', ' ')      // Replace T with space
+        .slice(0, 19);         // Remove milliseconds and timezone
+      
+      const testMatch = {
+        team1: "Test Team 1",
+        team2: "Test Team 2",
+        tournament_name: "Test Tournament",
+        unix_timestamp: formattedDate,  // Use formatted date string
+        match_page: "https://www.vlr.gg",
+        id: `test-match-${Date.now()}`
+      };
+      
+      console.log('Creating test match with formatted timestamp:', formattedDate);
+      return testMatch;
+    }
+
+    // Update parseTimestamp to handle ISO strings better
+    function parseTimestamp(timestamp) {
+      if (!timestamp) return null;
+    
+      try {
+        if (typeof timestamp === 'string') {
+          if (timestamp.includes('T')) {
+            // Handle ISO format
+            return new Date(timestamp).getTime();
+          } else if (timestamp.includes('-')) {
+            // Handle "YYYY-MM-DD HH:mm:ss" format
+            const [datePart, timePart] = timestamp.split(' ');
+            const [year, month, day] = datePart.split('-').map(Number);
+            const [hours, minutes, seconds] = timePart ? timePart.split(':').map(Number) : [0, 0, 0];
+            
+            const date = new Date(Date.UTC(year, month - 1, day, hours, minutes, seconds));
+            return date.getTime();
+          }
+          // Handle numeric string
+          return parseInt(timestamp);
+        }
+        // Handle numeric timestamp
+        return timestamp;
+      } catch (error) {
+        console.error('Error parsing timestamp:', error, 'for input:', timestamp);
+        return null;
+      }
+    }
+
+    function addTestMatch() {
+      const testMatch = createTestMatch();
+      console.log('Created test match:', testMatch);
+      
+      const matchElement = createMatchElement(testMatch, 'upcoming');
+      matchListDiv.insertBefore(matchElement, matchListDiv.firstChild);
+      
+      // Update notification buttons map
+      updateNotificationUI();
+    }
+    
+    // Add this near the end of DOMContentLoaded
+    if (process.env.NODE_ENV === 'development') {
+      // Add test button to header
+      const testButton = document.createElement('button');
+      testButton.textContent = 'Add Test Match';
+      testButton.style.backgroundColor = '#ff4655';
+      testButton.style.color = 'white';
+      testButton.onclick = addTestMatch;
+      document.querySelector('.header-right').appendChild(testButton);
+    }
+
+    // Improved loading state function
+    function showLoadingState() {
+      matchListDiv.innerHTML = '<div class="loading">Fetching latest matches...</div>';
+    }
 });

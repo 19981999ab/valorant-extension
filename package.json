@@ -1,0 +1,10 @@
+{
+  "name": "valorant-matches-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for Valorant match data",
+  "scripts": {
+    "start": "echo \"Start command not implemented\""
+  },
+  "author": "",
+  "license": "ISC"
+}

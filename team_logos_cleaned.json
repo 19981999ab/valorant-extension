@@ -1,0 +1,3832 @@
+[
+  {
+    "team_id": "103",
+    "team_name": "Immortals",
+    "logo_url": "https://owcdn.net/img/602e1b45e079f.png"
+  },
+  {
+    "team_id": "104",
+    "team_name": "REJECT",
+    "logo_url": "https://owcdn.net/img/62a4139de7f7e.png"
+  },
+  {
+    "team_id": "105",
+    "team_name": "Sharp-Clan",
+    "logo_url": "https://owcdn.net/img/5f1cebac93387.png"
+  },
+  {
+    "team_id": "106",
+    "team_name": "TSM",
+    "logo_url": "https://owcdn.net/img/60aeaad44872e.png"
+  },
+  {
+    "team_id": "107",
+    "team_name": "GODSENT GC",
+    "logo_url": "https://owcdn.net/img/5ede18d9bb1b8.png"
+  },
+  {
+    "team_id": "108",
+    "team_name": "forZe",
+    "logo_url": "https://owcdn.net/img/5f0cb321874ec.png"
+  },
+  {
+    "team_id": "109",
+    "team_name": "FABRIKEN",
+    "logo_url": "https://owcdn.net/img/5f120c2d7aa9a.png"
+  },
+  {
+    "team_id": "110",
+    "team_name": "FishkaVTom",
+    "logo_url": "https://owcdn.net/img/5ef8b70daf84e.png"
+  },
+  {
+    "team_id": "111",
+    "team_name": "Charlotte Phoenix",
+    "logo_url": "https://owcdn.net/img/5ed67ee396c92.png"
+  },
+  {
+    "team_id": "120",
+    "team_name": "100 Thieves",
+    "logo_url": "https://owcdn.net/img/603c00d5c5a08.png"
+  },
+  {
+    "team_id": "183",
+    "team_name": "SunSister Rapid",
+    "logo_url": "https://owcdn.net/img/5f25f9bab7ac3.png"
+  },
+  {
+    "team_id": "188",
+    "team_name": "Cloud9",
+    "logo_url": "https://owcdn.net/img/628addcbd509e.png"
+  },
+  {
+    "team_id": "189",
+    "team_name": "SWOLE PATROL",
+    "logo_url": "https://owcdn.net/img/5fb477fcef4be.png"
+  },
+  {
+    "team_id": "190",
+    "team_name": "MIXUP",
+    "logo_url": "https://owcdn.net/img/5f2cd14d8132f.png"
+  },
+  {
+    "team_id": "195",
+    "team_name": "Code7",
+    "logo_url": "https://owcdn.net/img/5ee435b65a95a.png"
+  },
+  {
+    "team_id": "196",
+    "team_name": "Oxygen Supremacy",
+    "logo_url": "https://owcdn.net/img/5f01509343879.png"
+  },
+  {
+    "team_id": "198",
+    "team_name": "Vision Strikers",
+    "logo_url": "https://owcdn.net/img/6217116c87b89.png"
+  },
+  {
+    "team_id": "199",
+    "team_name": "Project 5 Esport",
+    "logo_url": "https://owcdn.net/img/5edf9bbb3b9f9.png"
+  },
+  {
+    "team_id": "203",
+    "team_name": "paiN Gaming",
+    "logo_url": "https://owcdn.net/img/5f10ece309947.png"
+  },
+  {
+    "team_id": "204",
+    "team_name": "CYCLOPS athlete gaming",
+    "logo_url": "https://owcdn.net/img/5a917c997de07.png"
+  },
+  {
+    "team_id": "205",
+    "team_name": "DeToNator",
+    "logo_url": "https://owcdn.net/img/62c410ac26fa8.png"
+  },
+  {
+    "team_id": "206",
+    "team_name": "Warthox Esport",
+    "logo_url": "https://owcdn.net/img/5f78b5041faa5.png"
+  },
+  {
+    "team_id": "208",
+    "team_name": "LAVEGA esports",
+    "logo_url": "https://owcdn.net/img/5ee34e8203082.png"
+  },
+  {
+    "team_id": "212",
+    "team_name": "303 Esports Orange",
+    "logo_url": "https://owcdn.net/img/5ee3d9c4e1aa5.png"
+  },
+  {
+    "team_id": "213",
+    "team_name": "Echo 8",
+    "logo_url": "https://owcdn.net/img/5ee3dc14d060e.png"
+  },
+  {
+    "team_id": "214",
+    "team_name": "Way 2 French",
+    "logo_url": "https://owcdn.net/img/5f0e39f72adff.png"
+  },
+  {
+    "team_id": "216",
+    "team_name": "China Nguyen",
+    "logo_url": "https://owcdn.net/img/5f2c8e0218790.png"
+  },
+  {
+    "team_id": "219",
+    "team_name": "GameAgents",
+    "logo_url": "https://owcdn.net/img/5ee4a20062a9e.png"
+  },
+  {
+    "team_id": "240",
+    "team_name": "M4LIK",
+    "logo_url": "https://owcdn.net/img/5f80880497cfd.png"
+  },
+  {
+    "team_id": "241",
+    "team_name": "Purple Cobras",
+    "logo_url": "https://owcdn.net/img/5fbb4ba36fbeb.png"
+  },
+  {
+    "team_id": "243",
+    "team_name": "Gamelanders Blue",
+    "logo_url": "https://owcdn.net/img/61b993d51442e.png"
+  },
+  {
+    "team_id": "244",
+    "team_name": "Team Liquid R6",
+    "logo_url": "https://owcdn.net/img/5f11fac202eeb.png"
+  },
+  {
+    "team_id": "249",
+    "team_name": "Falkol eSports",
+    "logo_url": "https://owcdn.net/img/5f10bd8d5fcf3.png"
+  },
+  {
+    "team_id": "252",
+    "team_name": "Akademus Esport",
+    "logo_url": "https://owcdn.net/img/5fb0851e06e1a.png"
+  },
+  {
+    "team_id": "253",
+    "team_name": "7th heaven",
+    "logo_url": "https://owcdn.net/img/5ee89719446a0.png"
+  },
+  {
+    "team_id": "255",
+    "team_name": "Crest Gaming",
+    "logo_url": "https://owcdn.net/img/5ee896c6b8a7d.png"
+  },
+  {
+    "team_id": "256",
+    "team_name": "Awe Star",
+    "logo_url": "https://owcdn.net/img/5ee8974ae387e.png"
+  },
+  {
+    "team_id": "257",
+    "team_name": "G2 Esports",
+    "logo_url": "https://owcdn.net/img/633822848a741.png"
+  },
+  {
+    "team_id": "261",
+    "team_name": "Quantum Strikers",
+    "logo_url": "https://owcdn.net/img/5f7f79e961251.png"
+  },
+  {
+    "team_id": "262",
+    "team_name": "AKIHABARA ENCOUNT",
+    "logo_url": "https://owcdn.net/img/5ee9fef89fa3d.png"
+  },
+  {
+    "team_id": "263",
+    "team_name": "AVALON Gaming",
+    "logo_url": "https://owcdn.net/img/5eea013a5c623.png"
+  },
+  {
+    "team_id": "265",
+    "team_name": "RipNTear",
+    "logo_url": "https://owcdn.net/img/5fb9fe2f4d853.png"
+  },
+  {
+    "team_id": "273",
+    "team_name": "GVNG",
+    "logo_url": "https://owcdn.net/img/5f8c2cf87ee48.png"
+  },
+  {
+    "team_id": "276",
+    "team_name": "BAKEMON",
+    "logo_url": "https://owcdn.net/img/5eea416d86308.png"
+  },
+  {
+    "team_id": "277",
+    "team_name": "Crazy Raccoon",
+    "logo_url": "https://owcdn.net/img/654cc95339f53.png"
+  },
+  {
+    "team_id": "278",
+    "team_name": "DetonatioN FocusMe",
+    "logo_url": "https://owcdn.net/img/63972e548cdc9.png"
+  },
+  {
+    "team_id": "279",
+    "team_name": "Absolute JUPITER",
+    "logo_url": "https://owcdn.net/img/5f8caea35759c.png"
+  },
+  {
+    "team_id": "280",
+    "team_name": "LAG Gaming",
+    "logo_url": "https://owcdn.net/img/5eea47c017bf7.png"
+  },
+  {
+    "team_id": "281",
+    "team_name": "ROX Gaming",
+    "logo_url": "https://owcdn.net/img/5eea4a44d5140.png"
+  },
+  {
+    "team_id": "282",
+    "team_name": "SCARZ",
+    "logo_url": "https://owcdn.net/img/60693f9ee7109.png"
+  },
+  {
+    "team_id": "283",
+    "team_name": "Sengoku Gaming",
+    "logo_url": "https://owcdn.net/img/63bfebf0d4824.png"
+  },
+  {
+    "team_id": "284",
+    "team_name": "ShinoBee Gaming",
+    "logo_url": "https://owcdn.net/img/5eea4d2c1a0dd.png"
+  },
+  {
+    "team_id": "285",
+    "team_name": "Nora-Rengo",
+    "logo_url": "https://owcdn.net/img/5eea4dc43e488.png"
+  },
+  {
+    "team_id": "294",
+    "team_name": "CREST GAMING Zst",
+    "logo_url": "https://owcdn.net/img/63a33a790ae62.png"
+  },
+  {
+    "team_id": "295",
+    "team_name": "Ambush Esport",
+    "logo_url": "https://owcdn.net/img/5eece9e58c68f.png"
+  },
+  {
+    "team_id": "302",
+    "team_name": "Spot Up",
+    "logo_url": "https://owcdn.net/img/5f0e3a45dd4b0.png"
+  },
+  {
+    "team_id": "307",
+    "team_name": "Triumph",
+    "logo_url": "https://owcdn.net/img/607fa75b05196.png"
+  },
+  {
+    "team_id": "313",
+    "team_name": "Built by Gamers Academy",
+    "logo_url": "https://owcdn.net/img/5f166d357613c.png"
+  },
+  {
+    "team_id": "315",
+    "team_name": "Lemonade Stand",
+    "logo_url": "https://owcdn.net/img/61288c62b7810.png"
+  },
+  {
+    "team_id": "319",
+    "team_name": "ReD DevilS eSports",
+    "logo_url": "https://owcdn.net/img/5ef104619b344.png"
+  },
+  {
+    "team_id": "324",
+    "team_name": "Wave Esports",
+    "logo_url": "https://owcdn.net/img/62a1ccf18f673.png"
+  },
+  {
+    "team_id": "326",
+    "team_name": "nolpenki",
+    "logo_url": "https://owcdn.net/img/5f0dc95d11b86.png"
+  },
+  {
+    "team_id": "337",
+    "team_name": "FaZe Clan",
+    "logo_url": "https://owcdn.net/img/6450a2348b298.png"
+  },
+  {
+    "team_id": "339",
+    "team_name": "Divine Vendetta",
+    "logo_url": "https://owcdn.net/img/5ef64f42acd3e.png"
+  },
+  {
+    "team_id": "340",
+    "team_name": "Stade Tunisien Esports",
+    "logo_url": "https://owcdn.net/img/5ef6508015faf.png"
+  },
+  {
+    "team_id": "341",
+    "team_name": "Viboras",
+    "logo_url": "https://owcdn.net/img/5ef650c9dd37a.png"
+  },
+  {
+    "team_id": "342",
+    "team_name": "Knights of Bizertin Rise",
+    "logo_url": "https://owcdn.net/img/5ef6511a3b0b6.png"
+  },
+  {
+    "team_id": "343",
+    "team_name": "Eternity Esports",
+    "logo_url": "https://owcdn.net/img/5ef6516a02671.png"
+  },
+  {
+    "team_id": "344",
+    "team_name": "Exalted Esports",
+    "logo_url": "https://owcdn.net/img/5ef651c61e3f6.png"
+  },
+  {
+    "team_id": "346",
+    "team_name": "Simplicity Gaming",
+    "logo_url": "https://owcdn.net/img/5ef65259219a9.png"
+  },
+  {
+    "team_id": "348",
+    "team_name": "CITRON CHIEN",
+    "logo_url": "https://owcdn.net/img/5ef851861bba2.png"
+  },
+  {
+    "team_id": "353",
+    "team_name": "B7 Warriors",
+    "logo_url": "https://owcdn.net/img/5f759edc9f33b.png"
+  },
+  {
+    "team_id": "360",
+    "team_name": "Undead Gaming",
+    "logo_url": "https://owcdn.net/img/5eff237d7616d.png"
+  },
+  {
+    "team_id": "361",
+    "team_name": "Furious Gaming",
+    "logo_url": "https://owcdn.net/img/639441ed93cc5.png"
+  },
+  {
+    "team_id": "362",
+    "team_name": "Rebirth Esports",
+    "logo_url": "https://owcdn.net/img/5eff245789727.png"
+  },
+  {
+    "team_id": "363",
+    "team_name": "INFINITY",
+    "logo_url": "https://owcdn.net/img/6394460b00078.png"
+  },
+  {
+    "team_id": "364",
+    "team_name": "All Knights",
+    "logo_url": "https://owcdn.net/img/63806ade7442d.png"
+  },
+  {
+    "team_id": "365",
+    "team_name": "Azules Esports",
+    "logo_url": "https://owcdn.net/img/5f0424d006355.png"
+  },
+  {
+    "team_id": "366",
+    "team_name": "Infamous Gaming",
+    "logo_url": "https://owcdn.net/img/5f25c9047746e.png"
+  },
+  {
+    "team_id": "367",
+    "team_name": "9z Team",
+    "logo_url": "https://owcdn.net/img/65e447b0c2415.png"
+  },
+  {
+    "team_id": "368",
+    "team_name": "Estral Esports",
+    "logo_url": "https://owcdn.net/img/5f456e1609ff0.png"
+  },
+  {
+    "team_id": "369",
+    "team_name": "E-STORM",
+    "logo_url": "https://owcdn.net/img/5f0a84ac9034c.png"
+  },
+  {
+    "team_id": "370",
+    "team_name": "Timbers Esports",
+    "logo_url": "https://owcdn.net/img/5f0a8422b14da.png"
+  },
+  {
+    "team_id": "371",
+    "team_name": "Atheris Esports",
+    "logo_url": "https://owcdn.net/img/5f51212edf97e.png"
+  },
+  {
+    "team_id": "372",
+    "team_name": "XTEN Esports",
+    "logo_url": "https://owcdn.net/img/5f33433be37b9.png"
+  },
+  {
+    "team_id": "373",
+    "team_name": "Rainbow7",
+    "logo_url": "https://owcdn.net/img/5f0a89138e5e6.png"
+  },
+  {
+    "team_id": "374",
+    "team_name": "Arctic Gaming Mexico",
+    "logo_url": "https://owcdn.net/img/5f0a860762524.png"
+  },
+  {
+    "team_id": "375",
+    "team_name": "Team Aze",
+    "logo_url": "https://owcdn.net/img/5f0a87c4221b9.png"
+  },
+  {
+    "team_id": "377",
+    "team_name": "bonk",
+    "logo_url": "https://owcdn.net/img/5f0326f00108c.png"
+  },
+  {
+    "team_id": "378",
+    "team_name": "EXO Clan",
+    "logo_url": "https://owcdn.net/img/5f68d06bd3edf.png"
+  },
+  {
+    "team_id": "379",
+    "team_name": "LOL",
+    "logo_url": "https://owcdn.net/img/5f6c9cc490312.png"
+  },
+  {
+    "team_id": "386",
+    "team_name": "The Savior",
+    "logo_url": "https://owcdn.net/img/5efefaa01f08a.png"
+  },
+  {
+    "team_id": "387",
+    "team_name": "QQQ Hasagi",
+    "logo_url": "https://owcdn.net/img/5f83756261395.png"
+  },
+  {
+    "team_id": "388",
+    "team_name": "DivisionX Gaming",
+    "logo_url": "https://owcdn.net/img/5efefb2c03755.png"
+  },
+  {
+    "team_id": "389",
+    "team_name": "Speed Gaming",
+    "logo_url": "https://owcdn.net/img/5efefc013f3a5.png"
+  },
+  {
+    "team_id": "397",
+    "team_name": "BBL Esports",
+    "logo_url": "https://owcdn.net/img/65b8cce735f26.png"
+  },
+  {
+    "team_id": "398",
+    "team_name": "VISU Gaming",
+    "logo_url": "https://owcdn.net/img/5f4361f707770.png"
+  },
+  {
+    "team_id": "400",
+    "team_name": "flawless",
+    "logo_url": "https://owcdn.net/img/5f022d1b3066a.png"
+  },
+  {
+    "team_id": "408",
+    "team_name": "Team123",
+    "logo_url": "https://owcdn.net/img/5f26027daa960.png"
+  },
+  {
+    "team_id": "413",
+    "team_name": "Orbit",
+    "logo_url": "https://owcdn.net/img/5f33626794324.png"
+  },
+  {
+    "team_id": "414",
+    "team_name": "5Bros eSports",
+    "logo_url": "https://owcdn.net/img/5f03269b5dcf8.png"
+  },
+  {
+    "team_id": "415",
+    "team_name": "komand04ka",
+    "logo_url": "https://owcdn.net/img/5fc13e2055e00.png"
+  },
+  {
+    "team_id": "416",
+    "team_name": "exuLt.gg",
+    "logo_url": "https://owcdn.net/img/5f04d0701911e.png"
+  },
+  {
+    "team_id": "417",
+    "team_name": "Black Dragons",
+    "logo_url": "https://owcdn.net/img/5a96cfdaf1608.png"
+  },
+  {
+    "team_id": "420",
+    "team_name": "Team Vikings",
+    "logo_url": "https://owcdn.net/img/609c8ce618abd.png"
+  },
+  {
+    "team_id": "421",
+    "team_name": "Only-Esports",
+    "logo_url": "https://owcdn.net/img/5f04d159a16b5.png"
+  },
+  {
+    "team_id": "422",
+    "team_name": "NOTRAB",
+    "logo_url": "https://owcdn.net/img/5f21b1cfa9e9f.png"
+  },
+  {
+    "team_id": "423",
+    "team_name": "Mamba Mode Gaming",
+    "logo_url": "https://owcdn.net/img/5f04f6402518c.png"
+  },
+  {
+    "team_id": "425",
+    "team_name": "Team oNe",
+    "logo_url": "https://owcdn.net/img/5f10bdcd71e43.png"
+  },
+  {
+    "team_id": "427",
+    "team_name": "ENVY",
+    "logo_url": "https://owcdn.net/img/5f3ca822464a3.png"
+  },
+  {
+    "team_id": "434",
+    "team_name": "Team Launch",
+    "logo_url": "https://owcdn.net/img/5f3ca90a936a1.png"
+  },
+  {
+    "team_id": "436",
+    "team_name": "Bantz",
+    "logo_url": "https://owcdn.net/img/5f12c60cf1adf.png"
+  },
+  {
+    "team_id": "439",
+    "team_name": "Opportunists",
+    "logo_url": "https://owcdn.net/img/5fb199072b7f5.png"
+  },
+  {
+    "team_id": "442",
+    "team_name": "SWS Gaming",
+    "logo_url": "https://owcdn.net/img/5f0f46b74da5c.png"
+  },
+  {
+    "team_id": "448",
+    "team_name": "OSKARAVELHO",
+    "logo_url": "https://owcdn.net/img/61de0106e2795.png"
+  },
+  {
+    "team_id": "451",
+    "team_name": "Real Esports",
+    "logo_url": "https://owcdn.net/img/5f0f465c62c27.png"
+  },
+  {
+    "team_id": "453",
+    "team_name": "Vincit Gaming",
+    "logo_url": "https://owcdn.net/img/5f0f44cc204a9.png"
+  },
+  {
+    "team_id": "455",
+    "team_name": "Question Mark",
+    "logo_url": "https://owcdn.net/img/5f2dfa4a06abb.png"
+  },
+  {
+    "team_id": "466",
+    "team_name": "BOOM Esports",
+    "logo_url": "https://owcdn.net/img/629f1bdae82ab.png"
+  },
+  {
+    "team_id": "468",
+    "team_name": "Renegades",
+    "logo_url": "https://owcdn.net/img/5f0f5c0ea3426.png"
+  },
+  {
+    "team_id": "470",
+    "team_name": "Complexity",
+    "logo_url": "https://owcdn.net/img/5f10c1a708ec6.png"
+  },
+  {
+    "team_id": "472",
+    "team_name": "BIG",
+    "logo_url": "https://owcdn.net/img/62884fc2c96cd.png"
+  },
+  {
+    "team_id": "473",
+    "team_name": "Built By Gamers",
+    "logo_url": "https://owcdn.net/img/61f7cc477d979.png"
+  },
+  {
+    "team_id": "474",
+    "team_name": "Team Liquid",
+    "logo_url": "https://owcdn.net/img/640c381f0603f.png"
+  },
+  {
+    "team_id": "477",
+    "team_name": "looking4org",
+    "logo_url": "https://owcdn.net/img/5f1b70864f7c2.png"
+  },
+  {
+    "team_id": "478",
+    "team_name": "Lunaris",
+    "logo_url": "https://owcdn.net/img/5fb1987d01a47.png"
+  },
+  {
+    "team_id": "479",
+    "team_name": "LULw",
+    "logo_url": "https://owcdn.net/img/5f88eff7368ec.png"
+  },
+  {
+    "team_id": "480",
+    "team_name": "Quickmath",
+    "logo_url": "https://owcdn.net/img/60218f51524d4.png"
+  },
+  {
+    "team_id": "483",
+    "team_name": "Morning Light",
+    "logo_url": "https://owcdn.net/img/5f14ae059d13c.png"
+  },
+  {
+    "team_id": "486",
+    "team_name": "Vertexo",
+    "logo_url": "https://owcdn.net/img/5f1a4d237027a.png"
+  },
+  {
+    "team_id": "487",
+    "team_name": "Dia De Los Muertos",
+    "logo_url": "https://owcdn.net/img/5f607fdbd6f0e.png"
+  },
+  {
+    "team_id": "488",
+    "team_name": "tyeasy",
+    "logo_url": "https://owcdn.net/img/604546fadb09d.png"
+  },
+  {
+    "team_id": "491",
+    "team_name": "mercenaries",
+    "logo_url": "https://owcdn.net/img/5f7f707d49305.png"
+  },
+  {
+    "team_id": "495",
+    "team_name": "Fusion Fraggers",
+    "logo_url": "https://owcdn.net/img/5f248896192ff.png"
+  },
+  {
+    "team_id": "496",
+    "team_name": "ahq e-Sports Club",
+    "logo_url": "https://owcdn.net/img/5f1a6b16e5dec.png"
+  },
+  {
+    "team_id": "497",
+    "team_name": "Attack All Around",
+    "logo_url": "https://owcdn.net/img/61e28bfcec128.png"
+  },
+  {
+    "team_id": "501",
+    "team_name": "LEGENDs",
+    "logo_url": "https://owcdn.net/img/5fc4d6b3a15e1.png"
+  },
+  {
+    "team_id": "502",
+    "team_name": "Shiba",
+    "logo_url": "https://owcdn.net/img/5f8109f65aa40.png"
+  },
+  {
+    "team_id": "504",
+    "team_name": "Totem Providence",
+    "logo_url": "https://owcdn.net/img/5f5654b18b92e.png"
+  },
+  {
+    "team_id": "508",
+    "team_name": "Crazy Hamster",
+    "logo_url": "https://owcdn.net/img/5fcea0f990b87.png"
+  },
+  {
+    "team_id": "510",
+    "team_name": "No Mercy",
+    "logo_url": "https://owcdn.net/img/5f8233a869898.png"
+  },
+  {
+    "team_id": "511",
+    "team_name": "FURY",
+    "logo_url": "https://owcdn.net/img/5f1c2973d410d.png"
+  },
+  {
+    "team_id": "513",
+    "team_name": "BlackBird Ignis",
+    "logo_url": "https://owcdn.net/img/60ea7c21e067c.png"
+  },
+  {
+    "team_id": "514",
+    "team_name": "Ark5",
+    "logo_url": "https://owcdn.net/img/5f1d9811cdc41.png"
+  },
+  {
+    "team_id": "515",
+    "team_name": "VANC",
+    "logo_url": "https://owcdn.net/img/5f202846538b8.png"
+  },
+  {
+    "team_id": "516",
+    "team_name": "FAV gaming",
+    "logo_url": "https://owcdn.net/img/623be8f0125f2.png"
+  },
+  {
+    "team_id": "517",
+    "team_name": "Lunatic-Hai",
+    "logo_url": "https://owcdn.net/img/5f20dec21daa8.png"
+  },
+  {
+    "team_id": "518",
+    "team_name": "Urubuzada e-Sports",
+    "logo_url": "https://owcdn.net/img/5f21b3237a12f.png"
+  },
+  {
+    "team_id": "520",
+    "team_name": "Virtue Gaming",
+    "logo_url": "https://owcdn.net/img/5f21b3e9e34da.png"
+  },
+  {
+    "team_id": "522",
+    "team_name": "FazTeuHype",
+    "logo_url": "https://owcdn.net/img/5f21b48073bcb.png"
+  },
+  {
+    "team_id": "529",
+    "team_name": "Rix.GG",
+    "logo_url": "https://owcdn.net/img/5f238024e9d99.png"
+  },
+  {
+    "team_id": "530",
+    "team_name": "Lunatic-Hai FLUX",
+    "logo_url": "https://owcdn.net/img/5f22d614ea9d0.png"
+  },
+  {
+    "team_id": "532",
+    "team_name": "Goodbye myTeq",
+    "logo_url": "https://owcdn.net/img/5f230965d46c8.png"
+  },
+  {
+    "team_id": "533",
+    "team_name": "XSET",
+    "logo_url": "https://owcdn.net/img/62874ec8a2b0c.png"
+  },
+  {
+    "team_id": "534",
+    "team_name": "Second Wind",
+    "logo_url": "https://owcdn.net/img/5f23863310adc.png"
+  },
+  {
+    "team_id": "545",
+    "team_name": "ISOL-BULIL",
+    "logo_url": "https://owcdn.net/img/5f92e84071ae7.png"
+  },
+  {
+    "team_id": "548",
+    "team_name": "Wygers",
+    "logo_url": "https://owcdn.net/img/5f24845da0f74.png"
+  },
+  {
+    "team_id": "553",
+    "team_name": "RainbowMind",
+    "logo_url": "https://owcdn.net/img/5f248689efecc.png"
+  },
+  {
+    "team_id": "560",
+    "team_name": "GRANIT GAMING",
+    "logo_url": "https://owcdn.net/img/5ff2378f105bf.png"
+  },
+  {
+    "team_id": "562",
+    "team_name": "Inferno",
+    "logo_url": "https://owcdn.net/img/5f458afcb7e32.png"
+  },
+  {
+    "team_id": "566",
+    "team_name": "Phoenix1 Reborn",
+    "logo_url": "https://owcdn.net/img/5f2661e81a98b.png"
+  },
+  {
+    "team_id": "567",
+    "team_name": "VAC Kimchi",
+    "logo_url": "https://owcdn.net/img/5f267bbb323da.png"
+  },
+  {
+    "team_id": "568",
+    "team_name": "Pingu Gang",
+    "logo_url": "https://owcdn.net/img/5f54cf8c6ec79.png"
+  },
+  {
+    "team_id": "571",
+    "team_name": "LPX Gaming",
+    "logo_url": "https://owcdn.net/img/5f272875ded05.jpg"
+  },
+  {
+    "team_id": "572",
+    "team_name": "Bloom",
+    "logo_url": "https://owcdn.net/img/5f2c77af41a66.png"
+  },
+  {
+    "team_id": "574",
+    "team_name": "SPARX ESPORTS",
+    "logo_url": "https://owcdn.net/img/62a1d0a720795.png"
+  },
+  {
+    "team_id": "575",
+    "team_name": "Eloquence",
+    "logo_url": "https://owcdn.net/img/5f980e3715432.png"
+  },
+  {
+    "team_id": "576",
+    "team_name": "iPon Esport",
+    "logo_url": "https://owcdn.net/img/61854b12390f4.png"
+  },
+  {
+    "team_id": "579",
+    "team_name": "Entropiq",
+    "logo_url": "https://owcdn.net/img/62a0d7443f2b0.png"
+  },
+  {
+    "team_id": "581",
+    "team_name": "Liberty",
+    "logo_url": "https://owcdn.net/img/60cecd6a853ad.png"
+  },
+  {
+    "team_id": "583",
+    "team_name": "Furacão RED",
+    "logo_url": "https://owcdn.net/img/5f2df7718e5dc.png"
+  },
+  {
+    "team_id": "584",
+    "team_name": "Furacão BLACK",
+    "logo_url": "https://owcdn.net/img/5f2df7718e5dc.png"
+  },
+  {
+    "team_id": "585",
+    "team_name": "Depth Esports",
+    "logo_url": "https://owcdn.net/img/5f2df861a8c42.png"
+  },
+  {
+    "team_id": "587",
+    "team_name": "Imposto é Roubo",
+    "logo_url": "https://owcdn.net/img/5f2df58c9bc4e.png"
+  },
+  {
+    "team_id": "588",
+    "team_name": "FlyHigh eSports",
+    "logo_url": "https://owcdn.net/img/5f2df9c37a600.png"
+  },
+  {
+    "team_id": "589",
+    "team_name": "Warlord",
+    "logo_url": "https://owcdn.net/img/5f2df68bb9112.png"
+  },
+  {
+    "team_id": "590",
+    "team_name": "Fox Wizards",
+    "logo_url": "https://owcdn.net/img/5f2dfae514e85.png"
+  },
+  {
+    "team_id": "591",
+    "team_name": "Mindfreak",
+    "logo_url": "https://owcdn.net/img/5f2e15bde14dd.png"
+  },
+  {
+    "team_id": "592",
+    "team_name": "MISIS eSports",
+    "logo_url": "https://owcdn.net/img/5f2f010cb1fb3.png"
+  },
+  {
+    "team_id": "593",
+    "team_name": "PLATOON",
+    "logo_url": "https://owcdn.net/img/5faaca86ec57e.png"
+  },
+  {
+    "team_id": "595",
+    "team_name": "AoeXe",
+    "logo_url": "https://owcdn.net/img/5fb12b391d59b.png"
+  },
+  {
+    "team_id": "597",
+    "team_name": "Team Eden",
+    "logo_url": "https://owcdn.net/img/5f2f00ee030fe.png"
+  },
+  {
+    "team_id": "603",
+    "team_name": "Solyanka.094",
+    "logo_url": "https://owcdn.net/img/5f2efa0dc18e7.png"
+  },
+  {
+    "team_id": "604",
+    "team_name": "Aim.Attack",
+    "logo_url": "https://owcdn.net/img/6034f3dd08cef.png"
+  },
+  {
+    "team_id": "606",
+    "team_name": "BeeNinjas",
+    "logo_url": "https://owcdn.net/img/5f9078f825392.png"
+  },
+  {
+    "team_id": "608",
+    "team_name": "KABAHbl",
+    "logo_url": "https://owcdn.net/img/5f3885f4d7167.png"
+  },
+  {
+    "team_id": "614",
+    "team_name": "T1 Korea",
+    "logo_url": "https://owcdn.net/img/5ea85d21e625f.png"
+  },
+  {
+    "team_id": "616",
+    "team_name": "tAfz",
+    "logo_url": "https://owcdn.net/img/5f3cecc05953f.png"
+  },
+  {
+    "team_id": "617",
+    "team_name": "Team SMG",
+    "logo_url": "https://owcdn.net/img/6205db7e02c2a.png"
+  },
+  {
+    "team_id": "618",
+    "team_name": "fiVe",
+    "logo_url": "https://owcdn.net/img/5f3b6e331f527.png"
+  },
+  {
+    "team_id": "619",
+    "team_name": "Only One Word",
+    "logo_url": "https://owcdn.net/img/627cf6b150bdc.png"
+  },
+  {
+    "team_id": "620",
+    "team_name": "Superdomineering",
+    "logo_url": "https://owcdn.net/img/5f35f71059ca7.png"
+  },
+  {
+    "team_id": "621",
+    "team_name": "KILOISDEAD",
+    "logo_url": "https://owcdn.net/img/5f324380165b4.png"
+  },
+  {
+    "team_id": "622",
+    "team_name": "Thailand Attitude",
+    "logo_url": "https://owcdn.net/img/63d133414e1e2.png"
+  },
+  {
+    "team_id": "623",
+    "team_name": "Sharper Esport",
+    "logo_url": "https://owcdn.net/img/62bbeefb37a75.png"
+  },
+  {
+    "team_id": "624",
+    "team_name": "Paper Rex",
+    "logo_url": "https://owcdn.net/img/62bbeba74d5cb.png"
+  },
+  {
+    "team_id": "625",
+    "team_name": "MOTV",
+    "logo_url": "https://owcdn.net/img/5f3ccf1f1352e.png"
+  },
+  {
+    "team_id": "627",
+    "team_name": "Team LZ",
+    "logo_url": "https://owcdn.net/img/5f35f79dc0e8f.png"
+  },
+  {
+    "team_id": "628",
+    "team_name": "FunPlus Phoenix",
+    "logo_url": "https://owcdn.net/img/5feab33100c1d.png"
+  },
+  {
+    "team_id": "629",
+    "team_name": "ELZ1 eSports",
+    "logo_url": "https://owcdn.net/img/5f3343c1c3f9b.png"
+  },
+  {
+    "team_id": "630",
+    "team_name": "Adaptation",
+    "logo_url": "https://owcdn.net/img/5f45e3b9bad74.png"
+  },
+  {
+    "team_id": "631",
+    "team_name": "beastcoast",
+    "logo_url": "https://owcdn.net/img/5f3446b7ed110.png"
+  },
+  {
+    "team_id": "632",
+    "team_name": "Dignitas",
+    "logo_url": "https://owcdn.net/img/5ff7841731aa5.png"
+  },
+  {
+    "team_id": "635",
+    "team_name": "Hazmat.gg",
+    "logo_url": "https://owcdn.net/img/5fa317b3837ed.png"
+  },
+  {
+    "team_id": "636",
+    "team_name": "DETONA Gaming",
+    "logo_url": "https://owcdn.net/img/5f3587cb9fc0b.png"
+  },
+  {
+    "team_id": "637",
+    "team_name": "Rise",
+    "logo_url": "https://owcdn.net/img/5f3874cbd2156.png"
+  },
+  {
+    "team_id": "641",
+    "team_name": "Entropiq Bravo",
+    "logo_url": "https://owcdn.net/img/5f2c3cca5888a.png"
+  },
+  {
+    "team_id": "642",
+    "team_name": "Luminosity",
+    "logo_url": "https://owcdn.net/img/5f36ec1f4ab21.png"
+  },
+  {
+    "team_id": "644",
+    "team_name": "Wygers Argentina",
+    "logo_url": "https://owcdn.net/img/5f24845da0f74.png"
+  },
+  {
+    "team_id": "645",
+    "team_name": "Procyon Team",
+    "logo_url": "https://owcdn.net/img/5f3ae7d10c395.png"
+  },
+  {
+    "team_id": "646",
+    "team_name": "Sick Esports",
+    "logo_url": "https://owcdn.net/img/5f3afab8c1b97.png"
+  },
+  {
+    "team_id": "650",
+    "team_name": "Connect Gaming",
+    "logo_url": "https://owcdn.net/img/5f3c74047b293.png"
+  },
+  {
+    "team_id": "651",
+    "team_name": "Cloud9 Korea",
+    "logo_url": "https://owcdn.net/img/60135aa861fc5.png"
+  },
+  {
+    "team_id": "652",
+    "team_name": "Tek Gaming",
+    "logo_url": "https://owcdn.net/img/5f3d09f953bb4.png"
+  },
+  {
+    "team_id": "653",
+    "team_name": "Liga del Mal",
+    "logo_url": "https://owcdn.net/img/5f3d0d9b1db89.png"
+  },
+  {
+    "team_id": "654",
+    "team_name": "ROX TEAM",
+    "logo_url": "https://owcdn.net/img/5f3c586ca6533.png"
+  },
+  {
+    "team_id": "656",
+    "team_name": "Avant",
+    "logo_url": "https://owcdn.net/img/5f41937142f91.png"
+  },
+  {
+    "team_id": "657",
+    "team_name": "ROG Esport",
+    "logo_url": "https://owcdn.net/img/5f3ff5f90d1d1.png"
+  },
+  {
+    "team_id": "658",
+    "team_name": "Naura",
+    "logo_url": "https://owcdn.net/img/5f8aeb3ee1b22.png"
+  },
+  {
+    "team_id": "663",
+    "team_name": "Far East Boys",
+    "logo_url": "https://owcdn.net/img/5f409250d4847.png"
+  },
+  {
+    "team_id": "664",
+    "team_name": "MUTANTS",
+    "logo_url": "https://owcdn.net/img/5f4cf6abb6349.png"
+  },
+  {
+    "team_id": "665",
+    "team_name": "Onfire Team",
+    "logo_url": "https://owcdn.net/img/5f41e8bbe5214.png"
+  },
+  {
+    "team_id": "666",
+    "team_name": "Overtime",
+    "logo_url": "https://owcdn.net/img/5f41961e4cb77.png"
+  },
+  {
+    "team_id": "668",
+    "team_name": "SUMN FC",
+    "logo_url": "https://owcdn.net/img/5fb0759802bce.png"
+  },
+  {
+    "team_id": "669",
+    "team_name": "REVIVE",
+    "logo_url": "https://owcdn.net/img/5f4265bb3d831.png"
+  },
+  {
+    "team_id": "673",
+    "team_name": "Finest",
+    "logo_url": "https://owcdn.net/img/62a0d9a3a4184.png"
+  },
+  {
+    "team_id": "674",
+    "team_name": "Spacestation Gaming",
+    "logo_url": "https://owcdn.net/img/5f44393200c15.png"
+  },
+  {
+    "team_id": "675",
+    "team_name": "LBS Esports",
+    "logo_url": "https://owcdn.net/img/5f47ae46ade79.png"
+  },
+  {
+    "team_id": "676",
+    "team_name": "Meta Gaming",
+    "logo_url": "https://owcdn.net/img/5f47adf9ca9a1.png"
+  },
+  {
+    "team_id": "677",
+    "team_name": "v7eam",
+    "logo_url": "https://owcdn.net/img/5f456d5843825.png"
+  },
+  {
+    "team_id": "679",
+    "team_name": "Aion Esports",
+    "logo_url": "https://owcdn.net/img/5f47ad7144b62.png"
+  },
+  {
+    "team_id": "680",
+    "team_name": "Kanga Esports",
+    "logo_url": "https://owcdn.net/img/5a870c58146c7.png"
+  },
+  {
+    "team_id": "681",
+    "team_name": "SKADE",
+    "logo_url": "https://owcdn.net/img/5f48f7151d9a5.png"
+  },
+  {
+    "team_id": "682",
+    "team_name": "Gambit Esports",
+    "logo_url": "https://owcdn.net/img/5f5e971577783.png"
+  },
+  {
+    "team_id": "683",
+    "team_name": "ZEROZONE",
+    "logo_url": "https://owcdn.net/img/5f51f68ea4b35.png"
+  },
+  {
+    "team_id": "685",
+    "team_name": "HSDIRR",
+    "logo_url": "https://owcdn.net/img/63cfc14232deb.png"
+  },
+  {
+    "team_id": "686",
+    "team_name": "Megastitut",
+    "logo_url": "https://owcdn.net/img/60a233495d0e7.png"
+  },
+  {
+    "team_id": "689",
+    "team_name": "Washington Muscle",
+    "logo_url": "https://owcdn.net/img/5fa07633f4143.png"
+  },
+  {
+    "team_id": "695",
+    "team_name": "HIGHPOWER",
+    "logo_url": "https://owcdn.net/img/5fa5e594e278f.png"
+  },
+  {
+    "team_id": "703",
+    "team_name": "Wizards Club",
+    "logo_url": "https://owcdn.net/img/5f934d18b3768.png"
+  },
+  {
+    "team_id": "719",
+    "team_name": "Australs",
+    "logo_url": "https://owcdn.net/img/6055063c3a691.png"
+  },
+  {
+    "team_id": "720",
+    "team_name": "Bencheados",
+    "logo_url": "https://owcdn.net/img/5f51279eb7340.png"
+  },
+  {
+    "team_id": "721",
+    "team_name": "DKS Esports",
+    "logo_url": "https://owcdn.net/img/5f513521c2918.png"
+  },
+  {
+    "team_id": "722",
+    "team_name": "FroztFire",
+    "logo_url": "https://owcdn.net/img/5f5126b664248.png"
+  },
+  {
+    "team_id": "723",
+    "team_name": "Wild esports",
+    "logo_url": "https://owcdn.net/img/5f51265a37a4d.png"
+  },
+  {
+    "team_id": "724",
+    "team_name": "E-Xolos LAZER",
+    "logo_url": "https://owcdn.net/img/61b99c67aebb0.png"
+  },
+  {
+    "team_id": "726",
+    "team_name": "MeT",
+    "logo_url": "https://owcdn.net/img/5f5418d5398e7.png"
+  },
+  {
+    "team_id": "727",
+    "team_name": "Quality Teamplay",
+    "logo_url": "https://owcdn.net/img/5f5419597dcba.png"
+  },
+  {
+    "team_id": "728",
+    "team_name": "RusherX Gaming",
+    "logo_url": "https://owcdn.net/img/5f51239f015f3.png"
+  },
+  {
+    "team_id": "729",
+    "team_name": "TopHard Esports",
+    "logo_url": "https://owcdn.net/img/5f51242784be6.png"
+  },
+  {
+    "team_id": "731",
+    "team_name": "TYLOO",
+    "logo_url": "https://owcdn.net/img/63eb60fb08390.png"
+  },
+  {
+    "team_id": "732",
+    "team_name": "EFuture",
+    "logo_url": "https://owcdn.net/img/5f5202fb17cda.png"
+  },
+  {
+    "team_id": "733",
+    "team_name": "FS Gaming",
+    "logo_url": "https://owcdn.net/img/5f5203429f0b8.png"
+  },
+  {
+    "team_id": "752",
+    "team_name": "VERITAS VINCIT",
+    "logo_url": "https://owcdn.net/img/5f8dd36eb1027.png"
+  },
+  {
+    "team_id": "756",
+    "team_name": "ehehxd",
+    "logo_url": "https://owcdn.net/img/650bfd70e1fac.png"
+  },
+  {
+    "team_id": "776",
+    "team_name": "Janus Esports",
+    "logo_url": "https://owcdn.net/img/6010e52a5deae.png"
+  },
+  {
+    "team_id": "777",
+    "team_name": "Kaizen Esports",
+    "logo_url": "https://owcdn.net/img/5f614c5dd787c.png"
+  },
+  {
+    "team_id": "783",
+    "team_name": "Dylema Gaming",
+    "logo_url": "https://owcdn.net/img/5fbc15bea502d.png"
+  },
+  {
+    "team_id": "785",
+    "team_name": "Catolica Esports",
+    "logo_url": "https://owcdn.net/img/5f5e7594ac023.png"
+  },
+  {
+    "team_id": "786",
+    "team_name": "Odin Gaming",
+    "logo_url": "https://owcdn.net/img/5f572d70c0817.png"
+  },
+  {
+    "team_id": "788",
+    "team_name": "VASTA Gaming",
+    "logo_url": "https://owcdn.net/img/5f7f78a27f37f.png"
+  },
+  {
+    "team_id": "789",
+    "team_name": "Highground",
+    "logo_url": "https://owcdn.net/img/602dc5960a4ae.png"
+  },
+  {
+    "team_id": "792",
+    "team_name": "tiobarão",
+    "logo_url": "https://owcdn.net/img/5fb2d4009de9a.png"
+  },
+  {
+    "team_id": "793",
+    "team_name": "Moon Raccoons",
+    "logo_url": "https://owcdn.net/img/5f8480a53d52e.png"
+  },
+  {
+    "team_id": "795",
+    "team_name": "Union Gaming",
+    "logo_url": "https://owcdn.net/img/6050ea38edc12.png"
+  },
+  {
+    "team_id": "797",
+    "team_name": "God Particles",
+    "logo_url": "https://owcdn.net/img/6163291180b02.png"
+  },
+  {
+    "team_id": "799",
+    "team_name": "Velocity Gaming",
+    "logo_url": "https://owcdn.net/img/644409df4d0bc.png"
+  },
+  {
+    "team_id": "800",
+    "team_name": "Villainous",
+    "logo_url": "https://owcdn.net/img/60c125ef2176e.png"
+  },
+  {
+    "team_id": "804",
+    "team_name": "Royal Never Give Up",
+    "logo_url": "https://owcdn.net/img/63eb523921a3e.png"
+  },
+  {
+    "team_id": "809",
+    "team_name": "eStar Gaming",
+    "logo_url": "https://owcdn.net/img/5fafb7e7b3cbb.png"
+  },
+  {
+    "team_id": "811",
+    "team_name": "MAJKL",
+    "logo_url": "https://owcdn.net/img/5f6926d4f3604.png"
+  },
+  {
+    "team_id": "822",
+    "team_name": "Team France",
+    "logo_url": "https://owcdn.net/img/5a3806af210e7.png"
+  },
+  {
+    "team_id": "823",
+    "team_name": "Team Spain",
+    "logo_url": "https://owcdn.net/img/5a380a0393200.png"
+  },
+  {
+    "team_id": "824",
+    "team_name": "Team Germany",
+    "logo_url": "https://owcdn.net/img/5a3807c5c8560.png"
+  },
+  {
+    "team_id": "825",
+    "team_name": "Team Turkey",
+    "logo_url": "https://owcdn.net/img/5a3815336c150.png"
+  },
+  {
+    "team_id": "826",
+    "team_name": "Team Untold",
+    "logo_url": "https://owcdn.net/img/5f5ffb7708ae7.png"
+  },
+  {
+    "team_id": "827",
+    "team_name": "Genesis",
+    "logo_url": "https://owcdn.net/img/5f6001075d80e.png"
+  },
+  {
+    "team_id": "829",
+    "team_name": "PDHM Gaming",
+    "logo_url": "https://owcdn.net/img/5f5fff0e49ca6.png"
+  },
+  {
+    "team_id": "831",
+    "team_name": "McTeam",
+    "logo_url": "https://owcdn.net/img/630b65272a6dc.png"
+  },
+  {
+    "team_id": "832",
+    "team_name": "alltheRAGE",
+    "logo_url": "https://owcdn.net/img/5f8f505eb1440.png"
+  },
+  {
+    "team_id": "833",
+    "team_name": "Royal",
+    "logo_url": "https://owcdn.net/img/601f2b4cdd813.png"
+  },
+  {
+    "team_id": "835",
+    "team_name": "Mamba Mode Academy",
+    "logo_url": "https://owcdn.net/img/5f04f6402518c.png"
+  },
+  {
+    "team_id": "837",
+    "team_name": "Serenity",
+    "logo_url": "https://owcdn.net/img/5f627fa8acc9e.png"
+  },
+  {
+    "team_id": "840",
+    "team_name": "Less Than 3 Viewers",
+    "logo_url": "https://owcdn.net/img/5f5ffd9d07c50.png"
+  },
+  {
+    "team_id": "845",
+    "team_name": "Team Korea",
+    "logo_url": "https://owcdn.net/img/5a37ffa775944.png"
+  },
+  {
+    "team_id": "846",
+    "team_name": "Team Singapore",
+    "logo_url": "https://owcdn.net/img/5940234aef3ef.png"
+  },
+  {
+    "team_id": "847",
+    "team_name": "Team Thailand",
+    "logo_url": "https://owcdn.net/img/5a380a4310940.png"
+  },
+  {
+    "team_id": "848",
+    "team_name": "Team Japan",
+    "logo_url": "https://owcdn.net/img/5a38081b5c5f5.png"
+  },
+  {
+    "team_id": "849",
+    "team_name": "Armory Gaming",
+    "logo_url": "https://owcdn.net/img/5f62b8bac6680.png"
+  },
+  {
+    "team_id": "850",
+    "team_name": "ANBU Elite Gaming",
+    "logo_url": "https://owcdn.net/img/5f62b90b3e90d.png"
+  },
+  {
+    "team_id": "853",
+    "team_name": "Prism Esports",
+    "logo_url": "https://owcdn.net/img/5f8fb135886a5.png"
+  },
+  {
+    "team_id": "854",
+    "team_name": "Eros",
+    "logo_url": "https://owcdn.net/img/5f62e56b4c362.png"
+  },
+  {
+    "team_id": "856",
+    "team_name": "Andbox",
+    "logo_url": "https://owcdn.net/img/5f64213a6402f.png"
+  },
+  {
+    "team_id": "857",
+    "team_name": "Cracked",
+    "logo_url": "https://owcdn.net/img/5f6554863e3e8.png"
+  },
+  {
+    "team_id": "860",
+    "team_name": "Ground Zero",
+    "logo_url": "https://owcdn.net/img/5f6418c9aa5bc.png"
+  },
+  {
+    "team_id": "863",
+    "team_name": "Notick",
+    "logo_url": "https://owcdn.net/img/5f6d77ef66548.png"
+  },
+  {
+    "team_id": "864",
+    "team_name": "Magic Five",
+    "logo_url": "https://owcdn.net/img/5f65c54f21d79.png"
+  },
+  {
+    "team_id": "865",
+    "team_name": "Paradox Esports",
+    "logo_url": "https://owcdn.net/img/5f6431173b7a3.png"
+  },
+  {
+    "team_id": "868",
+    "team_name": "Noble India",
+    "logo_url": "https://owcdn.net/img/5f5180b401d4d.png"
+  },
+  {
+    "team_id": "875",
+    "team_name": "G2G Esport",
+    "logo_url": "https://owcdn.net/img/5f6796b20b9af.png"
+  },
+  {
+    "team_id": "876",
+    "team_name": "Enterprise Esports",
+    "logo_url": "https://owcdn.net/img/62409e4b2bd5f.png"
+  },
+  {
+    "team_id": "877",
+    "team_name": "Resurgence",
+    "logo_url": "https://owcdn.net/img/5f682a8a2e237.png"
+  },
+  {
+    "team_id": "878",
+    "team_name": "Rex Regum Qeon",
+    "logo_url": "https://owcdn.net/img/629f17f51e7a3.png"
+  },
+  {
+    "team_id": "879",
+    "team_name": "Todak",
+    "logo_url": "https://owcdn.net/img/63dce0a45e3f3.png"
+  },
+  {
+    "team_id": "880",
+    "team_name": "MiTH.Attitude",
+    "logo_url": "https://owcdn.net/img/5f67ad4a76391.png"
+  },
+  {
+    "team_id": "885",
+    "team_name": "NTER",
+    "logo_url": "https://owcdn.net/img/5f6d3df63277f.png"
+  },
+  {
+    "team_id": "889",
+    "team_name": "DELIRAWOW",
+    "logo_url": "https://owcdn.net/img/5fb02f414ba2d.png"
+  },
+  {
+    "team_id": "904",
+    "team_name": "CBT Gaming",
+    "logo_url": "https://owcdn.net/img/60eab4f47395b.png"
+  },
+  {
+    "team_id": "905",
+    "team_name": "KaiXin Esports",
+    "logo_url": "https://owcdn.net/img/609378363d0df.png"
+  },
+  {
+    "team_id": "906",
+    "team_name": "NewHappy Esports",
+    "logo_url": "https://owcdn.net/img/640722a56e28f.png"
+  },
+  {
+    "team_id": "907",
+    "team_name": "Suning Gaming",
+    "logo_url": "https://owcdn.net/img/6007d3d659f5e.png"
+  },
+  {
+    "team_id": "908",
+    "team_name": "Tales of Eastern",
+    "logo_url": "https://owcdn.net/img/621767f7e3d09.png"
+  },
+  {
+    "team_id": "910",
+    "team_name": "Exceeli Esports",
+    "logo_url": "https://owcdn.net/img/659a27a955a3a.png"
+  },
+  {
+    "team_id": "912",
+    "team_name": "Rebellious Gaming",
+    "logo_url": "https://owcdn.net/img/6061ec2cf340f.png"
+  },
+  {
+    "team_id": "913",
+    "team_name": "Level 5",
+    "logo_url": "https://owcdn.net/img/673f2b72f299d.png"
+  },
+  {
+    "team_id": "914",
+    "team_name": "Team Tamilas",
+    "logo_url": "https://owcdn.net/img/5fa4ee636b122.png"
+  },
+  {
+    "team_id": "918",
+    "team_name": "Global Esports",
+    "logo_url": "https://owcdn.net/img/629f316ddd4dd.png"
+  },
+  {
+    "team_id": "921",
+    "team_name": "Oxygen Esports",
+    "logo_url": "https://owcdn.net/img/61732742e090a.png"
+  },
+  {
+    "team_id": "922",
+    "team_name": "Overt",
+    "logo_url": "https://owcdn.net/img/5f696f5382a98.png"
+  },
+  {
+    "team_id": "926",
+    "team_name": "Nezuko Gaming",
+    "logo_url": "https://owcdn.net/img/5f6b80b636f57.png"
+  },
+  {
+    "team_id": "932",
+    "team_name": "random5",
+    "logo_url": "https://owcdn.net/img/5f6c9c7a6a2d7.png"
+  },
+  {
+    "team_id": "933",
+    "team_name": "5tar",
+    "logo_url": "https://owcdn.net/img/5f6c9d7ae7338.png"
+  },
+  {
+    "team_id": "934",
+    "team_name": "Revival",
+    "logo_url": "https://owcdn.net/img/5f6c9e3b6d277.png"
+  },
+  {
+    "team_id": "935",
+    "team_name": "Anatolia Esports",
+    "logo_url": "https://owcdn.net/img/6036a2ccd4d98.png"
+  },
+  {
+    "team_id": "952",
+    "team_name": "Team Flux",
+    "logo_url": "https://owcdn.net/img/61c2744d28f33.png"
+  },
+  {
+    "team_id": "956",
+    "team_name": "Pyronic",
+    "logo_url": "https://owcdn.net/img/5faf49dd8eaef.png"
+  },
+  {
+    "team_id": "958",
+    "team_name": "Reality Rift",
+    "logo_url": "https://owcdn.net/img/5f7055b868103.png"
+  },
+  {
+    "team_id": "966",
+    "team_name": "153",
+    "logo_url": "https://owcdn.net/img/5f806760c0b54.png"
+  },
+  {
+    "team_id": "967",
+    "team_name": "5MOKES",
+    "logo_url": "https://owcdn.net/img/5fafe2a073af5.png"
+  },
+  {
+    "team_id": "969",
+    "team_name": "Miracles",
+    "logo_url": "https://owcdn.net/img/5fb6edcb26982.png"
+  },
+  {
+    "team_id": "976",
+    "team_name": "Orgles5",
+    "logo_url": "https://owcdn.net/img/5fc32e2b7738c.png"
+  },
+  {
+    "team_id": "980",
+    "team_name": "Santiago Wanderers",
+    "logo_url": "https://owcdn.net/img/5f7e6a0e12d98.png"
+  },
+  {
+    "team_id": "981",
+    "team_name": "CR4ZY",
+    "logo_url": "https://owcdn.net/img/5f7346d6824c8.png"
+  },
+  {
+    "team_id": "982",
+    "team_name": "Marten Gaming",
+    "logo_url": "https://owcdn.net/img/5f734be32ff5f.png"
+  },
+  {
+    "team_id": "983",
+    "team_name": "Good Game",
+    "logo_url": "https://owcdn.net/img/5f734c2db6663.png"
+  },
+  {
+    "team_id": "984",
+    "team_name": "Team Toxic",
+    "logo_url": "https://owcdn.net/img/5f734ca485f39.png"
+  },
+  {
+    "team_id": "985",
+    "team_name": "Kum Gaming",
+    "logo_url": "https://owcdn.net/img/5f734c701df39.png"
+  },
+  {
+    "team_id": "987",
+    "team_name": "lvlUP",
+    "logo_url": "https://owcdn.net/img/5f734bc0eef29.png"
+  },
+  {
+    "team_id": "988",
+    "team_name": "MUTED",
+    "logo_url": "https://owcdn.net/img/5f734c9105dfa.png"
+  },
+  {
+    "team_id": "989",
+    "team_name": "LYNX TH",
+    "logo_url": "https://owcdn.net/img/5fb1d3ea9acb5.png"
+  },
+  {
+    "team_id": "990",
+    "team_name": "Magic Esport",
+    "logo_url": "https://owcdn.net/img/5f8375947fad4.png"
+  },
+  {
+    "team_id": "991",
+    "team_name": "Exodus",
+    "logo_url": "https://owcdn.net/img/5f830e9336031.png"
+  },
+  {
+    "team_id": "993",
+    "team_name": "Phoenix1",
+    "logo_url": "https://owcdn.net/img/5f2661e81a98b.png"
+  },
+  {
+    "team_id": "994",
+    "team_name": "Flow State",
+    "logo_url": "https://owcdn.net/img/5f8f48e0d15e2.png"
+  },
+  {
+    "team_id": "1001",
+    "team_name": "Team Heretics",
+    "logo_url": "https://owcdn.net/img/637b755224c12.png"
+  },
+  {
+    "team_id": "1007",
+    "team_name": "Revolution",
+    "logo_url": "https://owcdn.net/img/5f83751f28136.png"
+  },
+  {
+    "team_id": "1010",
+    "team_name": "Inside Games",
+    "logo_url": "https://owcdn.net/img/5f79b59863c2e.png"
+  },
+  {
+    "team_id": "1011",
+    "team_name": "ZEITGEIST",
+    "logo_url": "https://owcdn.net/img/5f7dcb27a87f4.png"
+  },
+  {
+    "team_id": "1018",
+    "team_name": "Rebels",
+    "logo_url": "https://owcdn.net/img/5f83151009e5b.png"
+  },
+  {
+    "team_id": "1019",
+    "team_name": "fostercare",
+    "logo_url": "https://owcdn.net/img/5fcb764a83778.png"
+  },
+  {
+    "team_id": "1020",
+    "team_name": "CrowСrowd",
+    "logo_url": "https://owcdn.net/img/5fbf95a7704ca.png"
+  },
+  {
+    "team_id": "1021",
+    "team_name": "Vengeance",
+    "logo_url": "https://owcdn.net/img/5fd8d0a0622e7.png"
+  },
+  {
+    "team_id": "1025",
+    "team_name": "ZFGaming",
+    "logo_url": "https://owcdn.net/img/5faa65ed093f5.png"
+  },
+  {
+    "team_id": "1028",
+    "team_name": "Wichita Wolves",
+    "logo_url": "https://owcdn.net/img/5fe45562b0491.png"
+  },
+  {
+    "team_id": "1030",
+    "team_name": "Take Flyte",
+    "logo_url": "https://owcdn.net/img/5faf481f76a0e.png"
+  },
+  {
+    "team_id": "1033",
+    "team_name": "Reckoning Esports",
+    "logo_url": "https://owcdn.net/img/5f7b4a299fe14.png"
+  },
+  {
+    "team_id": "1034",
+    "team_name": "NRG Esports",
+    "logo_url": "https://owcdn.net/img/6610f026c1a9e.png"
+  },
+  {
+    "team_id": "1035",
+    "team_name": "Cream Real Betis",
+    "logo_url": "https://owcdn.net/img/5f7f6967ba43f.png"
+  },
+  {
+    "team_id": "1054",
+    "team_name": "THE START W",
+    "logo_url": "https://owcdn.net/img/5fafa8647a360.png"
+  },
+  {
+    "team_id": "1057",
+    "team_name": "aNg DarkHorse",
+    "logo_url": "https://owcdn.net/img/5fc4c36221a4a.png"
+  },
+  {
+    "team_id": "1063",
+    "team_name": "S2V Esports",
+    "logo_url": "https://owcdn.net/img/5f7da1dd8d648.png"
+  },
+  {
+    "team_id": "1066",
+    "team_name": "NerdTown eSport",
+    "logo_url": "https://owcdn.net/img/5f856bb5d5c2e.png"
+  },
+  {
+    "team_id": "1069",
+    "team_name": "Five eSports Club",
+    "logo_url": "https://owcdn.net/img/5f7eb39933bf1.png"
+  },
+  {
+    "team_id": "1071",
+    "team_name": "unsigned",
+    "logo_url": "https://owcdn.net/img/602de19d0348d.png"
+  },
+  {
+    "team_id": "1074",
+    "team_name": "200 Policemen",
+    "logo_url": "https://owcdn.net/img/5f8c4d9128735.png"
+  },
+  {
+    "team_id": "1075",
+    "team_name": "Astral Factory",
+    "logo_url": "https://owcdn.net/img/5f8120f65859d.png"
+  },
+  {
+    "team_id": "1076",
+    "team_name": "Backlink Gaming",
+    "logo_url": "https://owcdn.net/img/5f827ab35ed47.png"
+  },
+  {
+    "team_id": "1080",
+    "team_name": "Evereux",
+    "logo_url": "https://owcdn.net/img/5f8058f572f7f.png"
+  },
+  {
+    "team_id": "1081",
+    "team_name": "Evicted Esports",
+    "logo_url": "https://owcdn.net/img/5f81215053875.png"
+  },
+  {
+    "team_id": "1084",
+    "team_name": "MCES Italia",
+    "logo_url": "https://owcdn.net/img/5f819ef7b1096.png"
+  },
+  {
+    "team_id": "1090",
+    "team_name": "Tarren Mill",
+    "logo_url": "https://owcdn.net/img/6085e7cf1e697.png"
+  },
+  {
+    "team_id": "1091",
+    "team_name": "Team 7AM",
+    "logo_url": "https://owcdn.net/img/5fab5be3a73b4.png"
+  },
+  {
+    "team_id": "1105",
+    "team_name": "Rugratz",
+    "logo_url": "https://owcdn.net/img/5f84bab563041.png"
+  },
+  {
+    "team_id": "1106",
+    "team_name": "Overtime Esports",
+    "logo_url": "https://owcdn.net/img/5f8374c1358fe.png"
+  },
+  {
+    "team_id": "1107",
+    "team_name": "King of Gamers",
+    "logo_url": "https://owcdn.net/img/5f83769775213.png"
+  },
+  {
+    "team_id": "1108",
+    "team_name": "LGD Gaming",
+    "logo_url": "https://owcdn.net/img/6549c2de5598b.png"
+  },
+  {
+    "team_id": "1110",
+    "team_name": "Alter Ego",
+    "logo_url": "https://owcdn.net/img/62bbed294db68.png"
+  },
+  {
+    "team_id": "1111",
+    "team_name": "MiTH.Streamer",
+    "logo_url": "https://owcdn.net/img/5f67ad4a76391.png"
+  },
+  {
+    "team_id": "1114",
+    "team_name": "Solstice Esports",
+    "logo_url": "https://owcdn.net/img/623d0c53576a5.png"
+  },
+  {
+    "team_id": "1117",
+    "team_name": "Grapefruit Techniques",
+    "logo_url": "https://owcdn.net/img/606b7d30b40c4.png"
+  },
+  {
+    "team_id": "1119",
+    "team_name": "All Gamers",
+    "logo_url": "https://owcdn.net/img/6549c2b905061.png"
+  },
+  {
+    "team_id": "1120",
+    "team_name": "EDward Gaming",
+    "logo_url": "https://owcdn.net/img/62c82049253b2.png"
+  },
+  {
+    "team_id": "1123",
+    "team_name": "SMARACIS eSports",
+    "logo_url": "https://owcdn.net/img/5f8477019cc0c.png"
+  },
+  {
+    "team_id": "1124",
+    "team_name": "RED Canids",
+    "logo_url": "https://owcdn.net/img/63876c258b1e3.png"
+  },
+  {
+    "team_id": "1132",
+    "team_name": "CNEsports",
+    "logo_url": "https://owcdn.net/img/67629fffb177d.png"
+  },
+  {
+    "team_id": "1140",
+    "team_name": "TUBEPLE Gaming",
+    "logo_url": "https://owcdn.net/img/5fbe1f956425c.png"
+  },
+  {
+    "team_id": "1146",
+    "team_name": "GodLike Esports",
+    "logo_url": "https://owcdn.net/img/63ebaa91f0e07.png"
+  },
+  {
+    "team_id": "1151",
+    "team_name": "Team Empire",
+    "logo_url": "https://owcdn.net/img/5f871b54232ed.png"
+  },
+  {
+    "team_id": "1152",
+    "team_name": "Equinox Esports",
+    "logo_url": "https://owcdn.net/img/5f874745ccf64.png"
+  },
+  {
+    "team_id": "1153",
+    "team_name": "PROPARTY",
+    "logo_url": "https://owcdn.net/img/5fa3d4396e5fe.png"
+  },
+  {
+    "team_id": "1154",
+    "team_name": "STrigi Manse",
+    "logo_url": "https://owcdn.net/img/5fa094cd1bffe.png"
+  },
+  {
+    "team_id": "1155",
+    "team_name": "Furnace e-sports",
+    "logo_url": "https://owcdn.net/img/5fa2a40b7b47d.png"
+  },
+  {
+    "team_id": "1156",
+    "team_name": "LAETUS Gaming",
+    "logo_url": "https://owcdn.net/img/5f9af24aaa727.png"
+  },
+  {
+    "team_id": "1158",
+    "team_name": "Intel New Indians",
+    "logo_url": "https://owcdn.net/img/5f9c20bb427b7.png"
+  },
+  {
+    "team_id": "1159",
+    "team_name": "eRa Eternity",
+    "logo_url": "https://owcdn.net/img/5f8891ba4df99.png"
+  },
+  {
+    "team_id": "1163",
+    "team_name": "Arctic",
+    "logo_url": "https://owcdn.net/img/61f8447e87640.png"
+  },
+  {
+    "team_id": "1166",
+    "team_name": "Time In",
+    "logo_url": "https://owcdn.net/img/5f8a49ae44d25.png"
+  },
+  {
+    "team_id": "1170",
+    "team_name": "Stars",
+    "logo_url": "https://owcdn.net/img/5f8c223596c5d.png"
+  },
+  {
+    "team_id": "1174",
+    "team_name": "Yendez",
+    "logo_url": "https://owcdn.net/img/60d7c79c184d4.png"
+  },
+  {
+    "team_id": "1182",
+    "team_name": "Daytrade Gaming",
+    "logo_url": "https://owcdn.net/img/5fac3be248cbe.png"
+  },
+  {
+    "team_id": "1184",
+    "team_name": "FUT Esports",
+    "logo_url": "https://owcdn.net/img/632be9976b8fe.png"
+  },
+  {
+    "team_id": "1187",
+    "team_name": "All Day Long",
+    "logo_url": "https://owcdn.net/img/5fbf5fa419516.png"
+  },
+  {
+    "team_id": "1189",
+    "team_name": "eXiLe eSports",
+    "logo_url": "https://owcdn.net/img/5f8e7fea522c7.png"
+  },
+  {
+    "team_id": "1190",
+    "team_name": "MJAOMODE",
+    "logo_url": "https://owcdn.net/img/5f8edff15fd6a.png"
+  },
+  {
+    "team_id": "1191",
+    "team_name": "doneVAL",
+    "logo_url": "https://owcdn.net/img/6042951f2d614.png"
+  },
+  {
+    "team_id": "1195",
+    "team_name": "CoreNine Academy",
+    "logo_url": "https://owcdn.net/img/5fbb52cbe65fa.png"
+  },
+  {
+    "team_id": "1198",
+    "team_name": "supremacy",
+    "logo_url": "https://owcdn.net/img/5fb332a93aa55.png"
+  },
+  {
+    "team_id": "1202",
+    "team_name": "R!OT Gaming",
+    "logo_url": "https://owcdn.net/img/5f8e7ddc89af1.png"
+  },
+  {
+    "team_id": "1206",
+    "team_name": "Legacy Esports",
+    "logo_url": "https://owcdn.net/img/5f8f909e71815.png"
+  },
+  {
+    "team_id": "1207",
+    "team_name": "Gravitas",
+    "logo_url": "https://owcdn.net/img/5f8f914d56829.png"
+  },
+  {
+    "team_id": "1208",
+    "team_name": "ORDER",
+    "logo_url": "https://owcdn.net/img/62a99588164f7.png"
+  },
+  {
+    "team_id": "1209",
+    "team_name": "Guild Esports",
+    "logo_url": "https://owcdn.net/img/6279315a0b968.png"
+  },
+  {
+    "team_id": "1211",
+    "team_name": "Totoro Gaming",
+    "logo_url": "https://owcdn.net/img/63eb56072ae3f.png"
+  },
+  {
+    "team_id": "1224",
+    "team_name": "Weibo Gaming",
+    "logo_url": "https://owcdn.net/img/62232bd14e5d7.png"
+  },
+  {
+    "team_id": "1227",
+    "team_name": "Meta Gaming Fem",
+    "logo_url": "https://owcdn.net/img/5f47adf9ca9a1.png"
+  },
+  {
+    "team_id": "1230",
+    "team_name": "HaZe Clan",
+    "logo_url": "https://owcdn.net/img/5fca13bb0508a.png"
+  },
+  {
+    "team_id": "1231",
+    "team_name": "BULLS Esports",
+    "logo_url": "https://owcdn.net/img/60ec2b6266276.png"
+  },
+  {
+    "team_id": "1233",
+    "team_name": "Italian Hope",
+    "logo_url": "https://owcdn.net/img/5fe3d7d2b6d57.png"
+  },
+  {
+    "team_id": "1234",
+    "team_name": "Team Sampi",
+    "logo_url": "https://owcdn.net/img/5f95b49a411f2.png"
+  },
+  {
+    "team_id": "1235",
+    "team_name": "MRKN",
+    "logo_url": "https://owcdn.net/img/5fa4ff4075c14.png"
+  },
+  {
+    "team_id": "1237",
+    "team_name": "Sangal Esports",
+    "logo_url": "https://owcdn.net/img/5fae2281d0fbf.png"
+  },
+  {
+    "team_id": "1245",
+    "team_name": "TradeLikePros Gold",
+    "logo_url": "https://owcdn.net/img/5fe9930a75767.png"
+  },
+  {
+    "team_id": "1246",
+    "team_name": "DREAMLAND",
+    "logo_url": "https://owcdn.net/img/5fc87809b2c22.png"
+  },
+  {
+    "team_id": "1248",
+    "team_name": "TradeLikePros",
+    "logo_url": "https://owcdn.net/img/62366068d9c45.png"
+  },
+  {
+    "team_id": "1249",
+    "team_name": "Decent Esports",
+    "logo_url": "https://owcdn.net/img/5f95a67c85c15.png"
+  },
+  {
+    "team_id": "1250",
+    "team_name": "Winfinity",
+    "logo_url": "https://owcdn.net/img/5fa7f823bc20f.png"
+  },
+  {
+    "team_id": "1259",
+    "team_name": "Dreamwalker",
+    "logo_url": "https://owcdn.net/img/5fd89fff53227.png"
+  },
+  {
+    "team_id": "1267",
+    "team_name": "Cloud9 White",
+    "logo_url": "https://owcdn.net/img/628addcbd509e.png"
+  },
+  {
+    "team_id": "1268",
+    "team_name": "OffLimits",
+    "logo_url": "https://owcdn.net/img/5fbf61e01bef1.png"
+  },
+  {
+    "team_id": "1269",
+    "team_name": "Lycus Empire",
+    "logo_url": "https://owcdn.net/img/6065f49c8dea6.png"
+  },
+  {
+    "team_id": "1282",
+    "team_name": "TMU SHORTYKINGS",
+    "logo_url": "https://owcdn.net/img/63712deb9b774.png"
+  },
+  {
+    "team_id": "1291",
+    "team_name": "Roosters",
+    "logo_url": "https://owcdn.net/img/5fc3525aedbad.png"
+  },
+  {
+    "team_id": "1300",
+    "team_name": "Last Round Save",
+    "logo_url": "https://owcdn.net/img/605fc27ed2512.png"
+  },
+  {
+    "team_id": "1301",
+    "team_name": "Exotic",
+    "logo_url": "https://owcdn.net/img/60a305751837f.png"
+  },
+  {
+    "team_id": "1305",
+    "team_name": "Sedated",
+    "logo_url": "https://owcdn.net/img/5fc330083a1d1.png"
+  },
+  {
+    "team_id": "1309",
+    "team_name": "Mix",
+    "logo_url": "https://owcdn.net/img/5fb495da68e6f.png"
+  },
+  {
+    "team_id": "1311",
+    "team_name": "Galaxy Carrots",
+    "logo_url": "https://owcdn.net/img/6014ba13ca0d0.png"
+  },
+  {
+    "team_id": "1314",
+    "team_name": "ever.wc",
+    "logo_url": "https://owcdn.net/img/5fb4c03bb94f6.png"
+  },
+  {
+    "team_id": "1316",
+    "team_name": "QLASH",
+    "logo_url": "https://owcdn.net/img/62efc0067ed80.png"
+  },
+  {
+    "team_id": "1317",
+    "team_name": "Team White",
+    "logo_url": "https://owcdn.net/img/5fbca4c436054.png"
+  },
+  {
+    "team_id": "1318",
+    "team_name": "Spectral Gaming",
+    "logo_url": "https://owcdn.net/img/5f9f15d3c4144.png"
+  },
+  {
+    "team_id": "1319",
+    "team_name": "Funcrew",
+    "logo_url": "https://owcdn.net/img/5fba3c30b5887.png"
+  },
+  {
+    "team_id": "1320",
+    "team_name": "Waterbottle",
+    "logo_url": "https://owcdn.net/img/5fb9fe835d515.png"
+  },
+  {
+    "team_id": "1322",
+    "team_name": "Scythe ESC",
+    "logo_url": "https://owcdn.net/img/5f9a29f5559db.png"
+  },
+  {
+    "team_id": "1323",
+    "team_name": "Nebula",
+    "logo_url": "https://owcdn.net/img/5faf8fdb3bf70.png"
+  },
+  {
+    "team_id": "1325",
+    "team_name": "Genuine Gaming",
+    "logo_url": "https://owcdn.net/img/5fab6f1316681.png"
+  },
+  {
+    "team_id": "1331",
+    "team_name": "BearClaw Gaming",
+    "logo_url": "https://owcdn.net/img/628763108924c.png"
+  },
+  {
+    "team_id": "1334",
+    "team_name": "Team NoX",
+    "logo_url": "https://owcdn.net/img/5fd6fb7b3f76a.png"
+  },
+  {
+    "team_id": "1341",
+    "team_name": "Team Singularity",
+    "logo_url": "https://owcdn.net/img/5f9c620010fec.png"
+  },
+  {
+    "team_id": "1342",
+    "team_name": "Axsor",
+    "logo_url": "https://owcdn.net/img/5f9c0bd7dd95b.png"
+  },
+  {
+    "team_id": "1347",
+    "team_name": "Nasty Ninjas",
+    "logo_url": "https://owcdn.net/img/5fd23a7868061.png"
+  },
+  {
+    "team_id": "1351",
+    "team_name": "REPLY TOTEM",
+    "logo_url": "https://owcdn.net/img/5fba9dd01f351.png"
+  },
+  {
+    "team_id": "1352",
+    "team_name": "Dire Wolves",
+    "logo_url": "https://owcdn.net/img/60b70f18a25f2.png"
+  },
+  {
+    "team_id": "1404",
+    "team_name": "Fighting 4 Freedom",
+    "logo_url": "https://owcdn.net/img/5f9f04e20eff4.png"
+  },
+  {
+    "team_id": "1405",
+    "team_name": "Shadownet",
+    "logo_url": "https://owcdn.net/img/5f9f13030b8ca.png"
+  },
+  {
+    "team_id": "1406",
+    "team_name": "Momentum Based",
+    "logo_url": "https://owcdn.net/img/5fba3bd25b3e7.png"
+  },
+  {
+    "team_id": "1412",
+    "team_name": "95x Esports",
+    "logo_url": "https://owcdn.net/img/630caa11dd33d.png"
+  },
+  {
+    "team_id": "1416",
+    "team_name": "Nexus Gaming",
+    "logo_url": "https://owcdn.net/img/5f9f8d3bacb6d.png"
+  },
+  {
+    "team_id": "1418",
+    "team_name": "NoWeaver",
+    "logo_url": "https://owcdn.net/img/5fa07e37048df.png"
+  },
+  {
+    "team_id": "1421",
+    "team_name": "Chakalaka",
+    "logo_url": "https://owcdn.net/img/602eccaaf4172.png"
+  },
+  {
+    "team_id": "1437",
+    "team_name": "Crew Esports",
+    "logo_url": "https://owcdn.net/img/5fee63c076428.png"
+  },
+  {
+    "team_id": "1442",
+    "team_name": "Team Spain",
+    "logo_url": "https://owcdn.net/img/5a380a0393200.png"
+  },
+  {
+    "team_id": "1443",
+    "team_name": "Team France",
+    "logo_url": "https://owcdn.net/img/5a3806af210e7.png"
+  },
+  {
+    "team_id": "1444",
+    "team_name": "Team Poland",
+    "logo_url": "https://owcdn.net/img/5a3808a35fb08.png"
+  },
+  {
+    "team_id": "1445",
+    "team_name": "Team Turkey",
+    "logo_url": "https://owcdn.net/img/5a3815336c150.png"
+  },
+  {
+    "team_id": "1446",
+    "team_name": "Team Italy",
+    "logo_url": "https://owcdn.net/img/5a380805db9da.png"
+  },
+  {
+    "team_id": "1448",
+    "team_name": "Team Portugal",
+    "logo_url": "https://owcdn.net/img/5a3809a1e95b4.png"
+  },
+  {
+    "team_id": "1449",
+    "team_name": "Team UK",
+    "logo_url": "https://owcdn.net/img/5a3815cd579b5.png"
+  },
+  {
+    "team_id": "1452",
+    "team_name": "Mod-Z",
+    "logo_url": "https://owcdn.net/img/5fbb5e6a6b4c2.png"
+  },
+  {
+    "team_id": "1453",
+    "team_name": "OtherSide",
+    "logo_url": "https://owcdn.net/img/5fee6347c2239.png"
+  },
+  {
+    "team_id": "1456",
+    "team_name": "PENTA",
+    "logo_url": "https://owcdn.net/img/5fa60792af47e.png"
+  },
+  {
+    "team_id": "1458",
+    "team_name": "The Ultimates",
+    "logo_url": "https://owcdn.net/img/65cb2b05be39e.png"
+  },
+  {
+    "team_id": "1464",
+    "team_name": "YaLLa Esports",
+    "logo_url": "https://owcdn.net/img/5fb5f076d4312.png"
+  },
+  {
+    "team_id": "1465",
+    "team_name": "RvN",
+    "logo_url": "https://owcdn.net/img/67c3a183a504a.png"
+  },
+  {
+    "team_id": "1466",
+    "team_name": "Anubis Gaming",
+    "logo_url": "https://owcdn.net/img/61b99de181b2e.png"
+  },
+  {
+    "team_id": "1469",
+    "team_name": "Cairo City G'zzz",
+    "logo_url": "https://owcdn.net/img/60061841a09b3.png"
+  },
+  {
+    "team_id": "1470",
+    "team_name": "NASR Esports",
+    "logo_url": "https://owcdn.net/img/61d485d346ed5.png"
+  },
+  {
+    "team_id": "1471",
+    "team_name": "Team RA'AD",
+    "logo_url": "https://owcdn.net/img/61d48692758bc.png"
+  },
+  {
+    "team_id": "1474",
+    "team_name": "eSuba",
+    "logo_url": "https://owcdn.net/img/602dd25f09a38.png"
+  },
+  {
+    "team_id": "1475",
+    "team_name": "Cool Guys",
+    "logo_url": "https://owcdn.net/img/5fb5a0589685e.png"
+  },
+  {
+    "team_id": "1480",
+    "team_name": "DreamSeller",
+    "logo_url": "https://owcdn.net/img/5fb1d1f92c2e5.png"
+  },
+  {
+    "team_id": "1481",
+    "team_name": "NG.Black",
+    "logo_url": "https://owcdn.net/img/5fb327224b2c4.png"
+  },
+  {
+    "team_id": "1482",
+    "team_name": "NongWaen",
+    "logo_url": "https://owcdn.net/img/5fe321c747958.png"
+  },
+  {
+    "team_id": "1483",
+    "team_name": "QConfirm",
+    "logo_url": "https://owcdn.net/img/5fac3c44661e6.png"
+  },
+  {
+    "team_id": "1485",
+    "team_name": "Aricat Esport Family",
+    "logo_url": "https://owcdn.net/img/61ed02e3eb93e.png"
+  },
+  {
+    "team_id": "1487",
+    "team_name": "Las Palmas Unity",
+    "logo_url": "https://owcdn.net/img/67073f1d289c6.png"
+  },
+  {
+    "team_id": "1490",
+    "team_name": "1stCav eSport Club",
+    "logo_url": "https://owcdn.net/img/5fa95538d1c94.png"
+  },
+  {
+    "team_id": "1491",
+    "team_name": "FARESHI",
+    "logo_url": "https://owcdn.net/img/5fecaf282f3fb.png"
+  },
+  {
+    "team_id": "1498",
+    "team_name": "ShadowzGG V2",
+    "logo_url": "https://owcdn.net/img/60017df866456.png"
+  },
+  {
+    "team_id": "1525",
+    "team_name": "Dirty boys",
+    "logo_url": "https://owcdn.net/img/5fc3cd1490fff.png"
+  },
+  {
+    "team_id": "1530",
+    "team_name": "Digital Ninjas",
+    "logo_url": "https://owcdn.net/img/60d99cfeb61f3.png"
+  },
+  {
+    "team_id": "1537",
+    "team_name": "BLOKES",
+    "logo_url": "https://owcdn.net/img/5fadab429bee4.png"
+  },
+  {
+    "team_id": "1539",
+    "team_name": "mens))",
+    "logo_url": "https://owcdn.net/img/5faad248373b0.png"
+  },
+  {
+    "team_id": "1544",
+    "team_name": "RosCey eSports",
+    "logo_url": "https://owcdn.net/img/5fa9c4adb119e.png"
+  },
+  {
+    "team_id": "1548",
+    "team_name": "Eternal Zen Gaming",
+    "logo_url": "https://owcdn.net/img/5fc29e1a1b531.png"
+  },
+  {
+    "team_id": "1556",
+    "team_name": "Merge",
+    "logo_url": "https://owcdn.net/img/5fa9b00072d32.png"
+  },
+  {
+    "team_id": "1568",
+    "team_name": "saY hello!",
+    "logo_url": "https://owcdn.net/img/5faaa1d5b2e19.png"
+  },
+  {
+    "team_id": "1576",
+    "team_name": "FiftyOne",
+    "logo_url": "https://owcdn.net/img/5fba5f3679a60.png"
+  },
+  {
+    "team_id": "1580",
+    "team_name": "feelmyhack",
+    "logo_url": "https://owcdn.net/img/5fb3b185d590c.png"
+  },
+  {
+    "team_id": "1581",
+    "team_name": "VIVIFY ESPORT",
+    "logo_url": "https://owcdn.net/img/5fad11757bb4c.png"
+  },
+  {
+    "team_id": "1591",
+    "team_name": "Team Lightning",
+    "logo_url": "https://owcdn.net/img/607e4a926d1ab.png"
+  },
+  {
+    "team_id": "1592",
+    "team_name": "Fox Gaming",
+    "logo_url": "https://owcdn.net/img/624ae94b5d677.png"
+  },
+  {
+    "team_id": "1593",
+    "team_name": "Ruthless54",
+    "logo_url": "https://owcdn.net/img/5fb52681c8d76.png"
+  },
+  {
+    "team_id": "1594",
+    "team_name": "Team Majesty",
+    "logo_url": "https://owcdn.net/img/5fac00bed806f.png"
+  },
+  {
+    "team_id": "1596",
+    "team_name": "Alterfox Esports",
+    "logo_url": "https://owcdn.net/img/607e5033dd08f.png"
+  },
+  {
+    "team_id": "1597",
+    "team_name": "NoWeaver",
+    "logo_url": "https://owcdn.net/img/5fa07e37048df.png"
+  },
+  {
+    "team_id": "1610",
+    "team_name": "Team Brave Soldiers",
+    "logo_url": "https://owcdn.net/img/6224df17276a2.png"
+  },
+  {
+    "team_id": "1615",
+    "team_name": "Knights",
+    "logo_url": "https://owcdn.net/img/62bc2a098573c.png"
+  },
+  {
+    "team_id": "1619",
+    "team_name": "Catalyst Esports",
+    "logo_url": "https://owcdn.net/img/63756748bbff9.png"
+  },
+  {
+    "team_id": "1620",
+    "team_name": "Allware",
+    "logo_url": "https://owcdn.net/img/5fac2feeca3a8.png"
+  },
+  {
+    "team_id": "1626",
+    "team_name": "NOX Esports",
+    "logo_url": "https://owcdn.net/img/5faededa36781.png"
+  },
+  {
+    "team_id": "1638",
+    "team_name": "Shanghai Emperors",
+    "logo_url": "https://owcdn.net/img/607235a1d331b.png"
+  },
+  {
+    "team_id": "1639",
+    "team_name": "Flash and Dash",
+    "logo_url": "https://owcdn.net/img/600f2fe3cd1ea.png"
+  },
+  {
+    "team_id": "1648",
+    "team_name": "Shadow Life",
+    "logo_url": "https://owcdn.net/img/5facb7a03e998.png"
+  },
+  {
+    "team_id": "1654",
+    "team_name": "Archons",
+    "logo_url": "https://owcdn.net/img/6227df5355305.png"
+  },
+  {
+    "team_id": "1657",
+    "team_name": "Penguin Sledding",
+    "logo_url": "https://owcdn.net/img/601b57d9b44a9.png"
+  },
+  {
+    "team_id": "1666",
+    "team_name": "Onslaught Gaming",
+    "logo_url": "https://owcdn.net/img/5fad9bd5735fe.png"
+  },
+  {
+    "team_id": "1668",
+    "team_name": "Noxis Gaming",
+    "logo_url": "https://owcdn.net/img/5faf602ab1e08.png"
+  },
+  {
+    "team_id": "1669",
+    "team_name": "Able Esports",
+    "logo_url": "https://owcdn.net/img/6012273369dee.png"
+  },
+  {
+    "team_id": "1670",
+    "team_name": "F4Q",
+    "logo_url": "https://owcdn.net/img/613869ba6886b.png"
+  },
+  {
+    "team_id": "1671",
+    "team_name": "Exodus",
+    "logo_url": "https://owcdn.net/img/5fb19b0709063.png"
+  },
+  {
+    "team_id": "1673",
+    "team_name": "QLASH Egypt",
+    "logo_url": "https://owcdn.net/img/62efc0067ed80.png"
+  },
+  {
+    "team_id": "1675",
+    "team_name": "Zero Zone",
+    "logo_url": "https://owcdn.net/img/60490613c6bd5.png"
+  },
+  {
+    "team_id": "1679",
+    "team_name": "Siberian",
+    "logo_url": "https://owcdn.net/img/5fd4a1fc74c2c.png"
+  },
+  {
+    "team_id": "1693",
+    "team_name": "Athletico Zombies",
+    "logo_url": "https://owcdn.net/img/5fadd777551b3.png"
+  },
+  {
+    "team_id": "1694",
+    "team_name": "DKS esports",
+    "logo_url": "https://owcdn.net/img/5fadf819a7827.png"
+  },
+  {
+    "team_id": "1695",
+    "team_name": "Somnium Esports",
+    "logo_url": "https://owcdn.net/img/5fadf848bf2d7.png"
+  },
+  {
+    "team_id": "1696",
+    "team_name": "Wildcard Gaming",
+    "logo_url": "https://owcdn.net/img/5fadf9cbc2b78.png"
+  },
+  {
+    "team_id": "1699",
+    "team_name": "Elecbossa",
+    "logo_url": "https://owcdn.net/img/5fadfce6099a6.png"
+  },
+  {
+    "team_id": "1700",
+    "team_name": "XcN Gaming",
+    "logo_url": "https://owcdn.net/img/5fadfcfd714fc.png"
+  },
+  {
+    "team_id": "1701",
+    "team_name": "Occamy Omega",
+    "logo_url": "https://owcdn.net/img/5fadfd4f83bf8.png"
+  },
+  {
+    "team_id": "1703",
+    "team_name": "ZENITH",
+    "logo_url": "https://owcdn.net/img/5fadfcaa57f5c.png"
+  },
+  {
+    "team_id": "1705",
+    "team_name": "5NOOBS",
+    "logo_url": "https://owcdn.net/img/5fb95635693a4.png"
+  },
+  {
+    "team_id": "1712",
+    "team_name": "Underdogs",
+    "logo_url": "https://owcdn.net/img/6058cfef4f599.png"
+  },
+  {
+    "team_id": "1727",
+    "team_name": "Elemental Esports",
+    "logo_url": "https://owcdn.net/img/5faf839c5bf2e.png"
+  },
+  {
+    "team_id": "1728",
+    "team_name": "Fast Rush",
+    "logo_url": "https://owcdn.net/img/5fb0c6ce80a83.png"
+  },
+  {
+    "team_id": "1732",
+    "team_name": "Novagis Gaming",
+    "logo_url": "https://owcdn.net/img/5fafadd8e1240.png"
+  },
+  {
+    "team_id": "1734",
+    "team_name": "FIRST Gaming",
+    "logo_url": "https://owcdn.net/img/5fb1d8735bf02.png"
+  },
+  {
+    "team_id": "1735",
+    "team_name": "THE SHABLES",
+    "logo_url": "https://owcdn.net/img/5fafb89846f11.png"
+  },
+  {
+    "team_id": "1739",
+    "team_name": "1Percent",
+    "logo_url": "https://owcdn.net/img/626e8f63f20ad.png"
+  },
+  {
+    "team_id": "1742",
+    "team_name": "Exality",
+    "logo_url": "https://owcdn.net/img/607d7e43e1433.png"
+  },
+  {
+    "team_id": "1746",
+    "team_name": "Not All Home",
+    "logo_url": "https://owcdn.net/img/5fb376597e261.png"
+  },
+  {
+    "team_id": "1755",
+    "team_name": "plusVV",
+    "logo_url": "https://owcdn.net/img/5fb2d4cec97b1.png"
+  },
+  {
+    "team_id": "1777",
+    "team_name": "SKYLINE Esports",
+    "logo_url": "https://owcdn.net/img/5fb67cd3192af.png"
+  },
+  {
+    "team_id": "1788",
+    "team_name": "Intrepid Fox",
+    "logo_url": "https://owcdn.net/img/61748d7f2e3fc.png"
+  },
+  {
+    "team_id": "1791",
+    "team_name": "FTW Esports",
+    "logo_url": "https://owcdn.net/img/63b8f5d4b6074.png"
+  },
+  {
+    "team_id": "1795",
+    "team_name": "Helios Gaming",
+    "logo_url": "https://owcdn.net/img/609950fb5816f.png"
+  },
+  {
+    "team_id": "1796",
+    "team_name": "ECM FCG eSports",
+    "logo_url": "https://owcdn.net/img/601ca9f7978c3.png"
+  },
+  {
+    "team_id": "1797",
+    "team_name": "Necrotic Esports",
+    "logo_url": "https://owcdn.net/img/5fb56a1b5f382.png"
+  },
+  {
+    "team_id": "1805",
+    "team_name": "Lotus Elites",
+    "logo_url": "https://owcdn.net/img/60200b34c233e.png"
+  },
+  {
+    "team_id": "1810",
+    "team_name": "Grow uP eSports",
+    "logo_url": "https://owcdn.net/img/5fb2e859798ae.png"
+  },
+  {
+    "team_id": "1817",
+    "team_name": "Prophecy ESC",
+    "logo_url": "https://owcdn.net/img/601d3f0edd7f8.png"
+  },
+  {
+    "team_id": "1826",
+    "team_name": "INTZ Angels",
+    "logo_url": "https://owcdn.net/img/5fb3183339579.png"
+  },
+  {
+    "team_id": "1829",
+    "team_name": "Rogue",
+    "logo_url": "https://owcdn.net/img/5fb43f9da8d99.png"
+  },
+  {
+    "team_id": "1830",
+    "team_name": "Vorax",
+    "logo_url": "https://owcdn.net/img/5fb5ed172d759.png"
+  },
+  {
+    "team_id": "1831",
+    "team_name": "LDM Esports",
+    "logo_url": "https://owcdn.net/img/5fc0be4fc6694.png"
+  },
+  {
+    "team_id": "1837",
+    "team_name": "Attacking Soul Esports",
+    "logo_url": "https://owcdn.net/img/62bd5058300a4.png"
+  },
+  {
+    "team_id": "1847",
+    "team_name": "sLDe",
+    "logo_url": "https://owcdn.net/img/5fb5829ec7722.png"
+  },
+  {
+    "team_id": "1852",
+    "team_name": "eGames.Coach",
+    "logo_url": "https://owcdn.net/img/5fb568c80a087.png"
+  },
+  {
+    "team_id": "1875",
+    "team_name": "ATRAVS",
+    "logo_url": "https://owcdn.net/img/601d011a105ba.png"
+  },
+  {
+    "team_id": "1895",
+    "team_name": "99Crooks",
+    "logo_url": "https://owcdn.net/img/5fb66d3b089f3.png"
+  },
+  {
+    "team_id": "1903",
+    "team_name": "YAZDA",
+    "logo_url": "https://owcdn.net/img/6064c4360403a.png"
+  },
+  {
+    "team_id": "1909",
+    "team_name": "KnockOut Esports",
+    "logo_url": "https://owcdn.net/img/5fc4a45db9764.png"
+  },
+  {
+    "team_id": "1910",
+    "team_name": "Team Duelist",
+    "logo_url": "https://owcdn.net/img/61f79efc71115.png"
+  },
+  {
+    "team_id": "1911",
+    "team_name": "Imperial Esports",
+    "logo_url": "https://owcdn.net/img/5fbb84f96a263.png"
+  },
+  {
+    "team_id": "1913",
+    "team_name": "RARE Esports",
+    "logo_url": "https://owcdn.net/img/604301554b8af.png"
+  },
+  {
+    "team_id": "1914",
+    "team_name": "Alfa Esports",
+    "logo_url": "https://owcdn.net/img/5fbbe8ded94d9.png"
+  },
+  {
+    "team_id": "1915",
+    "team_name": "NXL LIGAGAME",
+    "logo_url": "https://owcdn.net/img/600fa5f65aa7c.png"
+  },
+  {
+    "team_id": "1916",
+    "team_name": "INGAMING Esports",
+    "logo_url": "https://owcdn.net/img/61e3c143b140d.png"
+  },
+  {
+    "team_id": "1917",
+    "team_name": "Unsold Stuff Gaming",
+    "logo_url": "https://owcdn.net/img/5fb8a7108e8f8.png"
+  },
+  {
+    "team_id": "1919",
+    "team_name": "Kingsmen",
+    "logo_url": "https://owcdn.net/img/5fc4df5bd5612.png"
+  },
+  {
+    "team_id": "1921",
+    "team_name": "Zero Synergy",
+    "logo_url": "https://owcdn.net/img/6188d869cf534.png"
+  },
+  {
+    "team_id": "1924",
+    "team_name": "NXP.Aether",
+    "logo_url": "https://owcdn.net/img/5fc4bb851a201.png"
+  },
+  {
+    "team_id": "1926",
+    "team_name": "SE ATLAS",
+    "logo_url": "https://owcdn.net/img/6040a499b2959.png"
+  },
+  {
+    "team_id": "1927",
+    "team_name": "Bestial",
+    "logo_url": "https://owcdn.net/img/5fc4be0c69524.png"
+  },
+  {
+    "team_id": "1928",
+    "team_name": "AG.Nefarious",
+    "logo_url": "https://owcdn.net/img/5fc4bde3585e5.png"
+  },
+  {
+    "team_id": "1929",
+    "team_name": "KADILIMAN",
+    "logo_url": "https://owcdn.net/img/67d69de85810e.png"
+  },
+  {
+    "team_id": "1930",
+    "team_name": "DFT Revitalize",
+    "logo_url": "https://owcdn.net/img/5fc4be0279c75.png"
+  },
+  {
+    "team_id": "1931",
+    "team_name": "Chimaera",
+    "logo_url": "https://owcdn.net/img/5fc4bdd8d3743.png"
+  },
+  {
+    "team_id": "1932",
+    "team_name": "Hashira",
+    "logo_url": "https://owcdn.net/img/60621ac7de616.png"
+  },
+  {
+    "team_id": "1934",
+    "team_name": "ArkAngel",
+    "logo_url": "https://owcdn.net/img/5fc4bdf7b2a96.png"
+  },
+  {
+    "team_id": "1935",
+    "team_name": "Affinity Esports",
+    "logo_url": "https://owcdn.net/img/5fbb67307c0b7.png"
+  },
+  {
+    "team_id": "1942",
+    "team_name": "Team 600",
+    "logo_url": "https://owcdn.net/img/600eca250f899.png"
+  },
+  {
+    "team_id": "1944",
+    "team_name": "Excelsa",
+    "logo_url": "https://owcdn.net/img/5fd7324412ad0.png"
+  },
+  {
+    "team_id": "1948",
+    "team_name": "Running Dogs",
+    "logo_url": "https://owcdn.net/img/607190632bd49.png"
+  },
+  {
+    "team_id": "1951",
+    "team_name": "Wulf Esports",
+    "logo_url": "https://owcdn.net/img/6060384ecb802.png"
+  },
+  {
+    "team_id": "1960",
+    "team_name": "FrontsideGG",
+    "logo_url": "https://owcdn.net/img/5fbbbb2d4da60.png"
+  },
+  {
+    "team_id": "1970",
+    "team_name": "TNL Esports",
+    "logo_url": "https://owcdn.net/img/5fcea18229911.png"
+  },
+  {
+    "team_id": "1971",
+    "team_name": "Orgless",
+    "logo_url": "https://owcdn.net/img/5fbe974e34406.png"
+  },
+  {
+    "team_id": "1972",
+    "team_name": "The Alchemists",
+    "logo_url": "https://owcdn.net/img/5fbeb629232d4.png"
+  },
+  {
+    "team_id": "1978",
+    "team_name": "XenoFrost",
+    "logo_url": "https://owcdn.net/img/61c2f4c5b65ca.png"
+  },
+  {
+    "team_id": "1981",
+    "team_name": "Dark Passage",
+    "logo_url": "https://owcdn.net/img/6533d06928972.png"
+  },
+  {
+    "team_id": "1982",
+    "team_name": "DfuseTeam",
+    "logo_url": "https://owcdn.net/img/5fc0c9fac23d0.png"
+  },
+  {
+    "team_id": "1985",
+    "team_name": "Feint Gaming",
+    "logo_url": "https://owcdn.net/img/5fc0d4b94e0de.png"
+  },
+  {
+    "team_id": "1986",
+    "team_name": "Team Samurai",
+    "logo_url": "https://owcdn.net/img/5fc0d547ec2c3.png"
+  },
+  {
+    "team_id": "1987",
+    "team_name": "famolea",
+    "logo_url": "https://owcdn.net/img/5fc0d5a331b77.png"
+  },
+  {
+    "team_id": "1988",
+    "team_name": "Aracne Esports",
+    "logo_url": "https://owcdn.net/img/5fc0d607a68fc.png"
+  },
+  {
+    "team_id": "1989",
+    "team_name": "Zwan Gaming",
+    "logo_url": "https://owcdn.net/img/5fc0bdf898078.png"
+  },
+  {
+    "team_id": "1990",
+    "team_name": "IGNIS Esports",
+    "logo_url": "https://owcdn.net/img/5fc0bea806b0b.png"
+  },
+  {
+    "team_id": "1991",
+    "team_name": "Akave Esports",
+    "logo_url": "https://owcdn.net/img/61da5f0488060.png"
+  },
+  {
+    "team_id": "1993",
+    "team_name": "Team Warriors",
+    "logo_url": "https://owcdn.net/img/5fc0bc422925f.png"
+  },
+  {
+    "team_id": "1994",
+    "team_name": "OG Esports",
+    "logo_url": "https://owcdn.net/img/5fc0bbeb91132.png"
+  },
+  {
+    "team_id": "1996",
+    "team_name": "99cents",
+    "logo_url": "https://owcdn.net/img/5fc0bb53c07b6.png"
+  },
+  {
+    "team_id": "1997",
+    "team_name": "Altar Esports",
+    "logo_url": "https://owcdn.net/img/5fc0bcf221245.png"
+  },
+  {
+    "team_id": "1998",
+    "team_name": "Atletica Pro Gaming 9",
+    "logo_url": "https://owcdn.net/img/5fc0bc62e80ee.png"
+  },
+  {
+    "team_id": "1999",
+    "team_name": "Millions Gaming",
+    "logo_url": "https://owcdn.net/img/5fc0d4456c722.png"
+  },
+  {
+    "team_id": "2012",
+    "team_name": "Swag Silicone",
+    "logo_url": "https://owcdn.net/img/600dcaa1a50ca.png"
+  },
+  {
+    "team_id": "2026",
+    "team_name": "Arbalest",
+    "logo_url": "https://owcdn.net/img/5ffb6495eff19.png"
+  },
+  {
+    "team_id": "2028",
+    "team_name": "XTZ Esports",
+    "logo_url": "https://owcdn.net/img/5fc5c79177121.png"
+  },
+  {
+    "team_id": "2029",
+    "team_name": "WAY Esports",
+    "logo_url": "https://owcdn.net/img/60dc101843d3e.png"
+  },
+  {
+    "team_id": "2031",
+    "team_name": "KINGSLAYERS",
+    "logo_url": "https://owcdn.net/img/60dc120a9d205.png"
+  },
+  {
+    "team_id": "2032",
+    "team_name": "ONIC G",
+    "logo_url": "https://owcdn.net/img/621b04181f4b1.png"
+  },
+  {
+    "team_id": "2033",
+    "team_name": "Big Frames",
+    "logo_url": "https://owcdn.net/img/5ee532420a336.png"
+  },
+  {
+    "team_id": "2034",
+    "team_name": "VISU Gaming",
+    "logo_url": "https://owcdn.net/img/5fc756196df72.png"
+  },
+  {
+    "team_id": "2035",
+    "team_name": "ehehxd",
+    "logo_url": "https://owcdn.net/img/5f638c3318224.png"
+  },
+  {
+    "team_id": "2036",
+    "team_name": "Beşiktaş Esports",
+    "logo_url": "https://owcdn.net/img/623de5ba6273f.png"
+  },
+  {
+    "team_id": "2047",
+    "team_name": "AFTERMIND",
+    "logo_url": "https://owcdn.net/img/5fc86d7a39694.png"
+  },
+  {
+    "team_id": "2048",
+    "team_name": "Prodigy",
+    "logo_url": "https://owcdn.net/img/5ee5192f908db.png"
+  },
+  {
+    "team_id": "2049",
+    "team_name": "Team Divinity",
+    "logo_url": "https://owcdn.net/img/637daa87e7d50.png"
+  },
+  {
+    "team_id": "2051",
+    "team_name": "Game Fist",
+    "logo_url": "https://owcdn.net/img/5fe3d7c498067.png"
+  },
+  {
+    "team_id": "2056",
+    "team_name": "Relaxedly",
+    "logo_url": "https://owcdn.net/img/6279877920d9c.png"
+  },
+  {
+    "team_id": "2058",
+    "team_name": "UBITEAM",
+    "logo_url": "https://owcdn.net/img/5fd136236f0c6.png"
+  },
+  {
+    "team_id": "2059",
+    "team_name": "Team Vitality",
+    "logo_url": "https://owcdn.net/img/6466d79e1ed40.png"
+  },
+  {
+    "team_id": "2066",
+    "team_name": "WithoutName",
+    "logo_url": "https://owcdn.net/img/5fd25ad4e654f.png"
+  },
+  {
+    "team_id": "2101",
+    "team_name": "LAGOS",
+    "logo_url": "https://owcdn.net/img/5fd52dea5794d.png"
+  },
+  {
+    "team_id": "2102",
+    "team_name": "Kungarna",
+    "logo_url": "https://owcdn.net/img/5fd439de89656.png"
+  },
+  {
+    "team_id": "2103",
+    "team_name": "Tale Quale",
+    "logo_url": "https://owcdn.net/img/5fd495ef58f23.png"
+  },
+  {
+    "team_id": "2108",
+    "team_name": "BLUE BEES.ESP",
+    "logo_url": "https://owcdn.net/img/62a4128bd26f3.png"
+  },
+  {
+    "team_id": "2109",
+    "team_name": "Sneaker Daily Meloner",
+    "logo_url": "https://owcdn.net/img/60df0d8b94939.png"
+  },
+  {
+    "team_id": "2110",
+    "team_name": "Team SHIFT",
+    "logo_url": "https://owcdn.net/img/5feac5e10a80c.png"
+  },
+  {
+    "team_id": "2112",
+    "team_name": "X10 Esports",
+    "logo_url": "https://owcdn.net/img/62bd90e55f45a.png"
+  },
+  {
+    "team_id": "2118",
+    "team_name": "TooManyQuestions",
+    "logo_url": "https://owcdn.net/img/6004a571dc0fe.png"
+  },
+  {
+    "team_id": "2128",
+    "team_name": "Carpe Noctem",
+    "logo_url": "https://owcdn.net/img/5fe8175319164.png"
+  },
+  {
+    "team_id": "2131",
+    "team_name": "Chivas Esports",
+    "logo_url": "https://owcdn.net/img/63ce2eedbe573.png"
+  },
+  {
+    "team_id": "2133",
+    "team_name": "Marten Gaming",
+    "logo_url": "https://owcdn.net/img/5f734be32ff5f.png"
+  },
+  {
+    "team_id": "2134",
+    "team_name": "ZEROZONE",
+    "logo_url": "https://owcdn.net/img/5f51f68ea4b35.png"
+  },
+  {
+    "team_id": "2136",
+    "team_name": "seeker",
+    "logo_url": "https://owcdn.net/img/6066764b57907.png"
+  },
+  {
+    "team_id": "2139",
+    "team_name": "303 Esports",
+    "logo_url": "https://owcdn.net/img/5ee3d9c4e1aa5.png"
+  },
+  {
+    "team_id": "2147",
+    "team_name": "FTG Esports",
+    "logo_url": "https://owcdn.net/img/60715dbf040cb.png"
+  },
+  {
+    "team_id": "2150",
+    "team_name": "JustLose",
+    "logo_url": "https://owcdn.net/img/601bf477a8cb7.png"
+  },
+  {
+    "team_id": "2151",
+    "team_name": "Kantic Gaming",
+    "logo_url": "https://owcdn.net/img/6195e78e63470.png"
+  },
+  {
+    "team_id": "2158",
+    "team_name": "Team Max",
+    "logo_url": "https://owcdn.net/img/61ece8c918f34.png"
+  },
+  {
+    "team_id": "2160",
+    "team_name": "ZaPs Clan",
+    "logo_url": "https://owcdn.net/img/606cfdb12b3e4.png"
+  },
+  {
+    "team_id": "2165",
+    "team_name": "Aspire",
+    "logo_url": "https://owcdn.net/img/601764cf911fb.png"
+  },
+  {
+    "team_id": "2171",
+    "team_name": "Bleiz",
+    "logo_url": "https://owcdn.net/img/6022e19caf200.png"
+  },
+  {
+    "team_id": "2176",
+    "team_name": "Illés Akadémia Spirit",
+    "logo_url": "https://owcdn.net/img/600f356cd87b9.png"
+  },
+  {
+    "team_id": "2178",
+    "team_name": "PROJEKT RADIANT",
+    "logo_url": "https://owcdn.net/img/5fe453c055fee.png"
+  },
+  {
+    "team_id": "2182",
+    "team_name": "EWAVE ESPORTS",
+    "logo_url": "https://owcdn.net/img/5fe715517e83c.png"
+  },
+  {
+    "team_id": "2190",
+    "team_name": "HARD Esports",
+    "logo_url": "https://owcdn.net/img/5fe78ffc55919.png"
+  },
+  {
+    "team_id": "2191",
+    "team_name": "Supremacy Gaming",
+    "logo_url": "https://owcdn.net/img/5fe79b53e2ba3.png"
+  },
+  {
+    "team_id": "2205",
+    "team_name": "Zero MarksMen",
+    "logo_url": "https://owcdn.net/img/5ff4634170224.png"
+  },
+  {
+    "team_id": "2211",
+    "team_name": "Team Mahi",
+    "logo_url": "https://owcdn.net/img/5fe9984ddfc75.png"
+  },
+  {
+    "team_id": "2212",
+    "team_name": "White Rabbit Gaming",
+    "logo_url": "https://owcdn.net/img/5fe99c7e85159.png"
+  },
+  {
+    "team_id": "2214",
+    "team_name": "On The Way",
+    "logo_url": "https://owcdn.net/img/601c35e94a01d.png"
+  },
+  {
+    "team_id": "2223",
+    "team_name": "RED5",
+    "logo_url": "https://owcdn.net/img/6016afd407e2a.png"
+  },
+  {
+    "team_id": "2228",
+    "team_name": "Dallas Vendetta",
+    "logo_url": "https://owcdn.net/img/6066633aa1b2e.png"
+  },
+  {
+    "team_id": "2252",
+    "team_name": "SLAMMING GEARS",
+    "logo_url": "https://owcdn.net/img/60162c09dd1ae.png"
+  },
+  {
+    "team_id": "2270",
+    "team_name": "Foxy Araikordai",
+    "logo_url": "https://owcdn.net/img/5ffd69ce8adb6.png"
+  },
+  {
+    "team_id": "2287",
+    "team_name": "eUnited",
+    "logo_url": "https://owcdn.net/img/5ffcfefca4e61.png"
+  },
+  {
+    "team_id": "2290",
+    "team_name": "Gamax Esports",
+    "logo_url": "https://owcdn.net/img/64c0df3369bcd.png"
+  },
+  {
+    "team_id": "2291",
+    "team_name": "Ghost Gaming",
+    "logo_url": "https://owcdn.net/img/62a407a8ec084.png"
+  },
+  {
+    "team_id": "2303",
+    "team_name": "Lightning",
+    "logo_url": "https://owcdn.net/img/6124bf6191870.png"
+  },
+  {
+    "team_id": "2304",
+    "team_name": "Giants Gaming",
+    "logo_url": "https://owcdn.net/img/61dfcae52b0d8.png"
+  },
+  {
+    "team_id": "2307",
+    "team_name": "CISFAITH",
+    "logo_url": "https://owcdn.net/img/6006ec7500180.png"
+  },
+  {
+    "team_id": "2308",
+    "team_name": "Team Gravity",
+    "logo_url": "https://owcdn.net/img/6021be3b679bb.png"
+  },
+  {
+    "team_id": "2310",
+    "team_name": "S2V Esports",
+    "logo_url": "https://owcdn.net/img/5f7da1dd8d648.png"
+  },
+  {
+    "team_id": "2320",
+    "team_name": "UGIT",
+    "logo_url": "https://owcdn.net/img/6022dda69f730.png"
+  },
+  {
+    "team_id": "2328",
+    "team_name": "NUTURN",
+    "logo_url": "https://owcdn.net/img/615425fac2c84.png"
+  },
+  {
+    "team_id": "2331",
+    "team_name": "peanutz",
+    "logo_url": "https://owcdn.net/img/600de9ad88527.png"
+  },
+  {
+    "team_id": "2340",
+    "team_name": "STAGA",
+    "logo_url": "https://owcdn.net/img/606b282eaaf77.png"
+  },
+  {
+    "team_id": "2343",
+    "team_name": "Rise Gaming",
+    "logo_url": "https://owcdn.net/img/605e26d2e6114.png"
+  },
+  {
+    "team_id": "2346",
+    "team_name": "Almost International",
+    "logo_url": "https://owcdn.net/img/602f0f740d4db.png"
+  },
+  {
+    "team_id": "2347",
+    "team_name": "Arcana",
+    "logo_url": "https://owcdn.net/img/60215b2749390.png"
+  },
+  {
+    "team_id": "2348",
+    "team_name": "VIRTUOSO",
+    "logo_url": "https://owcdn.net/img/60c6aa221dc7f.png"
+  },
+  {
+    "team_id": "2350",
+    "team_name": "Soniqs",
+    "logo_url": "https://owcdn.net/img/62bbd71ea03bf.png"
+  },
+  {
+    "team_id": "2354",
+    "team_name": "Optix",
+    "logo_url": "https://owcdn.net/img/60787e6f8df4c.png"
+  },
+  {
+    "team_id": "2355",
+    "team_name": "KRÜ Esports",
+    "logo_url": "https://owcdn.net/img/63976677069e1.png"
+  },
+  {
+    "team_id": "2358",
+    "team_name": "Stampede Gaming",
+    "logo_url": "https://owcdn.net/img/600b1b1006759.png"
+  },
+  {
+    "team_id": "2359",
+    "team_name": "LEVIATÁN",
+    "logo_url": "https://owcdn.net/img/61b8888cc3860.png"
+  },
+  {
+    "team_id": "2360",
+    "team_name": "Kaos Latin Gamers",
+    "logo_url": "https://owcdn.net/img/600b19ed2c674.png"
+  },
+  {
+    "team_id": "2362",
+    "team_name": "Skull Cracker",
+    "logo_url": "https://owcdn.net/img/61da5309efc71.png"
+  },
+  {
+    "team_id": "2363",
+    "team_name": "Pro Hub Gaming",
+    "logo_url": "https://owcdn.net/img/600f56d868f25.png"
+  },
+  {
+    "team_id": "2364",
+    "team_name": "Ryze Gaming",
+    "logo_url": "https://owcdn.net/img/60f90c960d726.png"
+  },
+  {
+    "team_id": "2366",
+    "team_name": "Phinance G",
+    "logo_url": "https://owcdn.net/img/602dea8516032.png"
+  },
+  {
+    "team_id": "2369",
+    "team_name": "Entropy",
+    "logo_url": "https://owcdn.net/img/621f6d6fb2732.png"
+  },
+  {
+    "team_id": "2370",
+    "team_name": "eXiLe Academy",
+    "logo_url": "https://owcdn.net/img/5ff666adababe.png"
+  },
+  {
+    "team_id": "2373",
+    "team_name": "Rix.GG Thunder",
+    "logo_url": "https://owcdn.net/img/6081170dc0ffe.png"
+  },
+  {
+    "team_id": "2378",
+    "team_name": "SUPER SQUAD",
+    "logo_url": "https://owcdn.net/img/61caa1b2a4701.png"
+  },
+  {
+    "team_id": "2383",
+    "team_name": "Bounty Esports",
+    "logo_url": "https://owcdn.net/img/604546315d5b3.png"
+  },
+  {
+    "team_id": "2388",
+    "team_name": "Team Enigma",
+    "logo_url": "https://owcdn.net/img/603d4f65d60e1.png"
+  },
+  {
+    "team_id": "2394",
+    "team_name": "AnimeSquad",
+    "logo_url": "https://owcdn.net/img/60214a5645a0f.png"
+  },
+  {
+    "team_id": "2398",
+    "team_name": "Project X",
+    "logo_url": "https://owcdn.net/img/6020fb05276f2.png"
+  },
+  {
+    "team_id": "2406",
+    "team_name": "FURIA",
+    "logo_url": "https://owcdn.net/img/632be843b7d51.png"
+  },
+  {
+    "team_id": "2408",
+    "team_name": "HEET",
+    "logo_url": "https://owcdn.net/img/625b9429b5069.png"
+  },
+  {
+    "team_id": "2414",
+    "team_name": "ARK Esports",
+    "logo_url": "https://owcdn.net/img/604bde534773b.png"
+  },
+  {
+    "team_id": "2415",
+    "team_name": "Clown Squad",
+    "logo_url": "https://owcdn.net/img/601e743341e61.png"
+  },
+  {
+    "team_id": "2416",
+    "team_name": "Cyber Skull Esports",
+    "logo_url": "https://owcdn.net/img/60295d4841d69.png"
+  },
+  {
+    "team_id": "2418",
+    "team_name": "WhynotVLR",
+    "logo_url": "https://owcdn.net/img/603f9d13e0980.png"
+  },
+  {
+    "team_id": "2428",
+    "team_name": "SLICK",
+    "logo_url": "https://owcdn.net/img/605cc279bfc1a.png"
+  },
+  {
+    "team_id": "2431",
+    "team_name": "Typhoon",
+    "logo_url": "https://owcdn.net/img/600b1ab5e9d92.png"
+  },
+  {
+    "team_id": "2443",
+    "team_name": "PremierGG",
+    "logo_url": "https://owcdn.net/img/604024c9641bc.png"
+  },
+  {
+    "team_id": "2448",
+    "team_name": "SLU Esports",
+    "logo_url": "https://owcdn.net/img/606663ef8bf66.png"
+  },
+  {
+    "team_id": "2450",
+    "team_name": "D2E Black",
+    "logo_url": "https://owcdn.net/img/60121e9600cab.png"
+  },
+  {
+    "team_id": "2460",
+    "team_name": "US Army Esports",
+    "logo_url": "https://owcdn.net/img/60121c262be84.png"
+  },
+  {
+    "team_id": "2476",
+    "team_name": "D2E Gold",
+    "logo_url": "https://owcdn.net/img/60121e9600cab.png"
+  },
+  {
+    "team_id": "2481",
+    "team_name": "Waverunners",
+    "logo_url": "https://owcdn.net/img/606b5950a01ae.png"
+  },
+  {
+    "team_id": "2493",
+    "team_name": "Carleton Ravens",
+    "logo_url": "https://owcdn.net/img/636c63299aeaa.png"
+  },
+  {
+    "team_id": "2499",
+    "team_name": "Movistar Riders",
+    "logo_url": "https://owcdn.net/img/62a0dd93e0470.png"
+  },
+  {
+    "team_id": "2501",
+    "team_name": "Team 7AM",
+    "logo_url": "https://owcdn.net/img/5fab5be3a73b4.png"
+  },
+  {
+    "team_id": "2505",
+    "team_name": "Looking For Org",
+    "logo_url": "https://owcdn.net/img/6106808642cd7.png"
+  },
+  {
+    "team_id": "2506",
+    "team_name": "Myschief",
+    "logo_url": "https://owcdn.net/img/60198980336d7.png"
+  },
+  {
+    "team_id": "2509",
+    "team_name": "XIAO",
+    "logo_url": "https://owcdn.net/img/6019f2a8b3d97.png"
+  },
+  {
+    "team_id": "2511",
+    "team_name": "The Impaler",
+    "logo_url": "https://owcdn.net/img/60d9867d2b1e3.png"
+  },
+  {
+    "team_id": "2519",
+    "team_name": "SCYTES",
+    "logo_url": "https://owcdn.net/img/602b42f19c4ac.png"
+  },
+  {
+    "team_id": "2529",
+    "team_name": "Foxy",
+    "logo_url": "https://owcdn.net/img/606b7d4da3fbe.png"
+  },
+  {
+    "team_id": "2531",
+    "team_name": "Elevate",
+    "logo_url": "https://owcdn.net/img/5f5c4f6e16dcd.png"
+  },
+  {
+    "team_id": "2532",
+    "team_name": "Louvre",
+    "logo_url": "https://owcdn.net/img/63da121569e25.png"
+  },
+  {
+    "team_id": "2533",
+    "team_name": "Alliance",
+    "logo_url": "https://owcdn.net/img/62a0d8c6cfef5.png"
+  },
+  {
+    "team_id": "2536",
+    "team_name": "KG Network",
+    "logo_url": "https://owcdn.net/img/60d5f74a62042.png"
+  },
+  {
+    "team_id": "2542",
+    "team_name": "DAMWON Gaming",
+    "logo_url": "https://owcdn.net/img/601b3c37a5221.png"
+  },
+  {
+    "team_id": "2548",
+    "team_name": "APEX PEOPLE",
+    "logo_url": "https://owcdn.net/img/60409a2e9bdca.png"
+  },
+  {
+    "team_id": "2554",
+    "team_name": "World Game Star",
+    "logo_url": "https://owcdn.net/img/629d978f8c5d1.png"
+  },
+  {
+    "team_id": "2559",
+    "team_name": "SPEAR GAMING",
+    "logo_url": "https://owcdn.net/img/6295dc777c224.png"
+  },
+  {
+    "team_id": "2561",
+    "team_name": "GOMA",
+    "logo_url": "https://owcdn.net/img/602893f290d25.png"
+  },
+  {
+    "team_id": "2562",
+    "team_name": "HONK",
+    "logo_url": "https://owcdn.net/img/6014213a6cf1e.png"
+  },
+  {
+    "team_id": "2566",
+    "team_name": "Ballista",
+    "logo_url": "https://owcdn.net/img/602974130c5c5.png"
+  },
+  {
+    "team_id": "2567",
+    "team_name": "Monkey Business",
+    "logo_url": "https://owcdn.net/img/601dad9359d35.png"
+  },
+  {
+    "team_id": "2568",
+    "team_name": "Ethereal",
+    "logo_url": "https://owcdn.net/img/61ea77b791661.png"
+  },
+  {
+    "team_id": "2569",
+    "team_name": "Seniman Grooming",
+    "logo_url": "https://owcdn.net/img/6016624ceb61f.png"
+  },
+  {
+    "team_id": "2571",
+    "team_name": "Lunatic-Hai",
+    "logo_url": "https://owcdn.net/img/5f20dec21daa8.png"
+  },
+  {
+    "team_id": "2572",
+    "team_name": "TEAM X-FORCE",
+    "logo_url": "https://owcdn.net/img/60166269422e0.png"
+  },
+  {
+    "team_id": "2573",
+    "team_name": "Noir",
+    "logo_url": "https://owcdn.net/img/60166289154a9.png"
+  },
+  {
+    "team_id": "2574",
+    "team_name": "Power Danger Esport",
+    "logo_url": "https://owcdn.net/img/601662a05b59a.png"
+  },
+  {
+    "team_id": "2575",
+    "team_name": "Azalea",
+    "logo_url": "https://owcdn.net/img/601662cf44946.png"
+  },
+  {
+    "team_id": "2576",
+    "team_name": "Surabaya Esports",
+    "logo_url": "https://owcdn.net/img/601662e443d48.png"
+  },
+  {
+    "team_id": "2577",
+    "team_name": "Raise Your Edge",
+    "logo_url": "https://owcdn.net/img/601568bab77e9.png"
+  },
+  {
+    "team_id": "2580",
+    "team_name": "Yakuza",
+    "logo_url": "https://owcdn.net/img/60661259c60ba.png"
+  },
+  {
+    "team_id": "2588",
+    "team_name": "HalfBliss",
+    "logo_url": "https://owcdn.net/img/610e0c1d87572.png"
+  },
+  {
+    "team_id": "2593",
+    "team_name": "FNATIC",
+    "logo_url": "https://owcdn.net/img/62a40cc2b5e29.png"
+  },
+  {
+    "team_id": "2596",
+    "team_name": "Malvinas Gaming",
+    "logo_url": "https://owcdn.net/img/606bc8866dc18.png"
+  },
+  {
+    "team_id": "2598",
+    "team_name": "NerdTown eSport",
+    "logo_url": "https://owcdn.net/img/5f856bb5d5c2e.png"
+  },
+  {
+    "team_id": "2599",
+    "team_name": "eRa Eternity",
+    "logo_url": "https://owcdn.net/img/5f8891ba4df99.png"
+  },
+  {
+    "team_id": "2600",
+    "team_name": "Jaguares Esports",
+    "logo_url": "https://owcdn.net/img/601afd56740a2.png"
+  },
+  {
+    "team_id": "2605",
+    "team_name": "Twin Esports",
+    "logo_url": "https://owcdn.net/img/602dea06a8c8f.png"
+  },
+  {
+    "team_id": "2606",
+    "team_name": "PÊEK Gaming",
+    "logo_url": "https://owcdn.net/img/602deb72aac4f.png"
+  },
+  {
+    "team_id": "2607",
+    "team_name": "Edelweiss Esports",
+    "logo_url": "https://owcdn.net/img/602c25b18c0cd.png"
+  },
+  {
+    "team_id": "2635",
+    "team_name": "TEMPO",
+    "logo_url": "https://owcdn.net/img/60770bb797697.png"
+  },
+  {
+    "team_id": "2636",
+    "team_name": "Ambitious",
+    "logo_url": "https://owcdn.net/img/603bacb533523.png"
+  },
+  {
+    "team_id": "2637",
+    "team_name": "BadTurtles Esport",
+    "logo_url": "https://owcdn.net/img/604f94f02dc43.png"
+  },
+  {
+    "team_id": "2",
+    "team_name": "Sentinels",
+    "logo_url": "https://owcdn.net/img/62875027c8e06.png"
+  },
+  {
+    "team_id": "3",
+    "team_name": "Ninjas in Pyjamas",
+    "logo_url": "https://owcdn.net/img/62b947039ec5e.png"
+  },
+  {
+    "team_id": "4",
+    "team_name": "smoke",
+    "logo_url": "https://owcdn.net/img/5ee79f1a72454.png"
+  },
+  {
+    "team_id": "7",
+    "team_name": "Dignitas",
+    "logo_url": "https://owcdn.net/img/5ff7841731aa5.png"
+  },
+  {
+    "team_id": "11",
+    "team_name": "Obey Alliance",
+    "logo_url": "https://owcdn.net/img/5f11e166d41b1.png"
+  },
+  {
+    "team_id": "14",
+    "team_name": "T1",
+    "logo_url": "https://owcdn.net/img/62fe0b8f6b084.png"
+  },
+  {
+    "team_id": "15",
+    "team_name": "Prospects",
+    "logo_url": "https://owcdn.net/img/5f2ccaa8c4505.png"
+  },
+  {
+    "team_id": "17",
+    "team_name": "Gen.G",
+    "logo_url": "https://owcdn.net/img/654cc858ea9f5.png"
+  },
+  {
+    "team_id": "18",
+    "team_name": "mouseSpaz",
+    "logo_url": "https://owcdn.net/img/5f10c80142588.png"
+  },
+  {
+    "team_id": "21",
+    "team_name": "Prodigy",
+    "logo_url": "https://owcdn.net/img/5ee5192f908db.png"
+  },
+  {
+    "team_id": "22",
+    "team_name": "Dire Wolves",
+    "logo_url": "https://owcdn.net/img/5f12bdace9f58.png"
+  },
+  {
+    "team_id": "25",
+    "team_name": "fish123",
+    "logo_url": "https://owcdn.net/img/5eb5711b4c642.png"
+  },
+  {
+    "team_id": "42",
+    "team_name": "Valorando",
+    "logo_url": "https://owcdn.net/img/5ef21b6240b8e.png"
+  },
+  {
+    "team_id": "44",
+    "team_name": "Royals",
+    "logo_url": "https://owcdn.net/img/5ee665ad35f17.png"
+  },
+  {
+    "team_id": "46",
+    "team_name": "BlackBelts",
+    "logo_url": "https://owcdn.net/img/5eb56b552f45f.jpg"
+  },
+  {
+    "team_id": "47",
+    "team_name": "Chaos Injected",
+    "logo_url": "https://owcdn.net/img/5eb66a8541b72.jpg"
+  },
+  {
+    "team_id": "50",
+    "team_name": "need more DM",
+    "logo_url": "https://owcdn.net/img/5fb56b231453c.png"
+  }
+]

@@ -1,22 +1,28 @@
 {
     "manifest_version": 3,
-    "name": "Valorant Match Tracker",
+    "name": "Valorant Matches Tracker",
     "version": "1.0",
-    "description": "Track upcoming, live, and recent Valorant matches.",
+    "description": "Track live, upcoming, and past Valorant esports matches",
     "permissions": [
-      "activeTab"
+        "alarms",
+        "notifications",
+        "storage",
+        "activeTab"
     ],
     "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "images/icon16.png",
-        "48": "images/icon48.png",
-        "128": "images/icon128.png"
-      }
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "icon128.png"
+        }
     },
     "icons": {
-      "16": "images/icon16.png",
-      "48": "images/icon48.png",
-      "128": "images/icon128.png"
+        "128": "icon128.png"
+    },
+    "web_accessible_resources": [{
+        "resources": ["team_logos.json", "tournament_icons.json"],
+        "matches": ["<all_urls>"]
+    }],
+    "background": {
+        "service_worker": "background.js"
     }
-  }
+}

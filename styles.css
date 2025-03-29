@@ -1,3 +1,4 @@
+/* Updated on 2025-03-28 with responsiveness and visual hierarchy improvements */
 :root {
   --primary-color: #ff4655;
   --text-color: #333;
@@ -21,7 +22,7 @@
 }
 
 body {
-  width: 400px;
+  width: 450px;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -66,6 +67,22 @@ button:hover {
 button.active {
   background-color: var(--primary-color);
   color: white;
+}
+
+/* Add this near other button styles */
+.test-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.test-button:hover {
+  background-color: #ff2a3b;
 }
 
 #theme-toggle {
@@ -210,18 +227,27 @@ button.active {
   align-items: start;
 }
 
+/* Media query for wider screens to display matches in two columns */
+@media (min-width: 768px) {
+  #match-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .match-item {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
   transition: var(--transition);
   cursor: pointer;
   position: relative;
   overflow: hidden;
   height: fit-content;
-  min-height: 60px;
+  min-height: 65px;
   margin: 0 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .match-item:hover {
@@ -230,30 +256,62 @@ button.active {
   background-color: var(--hover-color);
 }
 
-.teams {
+/* Tournament section at top */
+.tournament {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-.team {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  max-width: 45%;
+  gap: 4px;
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  order: -1; /* Move to top */
+  white-space: nowrap;
   overflow: hidden;
-  padding-right: 4px;
+  text-overflow: ellipsis;
 }
 
-.team-logo {
+.tournament-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
   border-radius: 4px;
   flex-shrink: 0;
-  background-color: var(--hover-color);
-  padding: 2px;
+}
+
+.match-time {
+  margin-left: auto;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* Teams section */
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+  padding: 0 4px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 45%;
+  overflow: hidden;
+  padding-right: 4px;
+  min-width: 120px;
+}
+
+.team-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: normal;
+  filter: none;
+  opacity: 1;
 }
 
 .team-name {
@@ -262,31 +320,59 @@ button.active {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1em;
+  font-size: 1.2em; /* Increased font size */
   flex: 1;
 }
 
 .score {
-  font-size: 1.2em;
+  font-size: 1.5em; /* Increased font size */
   font-weight: 700;
   color: var(--primary-color);
-  margin: 0 8px;
-  min-width: 36px;
+  margin: 0 12px;
+  min-width: 60px;
   text-align: center;
   background-color: rgba(255, 70, 85, 0.15);
-  padding: 4px 8px;
+  padding: 6px 12px;
   border-radius: 4px;
   border: 1px solid rgba(255, 70, 85, 0.3);
   line-height: 1.2;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: center;
 }
 
-.score br {
-  content: "";
+/* Special styling for live scores */
+.match-item[data-type="live"] .score {
+  flex-direction: column;
+  min-width: 80px;
+  gap: 2px;
+  padding: 6px 12px;
+}
+
+.match-item[data-type="live"] .score br {
   display: block;
+  content: "";
   margin: 2px 0;
+}
+
+/* Map name in live scores */
+.map-name {
+  font-size: 0.8em;
+  color: var(--text-color);
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.map-score {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+/* Keep results scores compact */
+.match-item[data-type="results"] .score {
+  min-width: 50px;
+  padding: 4px 8px;
+  flex-direction: row;
 }
 
 .live-score {
@@ -362,38 +448,8 @@ button.active {
   display: block;
 }
 
-.tournament {
-  margin: 0;
-  font-weight: 500;
-  font-size: 1em;
-  color: var(--secondary-text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.tournament .tournament-icon {
-  width: 14px;
-  height: 14px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.match-time {
-  margin: 0;
-  font-size: 1em;
-  color: var(--secondary-text);
-}
-
 .match-time.upcoming {
-  font-weight: 700;
-  color: var(--primary-color);
-  display: block;
-  margin-top: 4px;
-  font-size: 1em;
+  color: var(--accent-color);
 }
 
 .map-info {
@@ -430,6 +486,7 @@ button.active {
 
 .team-rounds {
   display: flex;
+  
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4px;
@@ -497,7 +554,7 @@ button.active {
   align-items: center;
   margin-top: 4px;
   font-size: 1em;
-  color: var(--secondary-text);
+  color: var (--secondary-text);
 }
 
 a {
@@ -541,10 +598,133 @@ a {
   background: var(--secondary-text);
 }
 
-.tournament-icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  object-fit: contain;
-  vertical-align: middle;
-} 
+/* Results specific styles */
+.match-item[data-type="results"] .tournament-time-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 12px 0;
+  width: 100%;
+  gap: 8px;
+}
+
+.match-item[data-type="results"] .tournament {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.match-item[data-type="results"] .match-time {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Upcoming specific styles */
+.match-item[data-type="upcoming"] .match-time {
+  
+  width: 100%;
+  text-align: right;
+  /* color: var(--primary-color); */
+  font-weight: 700;
+  font-size: 1.1em;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  margin: 0;
+  padding: 0;
+}
+.time-until-match {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%, 50%); /* Now moves down by half its height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff4444;
+  color: #000;
+  font-size: 0.8rem;
+  /* padding: 6px 6px; */
+  border-radius: 4px;
+  font-weight: bold;
+  min-width: 140px;
+  max-width: 80%;
+  white-space: nowrap;
+  box-sizing: border-box;
+  z-index: 1;
+  height: 20px;
+  line-height: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Notification button styles - repositioned to top left */
+.match-actions {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.notify-button {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.notify-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  transform: scale(1.05);
+}
+
+.notify-button.active {
+  background: var(--primary-color);
+  color: white;
+  animation: pulse-notification 2s 1;
+}
+
+.notify-button.active:hover {
+  background: #ff2a3b;
+}
+
+@keyframes pulse-notification {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 70, 85, 0.7);
+  }
+  
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(255, 70, 85, 0);
+  }
+  
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 70, 85, 0);
+  }
+}
+
+/* Dark theme adjustments */
+.dark-theme .notify-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ddd;
+}
+
+.dark-theme .notify-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme .notify-button.active {
+  background: var(--primary-color);
+  color: white;
+}
