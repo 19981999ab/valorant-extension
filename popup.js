@@ -467,27 +467,10 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryOrder.forEach(categoryName => {
         const category = categories.get(categoryName);
         if (category) {
-          const filter = document.createElement('div');
-          filter.classList.add('dropdown-item', 'category-item');
+          const filter = createFilterItem(category.name, true, category);
+          
           filter.setAttribute('data-value', category.name);
           filter.setAttribute('data-tournaments', Array.from(category.tournaments).join(','));
-          
-          const content = document.createElement('span');
-          if (category.icon) {
-            const icon = document.createElement('img');
-            icon.src = category.icon;
-            icon.alt = category.name;
-            icon.classList.add('category-icon');
-            icon.onerror = () => { icon.style.display = 'none'; };
-            content.appendChild(icon);
-          }
-          content.innerHTML += `<i class="fas fa-folder"></i> ${category.name}`;
-          
-          const checkIcon = document.createElement('i');
-          checkIcon.className = 'fas fa-check';
-          
-          filter.appendChild(content);
-          filter.appendChild(checkIcon);
           
           filter.addEventListener('click', () => {
             const isActive = filter.classList.contains('active');
@@ -532,25 +515,9 @@ document.addEventListener('DOMContentLoaded', () => {
       Array.from(tournaments.entries())
         .sort((a, b) => a[0].localeCompare(b[0]))
         .forEach(([tournamentName, tournament]) => {
-          const filter = document.createElement('div');
-          filter.classList.add('dropdown-item', 'tournament-item');
+          const filter = createFilterItem(tournamentName);
+          
           filter.setAttribute('data-value', tournamentName);
-          
-          const content = document.createElement('span');
-          if (tournament.icon) {
-            const icon = document.createElement('img');
-            icon.src = tournament.icon;
-            icon.alt = tournamentName;
-            icon.onerror = () => { icon.style.display = 'none'; };
-            content.appendChild(icon);
-          }
-          content.appendChild(document.createTextNode(tournamentName));
-          
-          const checkIcon = document.createElement('i');
-          checkIcon.className = 'fas fa-check';
-          
-          filter.appendChild(content);
-          filter.appendChild(checkIcon);
           
           filter.addEventListener('click', () => {
             if (selectedTournaments.has(tournamentName)) {
@@ -719,52 +686,84 @@ document.addEventListener('DOMContentLoaded', () => {
     function getTournamentShineEffect(tournamentName) {
         if (!tournamentName) return '';
         
-        const effects = {
-            'VCT Americas': `
-                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(255,0,0,0.05) 40%, var(--card-bg) 60%);
-                background-size: 200% 100%;
-                animation: vctAmericasShine 3s linear infinite;
-            `,
-            'VCT Pacific': `
-                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(0,255,255,0.05) 40%, var(--card-bg) 60%);
-                background-size: 200% 100%;
-                animation: vctPacificShine 3s linear infinite;
-            `,
-            'VCT EMEA': `
-                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(255,70,85,0.05) 40%, var(--card-bg) 60%);
-                background-size: 200% 100%;
-                animation: vctEMEAShine 3s linear infinite;
-            `,
-            'Champions': `
-                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(255,215,0,0.05) 40%, var(--card-bg) 60%);
-                background-size: 200% 100%;
-                animation: championsShine 3s linear infinite;
-            `,
-            'Game Changers': `
-                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(147,112,219,0.05) 40%, var(--card-bg) 60%);
-                background-size: 200% 100%;
-                animation: gameChangersShine 3s linear infinite;
-            `,
-            'Challengers': `
-                background: linear-gradient(110deg, var(--card-bg) 0%, rgba(10,200,185,0.05) 40%, var(--card-bg) 60%);
-                background-size: 200% 100%;
-                animation: challengersShine 3s linear infinite;
-            `
-        };
+        const effects = [
+            {
+                pattern: /^Champions Tour.*(?:Americas|North America)/i,
+                color: 'rgba(255,0,0,0.15)',  // Increased opacity for Americas (red)
+                border: 'rgba(255,0,0,0.1)',
+                animation: 'vctAmericasShine'
+            },
+            {
+                pattern: /^Champions Tour.*Pacific/i,
+                color: 'rgba(0,255,255,0.12)', // Increased opacity for Pacific (cyan)
+                border: 'rgba(0,255,255,0.08)',
+                animation: 'vctPacificShine'
+            },
+            {
+                pattern: /^Champions Tour.*(?:EMEA|Europe)/i,
+                color: 'rgba(255,70,85,0.15)', // Increased opacity for EMEA (red-pink)
+                border: 'rgba(255,70,85,0.1)',
+                animation: 'vctEMEAShine'
+            },
+            {
+                pattern: /^Champions Tour.*China/i,
+                color: 'rgba(255,40,40,0.15)', // Increased opacity for China (bright red)
+                border: 'rgba(255,40,40,0.1)',
+                animation: 'vctChinaShine'
+            },
+            {
+                pattern: /^Challengers League/i,
+                color: 'rgba(10,200,185,0.12)', // Increased opacity for Challengers (teal)
+                border: 'rgba(10,200,185,0.08)',
+                animation: 'challengersShine'
+            },
+            {
+                pattern: /Game Changers/i,
+                color: 'rgba(147,112,219,0.15)', // Increased opacity for Game Changers (purple)
+                border: 'rgba(147,112,219,0.1)',
+                animation: 'gameChangersShine'
+            },
+            {
+                pattern: /Valorant Champions/i,
+                color: 'rgba(255,215,0,0.15)', // Increased opacity for Champions (gold)
+                border: 'rgba(255,215,0,0.1)',
+                animation: 'championsShine'
+            }
+        ];
 
-        // Check for exact matches first
-        for (const [key, effect] of Object.entries(effects)) {
-            if (tournamentName.includes(key)) {
-                return effect;
+        // Check patterns in order
+        for (const effect of effects) {
+            if (effect.pattern.test(tournamentName)) {
+                return `
+                    background: linear-gradient(110deg, 
+                        var(--card-bg) 0%, 
+                        ${effect.color} 40%, 
+                        var(--card-bg) 60%
+                    );
+                    background-size: 200% 100%;
+                    animation: ${effect.animation} 3s linear infinite;
+                    border: 1px solid ${effect.border};
+                    box-shadow: 0 2px 12px ${effect.color};
+                `;
             }
         }
 
-        // Generate consistent color based on tournament name hash
-        const color = generateConsistentColor(tournamentName);
+        // Default shine effect for unmatched tournaments
+        const hash = hashString(tournamentName);
+        const hue = hash % 360;
+        const color = `hsla(${hue}, 70%, 50%, 0.12)`;
+        const border = `hsla(${hue}, 70%, 50%, 0.08)`;
+        
         return `
-            background: linear-gradient(110deg, var(--card-bg) 0%, ${color} 40%, var(--card-bg) 60%);
+            background: linear-gradient(110deg, 
+                var(--card-bg) 0%, 
+                ${color} 40%, 
+                var(--card-bg) 60%
+            );
             background-size: 200% 100%;
             animation: defaultShine 3s linear infinite;
+            border: 1px solid ${border};
+            box-shadow: 0 2px 12px ${color};
         `;
     }
 
@@ -848,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Set background color based on tournament
       matchItem.style.cssText = getTournamentShineEffect(tournamentName);
       
-      // Create tournament section with icon
+      // Create tournament section with icon 
       const tournament = document.createElement('div');
       tournament.classList.add('tournament');
       if (tournamentIcon) {
@@ -1283,5 +1282,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Improved loading state function
     function showLoadingState() {
       matchListDiv.innerHTML = '<div class="loading">Fetching latest matches...</div>';
+    }
+
+    function createFilterItem(tournamentName, isCategory = false, tournamentData = null) {
+        const filter = document.createElement('div');
+        filter.classList.add('dropdown-item');
+        if (isCategory) filter.classList.add('category-item');
+        
+        const content = document.createElement('div');
+        content.classList.add('dropdown-item-content');
+    
+        // Add tournament icon
+        const icon = getTournamentIcon(tournamentName);
+        if (icon) {
+            const iconImg = document.createElement('img');
+            iconImg.src = icon;
+            iconImg.alt = tournamentName;
+            iconImg.classList.add('tournament-icon');
+            iconImg.onerror = () => {
+                iconImg.style.display = 'none';
+            };
+            content.appendChild(iconImg);
+        }
+    
+        const textSpan = document.createElement('span');
+        textSpan.textContent = tournamentName;
+        content.appendChild(textSpan);
+        
+        const checkIcon = document.createElement('i');
+        checkIcon.className = 'fas fa-check';
+        
+        filter.appendChild(content);
+        filter.appendChild(checkIcon);
+        
+        return filter;
     }
 });

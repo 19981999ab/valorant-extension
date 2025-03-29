@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Valorant Matches Tracker",
+    "name": "Valorant VLR",
     "version": "1.0",
-    "description": "Track live, upcoming, and past Valorant esports matches",
+    "description": "Track Valorant matches from VLR.gg",
     "permissions": [
         "alarms",
         "notifications",
@@ -12,11 +12,17 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "128": "icon128.png"
+            "16": "icons/icon16.png",
+            "32": "icons/icon32.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
         }
     },
     "icons": {
-        "128": "icon128.png"
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     },
     "web_accessible_resources": [{
         "resources": ["team_logos.json", "tournament_icons.json"],
