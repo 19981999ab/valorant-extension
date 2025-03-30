@@ -36,7 +36,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
-  width: 780px; /* Increased from 600px (1.3x wider) */
+  width: 1100px; /* Further increased width for longer team names */
   min-height: 500px;
   font-family: var(--font-main);
   background: var(--bg);
@@ -46,6 +46,9 @@ body {
   padding: 0;
   margin: 0;
   transition: background-color 0.3s, color 0.3s;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Header Styles */
@@ -65,14 +68,21 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
+    justify-content: center;
+    width: 100%;
+}
 
 .logo img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  image-rendering: -webkit-optimize-contrast; /* Improves image clarity */
-  vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    vertical-align: middle;
+}
+
+.logo span {
+    flex: 1;
+    text-align: center;
 }
 
 .header-right {
@@ -151,13 +161,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 14px;
+  padding: 12px 16px;
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 500;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 .dropdown-header:hover {
@@ -331,6 +342,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  line-height: 1.5;
 }
 
 /* Team layout adjustments for better space usage */
@@ -344,7 +356,7 @@ body {
 
 .team {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to allow for proper wrapping */
   gap: 8px;
   flex: 1;
   max-width: 40%; /* Reduced to ensure score has enough space */
@@ -353,6 +365,7 @@ body {
 .team:last-child {
   justify-content: flex-end;
   text-align: right;
+  align-items: flex-end; /* Align items to end for right side team */
 }
 
 .team-logo {
@@ -360,15 +373,104 @@ body {
   height: 24px;
   object-fit: contain;
   border-radius: 50%;
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .team-name {
   font-weight: 600;
-  font-size: 13px; /* Reduced font size */
-  white-space: nowrap;
+  font-size: 13px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 120px; /* Limit width */
+  max-width: 120px;
+  /* Remove white-space and text-overflow properties to allow wrapping */
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+/* Specifically for upcoming matches */
+.match-item[data-type="upcoming"] .team {
+  align-items: center; /* Keep center alignment for logos */
+  flex-direction: column; /* Stack logo and name for better space usage */
+  text-align: center; /* Center text for both teams */
+}
+
+.match-item[data-type="upcoming"] .team:last-child {
+  align-items: center; /* Keep center alignment for logos */
+  text-align: center; /* Center text for both teams */
+}
+
+.match-item[data-type="upcoming"] .team-logo {
+  width: 32px; /* Slightly larger logo for upcoming matches */
+  height: 32px;
+  margin-bottom: 4px; /* Add space between logo and name */
+}
+
+.match-item[data-type="upcoming"] .team-name {
+  font-size: 14px;
+  max-width: 100%; /* Allow more width for the name */
+  text-align: center;
+}
+
+/* Applying vertical team layout to live matches */
+.match-item[data-type="live"] .team {
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.match-item[data-type="live"] .team:last-child {
+  align-items: center;
+  text-align: center;
+}
+
+.match-item[data-type="live"] .team-logo {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.match-item[data-type="live"] .team-name {
+  font-size: 14px;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Applying vertical team layout to results matches */
+.match-item[data-type="results"] .team {
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.match-item[data-type="results"] .team:last-child {
+  align-items: center;
+  text-align: center;
+}
+
+.match-item[data-type="results"] .team-logo {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.match-item[data-type="results"] .team-name {
+  font-size: 14px;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Ensure score remains aligned for all match types */
+.match-item[data-type="live"] .score,
+.match-item[data-type="results"] .score {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 60px;
+}
+
+/* Adjust team layout for better spacing across all tabs */
+.match-item .teams {
+  padding: 8px 0;
+  align-items: stretch; /* Allow teams to stretch vertically */
 }
 
 .score {
@@ -376,7 +478,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 50px; /* Reduced minimum width */
+  min-width: 80px; /* Increased minimum width */
   font-weight: 700;
   font-size: 18px;
   color: var(--primary);
@@ -549,6 +651,180 @@ body {
   min-width: 60px;
 }
 
+/* Enhanced Match Item Layout for Upcoming Matches - make more compact */
+.match-item[data-type="upcoming"] {
+  position: relative;
+  padding: 10px 14px; /* Reduced from 12px to 10px top/bottom padding */
+  margin-top: 6px; /* Reduced from 8px to 6px */
+  min-height: 85px; /* Reduced from 100px to 85px */
+}
+
+.match-item[data-type="upcoming"] .tournament {
+  margin-bottom: 6px; /* Reduced from 12px to 6px */
+  font-size: 11px; /* Slightly smaller font size */
+}
+
+.match-item[data-type="upcoming"] .teams {
+  padding: 4px 0; /* Reduced from 8px to 4px */
+}
+
+.match-item[data-type="upcoming"] .team-logo {
+  width: 26px; /* Reduced from 28px to 26px */
+  height: 26px; /* Reduced from 28px to 26px */
+  margin-bottom: 2px; /* Reduced from 4px to 2px */
+}
+
+.match-item[data-type="upcoming"] .match-time-container {
+  margin-top: 6px; /* Reduced from 10px to 6px */
+}
+
+.match-item[data-type="upcoming"] .match-time {
+  margin-top: 8px; /* Reduced from 12px to 8px */
+  font-size: 12px; /* Reduced from 13px to 12px */
+}
+
+.time-until-match {
+  margin-top: 6px; /* Reduced from 8px to 6px */
+  font-size: 11px; /* Reduced from 12px to 11px */
+}
+
+/* Improve time-until-match styling for better readability */
+.time-until-match {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  background: var(--primary); /* Red background */
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add an icon to the time-until-match */
+.time-until-match::before {
+  content: '\f017'; /* Clock icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+  margin-right: 4px;
+  font-size: 10px;
+}
+
+/* Change to dark green on hover */
+.time-until-match:hover {
+  background: #006400; /* Dark green */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Add hover effect for better user experience */
+.time-until-match:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+/* Remove the conflicting style that's setting it to use accent color */
+/* This style is overriding our primary red color */
+.match-time-container .time-until-match {
+  background: var(--primary); /* Enforce red color */
+}
+
+/* Fix time-until-match styling - ensure red color and dark green hover */
+.time-until-match {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  background: var(--primary); /* Red background */
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add an icon to the time-until-match */
+.time-until-match::before {
+  content: '\f017'; /* Clock icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+  margin-right: 4px;
+  font-size: 10px;
+}
+
+/* Change to dark green on hover - ensure this is not overridden */
+.time-until-match:hover {
+  background: #006400 !important; /* Dark green with !important to prevent overrides */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove conflicting hover styles */
+.match-time-container .time-until-match,
+.match-item[data-type="upcoming"] .time-until-match {
+  background: var(--primary); /* Ensure red background */
+}
+
+/* Override any other hover effects that might interfere */
+.match-time-container .time-until-match:hover,
+.match-item[data-type="upcoming"] .time-until-match:hover {
+  background: #006400 !important; /* Force dark green on hover */
+}
+
+/* Fix time-until-match styling - consolidate styles and apply !important where needed */
+.time-until-match {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  background: var(--primary) !important; /* Force red background */
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Change to dark green on hover - ensure this is not overridden */
+.time-until-match:hover {
+  background: #006400 !important; /* Dark green with !important to prevent overrides */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix issues with icons in Font Awesome */
+.time-until-match::before {
+  content: '\f017'; /* Clock icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+  margin-right: 4px;
+  font-size: 10px;
+  display: inline-block; /* Ensure icon displays properly */
+}
+
+/* Ensure Font Awesome icons display correctly */
+.fa, .fas, .far, .fab {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Responsive adjustments for upcoming matches */
 @media (max-width: 600px) {
   body {
@@ -583,6 +859,7 @@ body {
   background: linear-gradient(135deg, var(--card-bg) 0%, rgba(227, 27, 12, 0.05) 100%);
   position: relative;
   overflow: hidden;
+  padding-top: 12px; /* Reduce top padding to move tournament name up */
 }
 
 .match-item[data-type="live"]::before {
@@ -602,11 +879,57 @@ body {
   pointer-events: none;
 }
 
+.match-item[data-type="live"] .teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px; /* Add space after the live indicator */
+  padding: 0;
+}
+
+.match-item[data-type="live"] .team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  max-width: 38%; /* Slightly reduced to ensure score has enough space */
+  text-align: center;
+}
+
+.match-item[data-type="live"] .team-logo {
+  width: 36px; /* Slightly larger logo for better visibility */
+  height: 36px;
+  margin-bottom: 6px;
+  object-fit: contain;
+}
+
+.match-item[data-type="live"] .team-name {
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  max-width: 100%; /* Allow the full width of the parent container */
+  word-break: break-word; /* Break long words if needed */
+  hyphens: auto; /* Allow hyphenation */
+}
+
 .match-item[data-type="live"] .score {
-  min-width: 70px;
+  min-width: 120px; /* Increased width */
   padding: 4px 12px;
   background: rgba(227, 27, 12, 0.1);
   border: 1px solid rgba(227, 27, 12, 0.2);
+}
+
+.match-item[data-type="live"] .tournament {
+  padding-right: 90px; /* Increase right padding to avoid overlap with LIVE indicator */
+  max-width: calc(100% - 90px); /* Ensure tournament name doesn't overlap with LIVE button */
+  position: relative;
+  z-index: 3;
+  margin-top: 0; /* Remove top margin */
+  line-height: 24px; /* Match the height of the live indicator */
+  height: 24px; /* Ensure consistent height alignment */
+  display: flex;
+  align-items: center;
 }
 
 .live-indicator {
@@ -620,13 +943,18 @@ body {
   font-size: 12px;
   font-weight: 600;
   position: absolute;
-  top: 12px;
+  top: 10px; /* Same as tournament height position */
   right: 12px;
   backdrop-filter: blur(4px);
   box-shadow: 0 2px 8px rgba(227, 27, 12, 0.2);
   border: 1px solid rgba(227, 27, 12, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  z-index: 5; /* Ensure it's above other elements */
+  height: 24px; /* Match the height of the tournament name */
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .live-indicator .dot {
@@ -783,6 +1111,50 @@ body {
   animation: resultsShine 3s infinite;
 }
 
+.match-item[data-type="results"] .teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.match-item[data-type="results"] .team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  max-width: 38%; /* Slightly reduced to ensure score has enough space */
+  text-align: center;
+}
+
+.match-item[data-type="results"] .team-logo {
+  width: 36px; /* Slightly larger logo for better visibility */
+  height: 36px;
+  margin-bottom: 6px;
+  object-fit: contain;
+}
+
+.match-item[data-type="results"] .team-name {
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  max-width: 100%; /* Allow the full width of the parent container */
+  word-break: break-word; /* Break long words if needed */
+  hyphens: auto; /* Allow hyphenation */
+}
+
+/* Improve score display for all match types */
+.match-item .score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  flex: 0 0 auto; /* Prevent the score from growing or shrinking */
+  z-index: 2; /* Ensure score is above other elements */
+}
+
 /* Animation keyframes */
 @keyframes tileShine {
   0% { transform: translateX(-100%) translateY(-100%); }
@@ -925,4 +1297,62 @@ body {
     0% { background-position: 200% 0; filter: brightness(1); }
     50% { background-position: 0% 0; filter: brightness(1.1); }
     100% { background-position: -200% 0; filter: brightness(1); }
+}
+
+/* Ensure the tournament icons align nicely */
+.tournament .tournament-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+/* Make match time styling consistent across match types */
+.match-time-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.match-time {
+  font-size: 13px;
+  color: var(--text-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.upcoming-time {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.upcoming-time i {
+  margin-right: 4px;
+}
+
+.time-until-match {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  background: var(--accent);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+/* Remove any conflicting styles */
+.match-item[data-type="upcoming"] .match-time {
+  margin: 0;
+  padding: 0;
+}
+
+.match-item[data-type="upcoming"] .match-time-container {
+  margin-top: 8px;
 }

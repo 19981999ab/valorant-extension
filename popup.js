@@ -645,26 +645,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Comment out or remove the existing color generation functions
-    /*
-    function generateColor() {
-        const hue = Math.random() * 360;
-        const saturation = 80 + Math.random() * 15;
-        const lightness = 80 + Math.random() * 10;
-        const opacity = 0.2 + Math.random() * 0.1;
-        return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
-    }
-
-    // Store colors for each tournament
-    const tournamentColors = new Map();
-
-    function getTournamentColor(tournamentName) {
-        if (!tournamentName) return 'var(--card-bg)';
-        if (!tournamentColors.has(tournamentName)) {
-            tournamentColors.set(tournamentName, generateColor());
-        }
-        return tournamentColors.get(tournamentName);
-    }
-    */
 
     // Add new shine effect functions
     function hashString(str) {
@@ -689,43 +669,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const effects = [
             {
                 pattern: /^Champions Tour.*(?:Americas|North America)/i,
-                color: 'rgba(255,0,0,0.15)',  // Increased opacity for Americas (red)
+                color: 'rgba(255, 145, 0, 0.45)',  // Increased opacity for Americas (red)
                 border: 'rgba(255,0,0,0.1)',
                 animation: 'vctAmericasShine'
             },
             {
                 pattern: /^Champions Tour.*Pacific/i,
-                color: 'rgba(0,255,255,0.12)', // Increased opacity for Pacific (cyan)
+                color: 'rgba(0,255,255,0.45)', // Increased opacity for Pacific (cyan)
                 border: 'rgba(0,255,255,0.08)',
                 animation: 'vctPacificShine'
             },
             {
                 pattern: /^Champions Tour.*(?:EMEA|Europe)/i,
-                color: 'rgba(255,70,85,0.15)', // Increased opacity for EMEA (red-pink)
+                color: 'rgba(70, 255, 101, 0.45)', // Increased opacity for EMEA (red-pink)
                 border: 'rgba(255,70,85,0.1)',
                 animation: 'vctEMEAShine'
             },
             {
                 pattern: /^Champions Tour.*China/i,
-                color: 'rgba(255,40,40,0.15)', // Increased opacity for China (bright red)
+                color: 'rgba(255,40,40,0.45)', // Increased opacity for China (bright red)
                 border: 'rgba(255,40,40,0.1)',
                 animation: 'vctChinaShine'
             },
             {
                 pattern: /^Challengers League/i,
-                color: 'rgba(10,200,185,0.12)', // Increased opacity for Challengers (teal)
+                color: 'rgba(10,200,185,0.45)', // Increased opacity for Challengers (teal)
                 border: 'rgba(10,200,185,0.08)',
                 animation: 'challengersShine'
             },
             {
                 pattern: /Game Changers/i,
-                color: 'rgba(147,112,219,0.15)', // Increased opacity for Game Changers (purple)
+                color: 'rgba(147,112,219,0.45)', // Increased opacity for Game Changers (purple)
                 border: 'rgba(147,112,219,0.1)',
                 animation: 'gameChangersShine'
             },
             {
                 pattern: /Valorant Champions/i,
-                color: 'rgba(255,215,0,0.15)', // Increased opacity for Champions (gold)
+                color: 'rgba(255, 217, 0, 0.45)', // Increased opacity for Champions (gold)
                 border: 'rgba(255,215,0,0.1)',
                 animation: 'championsShine'
             }
@@ -945,33 +925,57 @@ document.addEventListener('DOMContentLoaded', () => {
       
       matchItem.appendChild(teams);
       
-      // Create time element with improved formatting - replace this section
+      // Create time element with improved formatting - consistent across all match types
       const timeContainer = document.createElement('div');
       timeContainer.classList.add('match-time-container');
       
-      const time = document.createElement('span'); // Changed from p to span for better inline display
+      const time = document.createElement('span');
       time.classList.add('match-time');
       
       if (type === 'upcoming') {
-        time.classList.add('upcoming-time');
-        
-        // Ensure proper timestamp parsing
+        // Simplify the upcoming time display to match other types
         const timestamp = parseTimestamp(match.unix_timestamp);
         const matchTimeIST = formatDateTime(timestamp);
         
-        // Add clock icon for better visual indication
-        const clockIcon = document.createElement('i');
-        clockIcon.className = 'fas fa-clock';
-        time.appendChild(clockIcon);
-        
-        time.appendChild(document.createTextNode(' ' + matchTimeIST));
+        // Make the time display cleaner and more consistent
+        time.innerHTML = `<i class="fas fa-clock"></i> ${matchTimeIST}`;
+        time.classList.add('upcoming-time');
         timeContainer.appendChild(time);
         
-        // Add time until match inline with the time
+        // Add time until match with improved format
         if (match.time_until_match) {
           const timeUntil = document.createElement('span');
           timeUntil.classList.add('time-until-match');
-          timeUntil.textContent = `${match.time_until_match}`;
+          
+          // Format the time_until_match text to be more readable
+          let formattedTime = match.time_until_match;
+          
+          // Replace common patterns to be more readable
+          formattedTime = formattedTime
+            .replace(/(\d+)d/, '$1 days')
+            .replace(/(\d+)h/, '$1 hrs')
+            .replace(/(\d+)m/, '$1 min')
+            .replace(/(\d+)s/, '$1 sec');
+          
+          // Simplify text for better readability
+          if (formattedTime.includes('days')) {
+            // For longer times, simplify to just days
+            formattedTime = formattedTime.split(' ')[0] + ' days';
+          } else if (formattedTime.includes('hrs')) {
+            // For hour-based times, show hours and minutes
+            const parts = formattedTime.match(/(\d+) hrs(?: (\d+) min)?/);
+            if (parts) {
+              formattedTime = parts[1] + 'h' + (parts[2] ? ' ' + parts[2] + 'm' : '');
+            }
+          } else if (formattedTime.includes('min')) {
+            // For minute-based times, simplify format
+            const parts = formattedTime.match(/(\d+) min(?: (\d+) sec)?/);
+            if (parts) {
+              formattedTime = parts[1] + 'm';
+            }
+          }
+          
+          timeUntil.textContent = formattedTime;
           timeContainer.appendChild(timeUntil);
         }
       } else if (type === 'results') {
